@@ -10,7 +10,8 @@
     --color-text-secondary: #424242;
     --color-text-description: #4d4d4d;
     --color-surface: #d0d0d0;
-    --color-header-background: #e2e2e2cc;
+    --color-surface-subtle: rgba(226, 226, 226, 0.8);
+    --color-theme-icon: #0d0d0d;
 
     --gradient-border-image: linear-gradient(
       270deg,
@@ -28,7 +29,8 @@
     --color-text-secondary: #a1a1a1;
     --color-text-description: #959698;
     --color-surface: #26262a;
-    --color-header-background: #18181bcc;
+    --color-surface-subtle: rgba(24, 24, 27, 0.8);
+    --color-theme-icon: #bfbfbf;
 
     --gradient-mobile-menu: linear-gradient(
       180deg,
@@ -49,7 +51,8 @@
   --color-text-secondary: var(--color-text-secondary);
   --color-text-description: var(--color-text-description);
   --color-surface: var(--color-surface);
-  --color-header: var(--color-header-background);
+  --color-surface-subtle: var(--color-surface-subtle);
+  --color-theme-icon: var(--color-theme-icon);
 
   --font-size-sm: 14px;
   --font-size-base: 16px;
@@ -66,7 +69,6 @@
   --border-radius-md: var(--radius-md);
   --border-radius-lg: var(--radius-lg);
 
-  /* Max Width */
   --max-width-main: 768px;
 
   --font-family-sans: var(--font-general-sans), sans-serif;

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import Providers from './providers';
 
 const generalSans = localFont({
   src: [
@@ -30,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={generalSans.className}>
-      <body className='dark:bg-background'>{children}</body>
+    <html lang='en' className={`${generalSans.className}`}>
+      <Providers>{children}</Providers>
     </html>
   );
 }

@@ -1,15 +1,15 @@
+'use client';
+
+import ThemeSwitcher from './components/ThemeSwitcher';
+
 export default function Home() {
   return (
-    <div>
+    <body className={`bg-background dark:bg-background`}>
       <main>
         <h1>Hello, world!</h1>
 
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-        </ul>
+        <ThemeSwitcher />
       </main>
-    </div>
+    </body>
   );
 }
