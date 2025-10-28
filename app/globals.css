@@ -54,11 +54,11 @@
   --color-surface-subtle: var(--color-surface-subtle);
   --color-theme-icon: var(--color-theme-icon);
 
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 20px;
-  --font-size-xl: 24px;
-  --font-size-2xl: 36px;
+  --text-size-sm: 14px;
+  --text-size-base: 16px;
+  --text-size-lg: 20px;
+  --text-size-xl: 24px;
+  --text-size-2xl: 36px;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
