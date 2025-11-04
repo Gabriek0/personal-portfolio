@@ -11,12 +11,14 @@ function ThemeSwitcher() {
     fontWeight: 'bold',
   };
 
+  // absolute top-8 right-28
+
   return (
     <button
       onClick={() => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
       }}
-      className='cursor-pointer h-14 w-14 absolute top-8 right-28 flex items-center justify-center border-[1px] border-solid bg-surface-subtle border-surface rounded-full dark:bg-surface-subtle dark:border-surface'
+      className='cursor-pointer h-14 w-14  flex items-center justify-center border-[1px] border-solid bg-surface-subtle border-surface rounded-full dark:bg-surface-subtle dark:border-surface'
     >
       {resolvedTheme === 'dark' ? (
         <MoonIcon {...iconProps} className='dark:text-theme-icon' />
