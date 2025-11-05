@@ -1,4 +1,5 @@
 import { Button } from '@/ui/Button';
+import { Square } from 'lucide-react';
 
 const socialMedia = [
   {
@@ -29,10 +30,11 @@ function Hero() {
               Olá, eu sou
             </p>
             <h1 className='text-text-important font-semibold text-4xl mb-1'>
-              Gabriel Henrique
+              Gabriel Henrique 👋
             </h1>
-            <h2 className='text-text-secondary font-medium mb-4'>
-              Full Stack Developer
+            <h2 className='flex items-center gap-2 text-text-secondary font-medium mb-4'>
+              <Square className='h-4.5 w-4.5 text-text-description' /> Full
+              Stack Developer
             </h2>
             <p className='text-text-description font-regular mt-4'>
               Criando soluções elegantes para problemas complexos com
@@ -46,19 +48,27 @@ function Hero() {
               className='flex-1 py-3.5 px-5 rounded-3xl'
             >
               Vamos conversar
+              <Square className='text-background' />
             </Button>
             <Button
               variant='secondary'
               className='flex-1 py-3.5 px-5 rounded-3xl'
             >
               Baixar currículo
+              <Square className='text-text-important' />
             </Button>
           </div>
 
           <footer className='mt-16'>
-            <ul className='flex'>
+            <ul className='flex gap-6'>
               {socialMedia.map((sm) => (
-                <li key={sm.id}>{sm.label}</li>
+                <li className='flex items-center gap-1' key={sm.id}>
+                  <Square className='h-4.5 w-4.5 text-text-description' />
+
+                  <a className='cursor-pointer text-text-description text-sm font-medium'>
+                    {sm.label}
+                  </a>
+                </li>
               ))}
             </ul>
           </footer>
