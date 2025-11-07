@@ -1,6 +1,6 @@
+import Badge from '@/components/ui/Badge';
+import Image from '@/components/ui/Image';
 import { Square } from 'lucide-react';
-import Badge from '../Badge';
-import Image from '../Image';
 
 function About() {
   return (

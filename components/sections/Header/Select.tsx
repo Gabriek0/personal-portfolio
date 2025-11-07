@@ -4,7 +4,7 @@ import {
   Select as SelectRoot,
   SelectTrigger,
   SelectValue,
-} from '@/ui/Select';
+} from '@/components/ui/Select';
 import { BR, ES, US } from 'country-flag-icons/react/3x2';
 
 export function Select() {
