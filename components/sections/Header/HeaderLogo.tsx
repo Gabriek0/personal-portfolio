@@ -1,6 +1,6 @@
-function Logo() {
+function HeaderLogo() {
   return (
-    <div className='h-fit w-fit cursor-pointer select-none text-size-xl text-text-important'>
+    <div className='relative z-9999 h-fit w-fit cursor-pointer select-none text-size-xl text-text-important'>
       <strong className='font-bold'>G</strong>
       <span className='font-regular italic'>h</span>
       <span className='font-regular'>;</span>
@@ -8,4 +8,4 @@ function Logo() {
   );
 }
 
-export default Logo;
+export default HeaderLogo;

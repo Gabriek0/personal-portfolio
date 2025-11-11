@@ -3,7 +3,7 @@ import ProjectCard from './ProjectCard';
 
 export default function Projects() {
   return (
-    <section className='max-w-main my-0 mx-auto'>
+    <section className='max-w-main my-12 mx-auto'>
       <div>
         <Badge>Projetos</Badge>
         <h2 className='text-text-important text-2xl font-semibold my-2'>

@@ -6,6 +6,10 @@ hr {
   border: none;
 }
 
+body {
+  pointer-events: auto !important;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
@@ -16,6 +20,7 @@ hr {
     --color-text-description: #4d4d4d;
     --color-surface: #d0d0d0;
     --color-surface-subtle: rgba(226, 226, 226, 0.8);
+
     --color-theme-icon: #0d0d0d;
 
     --color-button-primary: #0d0d0d;

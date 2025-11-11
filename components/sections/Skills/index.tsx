@@ -2,7 +2,7 @@ import Badge from '@/components/ui/Badge';
 
 export default function Skills() {
   return (
-    <section>
+    <section className='max-w-main my-12 mx-auto'>
       <div>
         <Badge>Habilidades</Badge>
 

@@ -4,7 +4,7 @@ import { Square } from 'lucide-react';
 
 function About() {
   return (
-    <section className='max-w-main my-0 mx-auto py-12'>
+    <section className='max-w-main my-12 mx-auto'>
       <div className='flex items-center justify-start gap-10'>
         <div className='max-w-120'>
           <Badge>Sobre</Badge>

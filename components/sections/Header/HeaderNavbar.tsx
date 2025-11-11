@@ -1,4 +1,6 @@
-import { Select } from './Select';
+'use client';
+
+import { HeaderNavbarProps } from './Header.types';
 
 const options = [
   {
@@ -27,15 +29,15 @@ const options = [
   },
 ];
 
-function Navbar() {
+export default function HeaderNavbar({ children }: HeaderNavbarProps) {
   return (
-    <nav className='min-w-main flex items-center justify-center py-4.5 border-surface bg-surface-subtle border-[1px] rounded-2xl'>
+    <nav className='hidden lg:flex max-h-14 min-w-main items-center justify-center py-4.5 border-surface bg-surface-subtle border-[1px] rounded-2xl'>
       <ul className='flex gap-6'>
         {options.map(({ id, option }) => (
           <li key={id}>
             <a
               href='#'
-              className='text-theme-icon textcursor-pointer font-medium text-sm'
+              className={`relative cursor-pointer text-theme-icon font-medium text-sm hover:underline`}
             >
               {option}
             </a>
@@ -45,9 +47,7 @@ function Navbar() {
 
       <hr className='w-[1px] h-5 bg-surface mx-6' />
 
-      <Select />
+      {children}
     </nav>
   );
 }
-
-export default Navbar;
