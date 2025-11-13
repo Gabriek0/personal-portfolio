@@ -1,6 +1,7 @@
 'use client';
 
 import Header from '@/components/sections/Header';
+import Hero from '@/components/sections/Hero';
 
 export default function Home() {
   return (
@@ -18,6 +19,12 @@ export default function Home() {
           <Header.LanguageSelect />
         </Header.MenuToggle>
       </Header>
+
+      <Hero>
+        <Hero.Presentation />
+        <Hero.Buttons />
+        <Hero.SocialMedia />
+      </Hero>
 
       {/* <Hero />
       <About />

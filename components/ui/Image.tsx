@@ -8,7 +8,8 @@ type Props = React.ComponentProps<'div'> &
 const imageContainerVariants = cva('flex items-center justify-center', {
   variants: {
     variant: {
-      circle: 'relative rounded-full bg-background overflow-hidden border-text-description border-[1px]  p-4',
+      circle:
+        'relative rounded-full bg-background overflow-hidden border-text-description border-[1px]  p-4',
       square: 'rounded-3xl',
     },
   },
