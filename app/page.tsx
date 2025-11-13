@@ -23,10 +23,11 @@ export default function Home() {
       <Hero>
         <Hero.Presentation />
         <Hero.Buttons />
+        <Hero.Divider />
         <Hero.SocialMedia />
       </Hero>
 
-      {/* <Hero />
+      {/* 
       <About />
       <Projects />
       <Experiences />

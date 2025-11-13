@@ -26,7 +26,7 @@ const socialMedia = [
 
 export default function HeroSocialMedia() {
   return (
-    <footer className='mt-16'>
+    <footer>
       <ul className='flex items-center justify-center gap-4 md:gap-6 md:justify-normal '>
         {socialMedia.map((sm) => (
           <li className='flex items-center gap-1 hover:underline' key={sm.id}>

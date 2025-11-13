@@ -56,7 +56,7 @@ export default function HeaderMenuToggle({ children }: HeaderMenuToggleProps) {
           showCloseButton={false}
           className='h-84 w-80 max-h-84 max-w-80 py-6 px-0 bg-background border-[1px] border-surface rounded-2xl'
         >
-          <div className='flex flex-col gap-8 items-center '>
+          <div className='flex flex-col gap-8 items-center'>
             <ul className='flex flex-col gap-4 items-center justify-center '>
               {options.map(({ id, option }) => (
                 <li key={id}>

@@ -15,9 +15,11 @@ body {
 @layer base {
   :root {
     --color-background: #ecebea;
+
     --color-text-important: #0d0d0d;
     --color-text-secondary: #424242;
     --color-text-description: #4d4d4d;
+
     --color-surface: #d0d0d0;
     --color-surface-subtle: rgba(226, 226, 226, 0.8);
 
@@ -25,19 +27,15 @@ body {
 
     --color-button-primary: #0d0d0d;
     --color-button-secondary: #ecebea;
-
-    --gradient-border-image: linear-gradient(
-      270deg,
-      #26262a 0%,
-      rgba(130, 130, 144, 0.57) 100%
-    );
   }
 
   .dark {
     --color-background: #0d0d0d;
+
     --color-text-important: #ecebea;
     --color-text-secondary: #a1a1a1;
     --color-text-description: #959698;
+
     --color-surface: #26262a;
     --color-surface-subtle: rgba(24, 24, 27, 0.8);
 
@@ -45,17 +43,6 @@ body {
 
     --color-button-primary: #ecebea;
     --color-button-secondary: #191919;
-
-    --gradient-mobile-menu: linear-gradient(
-      180deg,
-      rgba(22, 22, 22, 0.9) 0%,
-      rgba(0, 0, 0, 0.9) 100%
-    );
-    --gradient-border-image: linear-gradient(
-      270deg,
-      #26262a 0%,
-      rgba(130, 130, 144, 0.57) 100%
-    );
   }
 }
 
@@ -86,4 +73,6 @@ body {
   --min-width-main: 768px;
 
   --font-family-sans: var(--font-general-sans), sans-serif;
+
+  --gradient-divider: linear-gradient(90deg, transparent, var(--color-surface));
 }
