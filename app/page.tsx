@@ -3,6 +3,7 @@
 import About from '@/components/sections/About';
 import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
+import Projects from '@/components/sections/Projects';
 
 export default function Home() {
   return (
@@ -31,11 +32,10 @@ export default function Home() {
           <About.Image />
         </About>
 
-        {/* 
-          <Projects />
-          <Experiences />
-          <Skills /> 
-        */}
+        <Projects>
+          <Projects.Presentation />
+          <Projects.List />
+        </Projects>
       </main>
     </body>
   );

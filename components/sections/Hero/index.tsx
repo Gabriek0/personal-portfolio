@@ -1,3 +1,4 @@
+import { Section, SectionWrapper } from '@/components/ui/Section';
 import { HeroProps } from './Hero.types';
 import HeroButtons from './HeroButtons';
 import HeroDivider from './HeroDivider';
@@ -6,13 +7,13 @@ import HeroSocialMedia from './HeroSocialMedia';
 
 function Hero({ children }: HeroProps) {
   return (
-    <section className='flex items-center h-fit w-full my-8 lg:h-170'>
-      <div className='my-0 mx-auto max-w-80 md:max-w-155 lg:min-w-192'>
+    <Section className='items-center h-fit w-full my-8 lg:h-170'>
+      <SectionWrapper>
         <div className='flex-col items-center lg:max-w-100 lg:items-start'>
           {children}
         </div>
-      </div>
-    </section>
+      </SectionWrapper>
+    </Section>
   );
 }
 
