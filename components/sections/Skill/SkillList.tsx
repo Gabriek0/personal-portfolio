@@ -17,7 +17,7 @@ function SkillCard() {
 
 export default function SkillsList() {
   return (
-    <ul className='w-full flex flex-wrap items-center justify-center gap-3'>
+    <ul className='w-full flex flex-wrap justify-center gap-3'>
       <SkillCard />
       <SkillCard />
       <SkillCard />
