@@ -5,6 +5,7 @@ import Experience from '@/components/sections/Experience';
 import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
 import Projects from '@/components/sections/Projects';
+import Skill from '@/components/sections/Skill';
 
 export default function Home() {
   return (
@@ -42,6 +43,11 @@ export default function Home() {
           <Experience.Header />
           <Experience.Timeline />
         </Experience>
+
+        <Skill>
+          <Skill.Header />
+          <Skill.List />
+        </Skill>
       </main>
     </body>
   );

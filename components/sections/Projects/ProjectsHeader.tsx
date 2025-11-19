@@ -8,10 +8,10 @@ import {
 
 export default function ProjectsHeader() {
   return (
-    <div className='flex flex-col'>
+    <header className='flex flex-col'>
       <SectionBadge>Projetos</SectionBadge>
       <SectionTitle> Sim, é o meu portfólio</SectionTitle>
       <SectionDescription>Os meus principais projetos.</SectionDescription>
-    </div>
+    </header>
   );
 }

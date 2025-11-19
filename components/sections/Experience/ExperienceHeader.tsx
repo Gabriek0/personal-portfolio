@@ -7,7 +7,7 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 
 export default function ExperienceHeader() {
   return (
-    <div className='flex flex-col'>
+    <header className='flex flex-col'>
       <SectionBadge>Experiência</SectionBadge>
       <SectionTitle className='mb-2'>Minha Jornada.</SectionTitle>
 
@@ -20,6 +20,6 @@ export default function ExperienceHeader() {
           Acessar meu LinkedIn <SquareArrowOutUpRight className='size-4' />
         </a>
       </div>
-    </div>
+    </header>
   );
 }
