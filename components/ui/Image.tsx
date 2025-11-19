@@ -25,7 +25,12 @@ export default function Image({ variant, className, ...props }: Props) {
         case 'circle':
           return (
             <div className='relative h-full w-full'>
-              <NextImage {...props} className='rounded-full' fill={true} />
+              <NextImage
+                fill={true}
+                src={props.src}
+                alt={props.alt}
+                className='rounded-full h-full w-full'
+              />
             </div>
           );
         case 'square':

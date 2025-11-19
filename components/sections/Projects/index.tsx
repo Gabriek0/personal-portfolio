@@ -2,8 +2,8 @@
 
 import { Section, SectionWrapper } from '@/components/ui/Section';
 import { ProjectsProps } from './Projects.types';
+import ProjectsHeader from './ProjectsHeader';
 import ProjectsList from './ProjectsList';
-import ProjectsPresentation from './ProjectsPresentation';
 
 function Projects({ children }: ProjectsProps) {
   return (
@@ -14,6 +14,6 @@ function Projects({ children }: ProjectsProps) {
 }
 
 Projects.List = ProjectsList;
-Projects.Presentation = ProjectsPresentation;
+Projects.Header = ProjectsHeader;
 
 export default Projects;

@@ -1,6 +1,6 @@
 import { Code } from 'phosphor-react';
 
-export default function HeroPresentation() {
+export default function HeroHeader() {
   return (
     <header className='flex-col'>
       <p className='text-text-important font-normal text-sm mb-1 md:text-xl'>

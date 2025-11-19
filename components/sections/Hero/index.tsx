@@ -2,7 +2,7 @@ import { Section, SectionWrapper } from '@/components/ui/Section';
 import { HeroProps } from './Hero.types';
 import HeroButtons from './HeroButtons';
 import HeroDivider from './HeroDivider';
-import HeroPresentation from './HeroPresentation';
+import HeroHeader from './HeroHeader';
 import HeroSocialMedia from './HeroSocialMedia';
 
 function Hero({ children }: HeroProps) {
@@ -17,9 +17,9 @@ function Hero({ children }: HeroProps) {
   );
 }
 
+Hero.Header = HeroHeader;
 Hero.Buttons = HeroButtons;
 Hero.Divider = HeroDivider;
 Hero.SocialMedia = HeroSocialMedia;
-Hero.Presentation = HeroPresentation;
 
 export default Hero;

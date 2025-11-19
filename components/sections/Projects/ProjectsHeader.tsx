@@ -6,7 +6,7 @@ import {
   SectionTitle,
 } from '@/components/ui/Section';
 
-export default function ProjectsPresentation() {
+export default function ProjectsHeader() {
   return (
     <div className='flex flex-col'>
       <SectionBadge>Projetos</SectionBadge>
