@@ -2,6 +2,8 @@ import Header from '@/components/sections/Header';
 import { query } from '@/lib/qs';
 import { client } from '@/services/strapi-client';
 import { StrapiApiResponse } from '@/types/strapi';
+import { notFound } from 'next/navigation';
+import React from 'react';
 
 type GetDataResponse = Promise<StrapiApiResponse['data'] | null>;
 
@@ -30,13 +32,14 @@ export default async function Page({
   const { lang } = await params;
   const data = await getData(lang);
 
-  // console.log('🚀 ~ Page ~ data:', data);
-
-  if (!data) return <></>;
+  if (!data) {
+    notFound();
+  }
 
   return (
-    <body className={`bg-background dark:bg-background`}>
+    <React.Fragment>
       <Header data={data?.header_section} />
+
       {/* <main className='w-full px-5'>
         <Hero>
           <Hero.Header />
@@ -67,6 +70,6 @@ export default async function Page({
 
         <Footer />
       </main> */}
-    </body>
+    </React.Fragment>
   );
 }
