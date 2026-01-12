@@ -1,12 +1,14 @@
-import SkillsList from './SkillList';
-import SkillHeader from './SkillHeader';
-import { SkillProps } from './Skill.types';
 import { Section, SectionWrapper } from '@/components/ui/Section';
+import SkillHeader from './SkillHeader';
+import SkillsList from './SkillList';
 
-function Skill({ children }: SkillProps) {
+function Skill() {
   return (
     <Section className='max-w-main my-12 mx-auto'>
-      <SectionWrapper>{children}</SectionWrapper>
+      <SectionWrapper>
+        <SkillHeader />
+        <SkillsList />
+      </SectionWrapper>
     </Section>
   );
 }
