@@ -4,35 +4,9 @@ import { Dialog, DialogContent, DialogOverlay } from '@/components/ui/Dialog';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { HeaderMenuToggleProps } from './Header.types';
+import HeaderLanguageSelect from './HeaderLanguageSelect';
 
-const options = [
-  {
-    id: 1,
-    option: 'Início',
-  },
-  {
-    id: 2,
-    option: 'Sobre',
-  },
-  {
-    id: 3,
-    option: 'Portfólio',
-  },
-  {
-    id: 4,
-    option: 'Artigos',
-  },
-  {
-    id: 5,
-    option: 'Experiência',
-  },
-  {
-    id: 6,
-    option: 'Contato',
-  },
-];
-
-export default function HeaderMenuToggle({ children }: HeaderMenuToggleProps) {
+export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
@@ -58,19 +32,19 @@ export default function HeaderMenuToggle({ children }: HeaderMenuToggleProps) {
         >
           <div className='flex flex-col gap-8 items-center'>
             <ul className='flex flex-col gap-4 items-center justify-center '>
-              {options.map(({ id, option }) => (
+              {data.header_navigation_bar.map(({ id, link_title }) => (
                 <li key={id}>
                   <a
                     href='#'
                     className='text-theme-icon text-sm font-medium hover:underline'
                   >
-                    {option}
+                    {link_title}
                   </a>
                 </li>
               ))}
             </ul>
 
-            {children}
+            <HeaderLanguageSelect data={data.header_language_selector} />
           </div>
         </DialogContent>
       </Dialog>

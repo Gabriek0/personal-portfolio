@@ -8,50 +8,37 @@ import {
   SelectValue,
 } from '@/components/ui/Select';
 
-import { BR, ES, US } from 'country-flag-icons/react/3x2';
-import { useState } from 'react';
+import { getMediaUrl } from '@/lib/getMediaUrl';
+import { usePathname, useRouter } from 'next/navigation';
+import { HeaderLanguageSelectProps } from './Header.types';
 
-const options = [
-  {
-    id: 1,
-    icon: BR,
-    label: 'PT/BR',
-    value: 'pt-br',
-  },
-  {
-    id: 2,
-    icon: US,
-    label: 'EN/US',
-    value: 'en-us',
-  },
-  {
-    id: 3,
-    icon: ES,
-    label: 'EN/ES',
-    value: 'en-es',
-  },
-];
-
-export default function HeaderLanguageSelect() {
-  const [language, setLanguage] = useState<string>('en-us');
+export default function HeaderLanguageSelect({
+  data,
+}: HeaderLanguageSelectProps) {
+  const router = useRouter();
+  const pathname = usePathname();
 
   return (
-    <SelectRoot onValueChange={(event) => setLanguage(event)} value={language}>
+    <SelectRoot
+      value={pathname.replace('/', '')}
+      onValueChange={(value) => router.push('/' + value)}
+    >
       <SelectTrigger className='cursor-pointer w-fit outline-0'>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        {options.map((option) => (
+        {data.map(({ id, language_code, language_name, language_flag }) => (
           <SelectItem
-            key={option.id}
-            value={option.value}
+            key={id}
+            value={language_code}
             className='cursor-pointer hover:bg-surface'
           >
-            <div className='h-6 w-6 flex items-center justify-center rounded-full overflow-hidden '>
-              <option.icon className='size-9' />
-            </div>
-
-            {option.label}
+            <img
+              alt={language_flag.name}
+              src={getMediaUrl(language_flag.url)}
+              className='h-6 w-6 object-fill object-center rounded-full'
+            />
+            {language_name}
           </SelectItem>
         ))}
       </SelectContent>

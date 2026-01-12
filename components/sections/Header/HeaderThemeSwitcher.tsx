@@ -1,13 +1,24 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { MoonIcon, SunDimIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import React, { useEffect, useState } from 'react';
 
 export default function HeaderThemeSwitcher() {
+  const [isClient, setIsClient] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return <React.Fragment />;
+
   return (
-    <button
+    <motion.button
+      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: -100, opacity: 0 }}
       onClick={() => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
       }}
@@ -18,6 +29,6 @@ export default function HeaderThemeSwitcher() {
       ) : (
         <SunDimIcon className='text-theme-icon font-bold size-4 lg-size-4.5' />
       )}
-    </button>
+    </motion.button>
   );
 }

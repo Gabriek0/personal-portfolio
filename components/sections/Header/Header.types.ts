@@ -1,13 +1,15 @@
-import { ReactNode } from 'react';
+import { HeaderLanguageSelector, HeaderSection } from '@/types/strapi';
 
 export interface HeaderProps {
-  children: ReactNode;
+  data: HeaderSection;
 }
-
 export interface HeaderNavbarProps {
-  children: ReactNode;
+  data: HeaderSection;
+}
+export interface HeaderLanguageSelectProps {
+  data: HeaderLanguageSelector;
 }
 
 export interface HeaderMenuToggleProps {
-  children: ReactNode;
+  data: HeaderSection;
 }
