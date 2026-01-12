@@ -1,5 +1,17 @@
-import { ReactNode } from 'react';
+import { HeroSection } from '@/types/strapi';
 
 export interface HeroProps {
-  children: ReactNode;
+  data: HeroSection;
+}
+
+export interface HeroHeaderProps {
+  data: HeroSection;
+}
+
+export interface HeroButtonProps {
+  data: HeroSection;
+}
+
+export interface HeroSocialMediaProps {
+  data: HeroSection['hero_social_media'];
 }
