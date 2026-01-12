@@ -36,7 +36,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${generalSans.className}`}
     >
-      <body className={`bg-background dark:bg-background`}>
+      <body
+        suppressHydrationWarning
+        className={`bg-background dark:bg-background`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
