@@ -53,6 +53,7 @@ export type HeaderLanguageSelector = Array<{
   id: number;
   language_name: string;
   language_code: string;
+  language_flag: StrapiImage;
 }>;
 
 export type HeaderNavigationBar = Array<{
@@ -73,7 +74,6 @@ export interface HeaderSection {
   header_navigation_bar: HeaderNavigationBar;
   header_language_selector: HeaderLanguageSelector;
 }
-
 export interface HeroSection {
   id: number;
   hero_greetings: string;
@@ -108,6 +108,8 @@ export interface ProjectSection {
   projects_header: SectionHeader;
 }
 
+export type ExperienceType = 'career' | 'education';
+
 export interface Experience {
   id: number;
   experience_title: string;
@@ -115,9 +117,9 @@ export interface Experience {
   experience_location: string;
   experience_from: string;
   experience_to: string | null;
-  experience_type: 'career' | 'education';
+  experience_type: ExperienceType;
   experience_description: string;
-  experience_image: StrapiImage[];
+  experience_image: StrapiImage;
 }
 
 export interface ExperienceSection {
