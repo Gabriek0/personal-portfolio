@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
+import { AboutSection } from '@/types/strapi';
 
 export interface AboutProps {
-  children: ReactNode;
+  data: AboutSection;
 }
