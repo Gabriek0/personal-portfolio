@@ -1,11 +1,5 @@
-import { ImageProps } from 'next/image';
-import { ReactNode } from 'react';
+import { ProjectSection } from '@/types/strapi';
 
 export interface ProjectsProps {
-  children: ReactNode;
+  data: ProjectSection;
 }
-
-export type ProjectsCardProps = Pick<ImageProps, 'src'> & {
-  title: string;
-  description: string;
-};
