@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
+import { ExperienceSection } from '@/types/strapi';
 
 export interface ExperienceProps {
-  children: ReactNode;
+  data: ExperienceSection;
 }
