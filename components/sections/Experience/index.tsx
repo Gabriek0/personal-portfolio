@@ -106,133 +106,128 @@ function Experience({ data }: ExperienceProps) {
   return (
     <Section className='max-w-main my-12 mx-auto'>
       <SectionWrapper>
-        <SectionTitle>
-          <header className='flex flex-col'>
-            <SectionBadge>{data.experiences_header.section_badge}</SectionBadge>
-            <SectionTitle className='mb-2'>
-              {data.experiences_header.section_title}
-            </SectionTitle>
+        <header className='flex flex-col'>
+          <SectionBadge>{data.experiences_header.section_badge}</SectionBadge>
+          <SectionTitle className='mb-2'>
+            {data.experiences_header.section_title}
+          </SectionTitle>
 
-            <div className='md:flex md:items-center md:justify-between'>
-              <SectionDescription className='mt-2 mb-4 md:4'>
-                {data.experiences_header.section_description}
-              </SectionDescription>
+          <div className='md:flex md:items-center md:justify-between'>
+            <SectionDescription className='mt-2 mb-4 md:4'>
+              {data.experiences_header.section_description}
+            </SectionDescription>
 
-              <a className='cursor-pointer flex items-center gap-2 text-base font-medium text-text-important underline'>
-                Acessar meu LinkedIn{' '}
-                <SquareArrowOutUpRight className='size-4' />
-              </a>
-            </div>
-          </header>
-
-          <div className='flex flex-col mt-10'>
-            <div className='w-fit p-2 flex items-center gap-1 bg-button-secondary rounded-4xl relative'>
-              {data.experiences_button_switchers.map((button, idx) => {
-                const isActive = experienceType === button.button_value;
-
-                return (
-                  <div key={idx} className='relative'>
-                    {isActive && (
-                      <motion.div
-                        layoutId='active-pill'
-                        className='absolute inset-0 bg-button-primary rounded-3xl shadow-sm'
-                        transition={{ type: 'spring', duration: 0.6 }}
-                        style={{ borderRadius: 24 }}
-                      />
-                    )}
-
-                    <Button
-                      onClick={() =>
-                        setExpeirenceType(button.button_value as ExperienceType)
-                      }
-                      variant='ghost'
-                      className={cn(
-                        'relative z-10 max-w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-36 transition-colors',
-
-                        isActive
-                          ? 'text-background hover:text-background hover:bg-transparent'
-                          : 'text-text-description hover:text-text-important hover:bg-transparent'
-                      )}
-                    >
-                      {!idx ? (
-                        <BriefcaseBusiness className='size-4' />
-                      ) : (
-                        <GraduationCap className='size-4' />
-                      )}
-                      {button.button_text}
-                    </Button>
-                  </div>
-                );
-              })}
-            </div>
-
-            <motion.ul
-              initial='hidden'
-              animate='visible'
-              key={experienceType}
-              variants={listVariants}
-              className='flex flex-col gap-8 mt-8 w-full'
-            >
-              <AnimatePresence mode='wait'>
-                {experiences.map((exp, idx) => (
-                  <motion.li
-                    variants={itemVariants}
-                    key={`${exp.experience_title}-${idx}`}
-                    className='w-full flex flex-col gap-8 align-top md:flex-row'
-                  >
-                    <div>
-                      <Image
-                        fill={true}
-                        variant='circle'
-                        alt={exp.experience_title}
-                        src={getMediaUrl(exp.experience_image.url)}
-                        className='h-18 w-18 md:h-18 md:w-18 lg:h-22 lg:w-22'
-                      />
-                    </div>
-
-                    <div className='flex flex-col gap-2'>
-                      <h2 className='text-text-important font-semibold text-xl md:text-2xl'>
-                        {exp.experience_organization}
-                      </h2>
-
-                      <div className='flex gap-2'>
-                        <p className='text-text-important font-regular text-sm underline md:text-base'>
-                          {exp.experience_title}
-                        </p>
-                        <span className='text-text-description font-light text-base'>
-                          |
-                        </span>
-                        <p className='text-text-description font-regular text-sm md:text-base'>
-                          {exp.experience_location}
-                        </p>
-                      </div>
-
-                      <p className='text-text-description font-regular text-sm md:text-base'>
-                        {dayjs(exp.experience_from).locale(locale).format('L')}
-                        {exp.experience_to &&
-                          ' - ' +
-                            dayjs(exp.experience_to)
-                              .locale(locale)
-                              .format('L') +
-                            ' • '}
-                        {calculateDuration(
-                          exp.experience_from,
-                          exp.experience_to
-                        )}{' '}
-                      </p>
-
-                      <span className='text-text-important font-regular text-left text-sm md:text-base'>
-                        <ReactMarkdown>
-                          {exp.experience_description}
-                        </ReactMarkdown>
-                      </span>
-                    </div>
-                  </motion.li>
-                ))}
-              </AnimatePresence>
-            </motion.ul>
+            <a className='cursor-pointer flex items-center gap-2 text-base font-medium text-text-important underline'>
+              Acessar meu LinkedIn <SquareArrowOutUpRight className='size-4' />
+            </a>
           </div>
-        </SectionTitle>
+        </header>
+
+        <div className='flex flex-col mt-10'>
+          <div className='w-fit p-2 flex items-center gap-1 bg-button-secondary rounded-4xl relative'>
+            {data.experiences_button_switchers.map((button, idx) => {
+              const isActive = experienceType === button.button_value;
+
+              return (
+                <div key={idx} className='relative'>
+                  {isActive && (
+                    <motion.div
+                      layoutId='active-pill'
+                      className='absolute inset-0 bg-button-primary rounded-3xl shadow-sm'
+                      transition={{ type: 'spring', duration: 0.6 }}
+                      style={{ borderRadius: 24 }}
+                    />
+                  )}
+
+                  <Button
+                    onClick={() =>
+                      setExpeirenceType(button.button_value as ExperienceType)
+                    }
+                    variant='ghost'
+                    className={cn(
+                      'relative z-10 max-w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-36 transition-colors',
+
+                      isActive
+                        ? 'text-background hover:text-background hover:bg-transparent'
+                        : 'text-text-description hover:text-text-important hover:bg-transparent'
+                    )}
+                  >
+                    {!idx ? (
+                      <BriefcaseBusiness className='size-4' />
+                    ) : (
+                      <GraduationCap className='size-4' />
+                    )}
+                    {button.button_text}
+                  </Button>
+                </div>
+              );
+            })}
+          </div>
+
+          <motion.ul
+            initial='hidden'
+            animate='visible'
+            key={experienceType}
+            variants={listVariants}
+            className='flex flex-col gap-8 mt-8 w-full'
+          >
+            <AnimatePresence mode='wait'>
+              {experiences.map((exp, idx) => (
+                <motion.li
+                  variants={itemVariants}
+                  key={`${exp.experience_title}-${idx}`}
+                  className='w-full flex flex-col gap-8 align-top md:flex-row'
+                >
+                  <div>
+                    <Image
+                      fill={true}
+                      variant='circle'
+                      alt={exp.experience_title}
+                      src={getMediaUrl(exp.experience_image.url)}
+                      className='h-18 w-18 md:h-18 md:w-18 lg:h-22 lg:w-22'
+                    />
+                  </div>
+
+                  <div className='flex flex-col gap-2'>
+                    <h2 className='text-text-important font-semibold text-xl md:text-2xl'>
+                      {exp.experience_organization}
+                    </h2>
+
+                    <div className='flex gap-2'>
+                      <p className='text-text-important font-regular text-sm underline md:text-base'>
+                        {exp.experience_title}
+                      </p>
+                      <span className='text-text-description font-light text-base'>
+                        |
+                      </span>
+                      <p className='text-text-description font-regular text-sm md:text-base'>
+                        {exp.experience_location}
+                      </p>
+                    </div>
+
+                    <p className='text-text-description font-regular text-sm md:text-base'>
+                      {dayjs(exp.experience_from).locale(locale).format('L')}
+                      {exp.experience_to &&
+                        ' - ' +
+                          dayjs(exp.experience_to).locale(locale).format('L') +
+                          ' • '}
+                      {calculateDuration(
+                        exp.experience_from,
+                        exp.experience_to
+                      )}{' '}
+                    </p>
+
+                    <span className='text-text-important font-regular text-left text-sm md:text-base'>
+                      <ReactMarkdown>
+                        {exp.experience_description}
+                      </ReactMarkdown>
+                    </span>
+                  </div>
+                </motion.li>
+              ))}
+            </AnimatePresence>
+          </motion.ul>
+        </div>
       </SectionWrapper>
     </Section>
   );
