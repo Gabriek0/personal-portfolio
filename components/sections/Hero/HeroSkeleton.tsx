@@ -11,9 +11,9 @@ export default function HeroSkeleton() {
           <Skeleton className='h-6 w-2/4 mb-4' />
           <Skeleton className='h-12 w-full mb-4' />
 
-          <div className='flex gap-4 mb-12'>
-            <Skeleton className='h-13 flex-1 rounded-3xl' />
-            <Skeleton className='h-13 flex-1 rounded-3xl' />
+          <div className='flex flex-col gap-4 my-6 md:flex-row lg:my-8'>
+            <Skeleton className='h-13 max-w-full rounded-3xl md:flex-1' />
+            <Skeleton className='h-13 max-w-full rounded-3xl md:flex-1' />
           </div>
 
           <footer>
