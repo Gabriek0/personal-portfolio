@@ -5,7 +5,6 @@ import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
 import Projects from '@/components/sections/Projects';
 import Skill from '@/components/sections/Skill';
-import SkillSkeleton from '@/components/sections/Skill/SkillSkeleton';
 import { query } from '@/lib/qs';
 import { client } from '@/services/strapi-client';
 import { StrapiApiResponse } from '@/types/strapi';
@@ -54,7 +53,6 @@ export default async function Page({
       <Projects data={data.project_section} />
       <Experience data={data.experience_section} />
       <Skill data={data.skill_section} />
-      <SkillSkeleton />
       <Footer data={data.footer_section} />
     </main>
   );
