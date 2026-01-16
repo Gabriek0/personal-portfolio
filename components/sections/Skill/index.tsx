@@ -10,7 +10,6 @@ import NextImage from 'next/image';
 import { SkillProps } from './Skill.types';
 
 function Skill({ data }: SkillProps) {
-  console.log('🚀 ~ Skill ~ data:', data);
   return (
     <Section className='max-w-main my-12 mx-auto'>
       <SectionWrapper>
