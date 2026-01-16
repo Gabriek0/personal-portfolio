@@ -133,7 +133,7 @@ export interface Skill {
   id: number;
   skill_name: string;
   skill_url: string;
-  skill_image: StrapiImage[];
+  skill_image: StrapiImage;
 }
 
 export interface SkillSection {
