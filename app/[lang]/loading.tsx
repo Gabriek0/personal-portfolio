@@ -1,5 +1,6 @@
 import AboutSkeleton from '@/components/sections/About/AboutSkeleton';
 import ExperienceSkeleton from '@/components/sections/Experience/ExperienceSkeleton';
+import FooterSkeleton from '@/components/sections/Footer/FooterSkeleton';
 import HeaderSkeleton from '@/components/sections/Header/HeaderSkeleton';
 import HeroSkeleton from '@/components/sections/Hero/HeroSkeleton';
 import ProjectSkeleton from '@/components/sections/Projects/ProjectSkeleton';
@@ -15,6 +16,7 @@ export default function Loading() {
       <ProjectSkeleton />
       <ExperienceSkeleton />
       <SkillSkeleton />
+      <FooterSkeleton />
     </React.Fragment>
   );
 }
