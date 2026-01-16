@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
+import { SkillSection } from "@/types/strapi";
 
 export interface SkillProps {
-  children: ReactNode;
+  data: SkillSection;
 }
