@@ -1,5 +1,6 @@
 import { Section, SectionWrapper } from '@/components/ui/Section';
 import { Skeleton } from '@/components/ui/Skeleton';
+import HeroDivider from './HeroDivider';
 
 export default function HeroSkeleton() {
   return (
@@ -15,6 +16,8 @@ export default function HeroSkeleton() {
             <Skeleton className='h-13 max-w-full rounded-3xl md:flex-1' />
             <Skeleton className='h-13 max-w-full rounded-3xl md:flex-1' />
           </div>
+
+          <HeroDivider />
 
           <footer>
             <ul className='flex items-center justify-center gap-4 md:gap-6 md:justify-normal'>
