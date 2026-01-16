@@ -52,8 +52,8 @@ export default async function Page({
       <About data={data.about_section} />
       <Projects data={data.project_section} />
       <Experience data={data.experience_section} />
-      <Skill />
-      <Footer />
+      <Skill data={data.skill_section} />
+      <Footer data={data.footer_section} />
     </main>
   );
 }
