@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { HeaderMenuToggleProps } from './Header.types';
 import HeaderLanguageSelect from './HeaderLanguageSelect';
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,6 +25,7 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
       </button>
 
       <Dialog modal open={isMobileMenuOpen} >
+        <DialogTitle />
         <DialogOverlay className='fixed inset-0 bg-background/80'/>
 
         <DialogContent
