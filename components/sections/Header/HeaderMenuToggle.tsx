@@ -23,11 +23,12 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
         )}
       </button>
 
-      <Dialog open={isMobileMenuOpen} modal>
-        <DialogOverlay className='fixed inset-0 bg-background/80' />
+      <Dialog modal open={isMobileMenuOpen} >
+        <DialogOverlay className='fixed inset-0 bg-background/80'/>
 
         <DialogContent
           showCloseButton={false}
+          onInteractOutside={() => setIsMobileMenuOpen(false)}
           className='h-84 w-80 max-h-84 max-w-80 py-6 px-0 bg-background border-[1px] border-surface rounded-2xl'
         >
           <div className='flex flex-col gap-8 items-center'>
