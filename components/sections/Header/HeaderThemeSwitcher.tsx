@@ -27,7 +27,7 @@ export default function HeaderThemeSwitcher() {
       {resolvedTheme === 'dark' ? (
         <MoonIcon className='dark:text-theme-icon font-bold size-4 lg:size-4.5' />
       ) : (
-        <SunDimIcon className='text-theme-icon font-bold size-4 lg-size-4.5' />
+        <SunDimIcon className='text-theme-icon font-bold size-4 lg:size-6' />
       )}
     </motion.button>
   );
