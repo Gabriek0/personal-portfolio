@@ -82,14 +82,14 @@ function Experience({ data }: ExperienceProps) {
         durations.push(
           years +
             ' ' +
-            dayjs.duration({ years }).locale(locale).humanize().split(' ')[1]
+            dayjs.duration({ years }).locale(locale).humanize().split(' ')[1],
         );
       }
       if (months > 0) {
         durations.push(
           months +
             ' ' +
-            dayjs.duration({ months }).locale(locale).humanize().split(' ')[1]
+            dayjs.duration({ months }).locale(locale).humanize().split(' ')[1],
         );
       }
 
@@ -100,11 +100,11 @@ function Experience({ data }: ExperienceProps) {
 
       return formatter.format(durations);
     },
-    [locale]
+    [locale],
   );
 
   return (
-    <Section className='max-w-main my-12 mx-auto'>
+    <Section id='experience' className='max-w-main my-12 mx-auto'>
       <SectionWrapper>
         <header className='flex flex-col'>
           <SectionBadge>{data.experiences_header.section_badge}</SectionBadge>
@@ -149,7 +149,7 @@ function Experience({ data }: ExperienceProps) {
 
                       isActive
                         ? 'text-background hover:text-background hover:bg-transparent'
-                        : 'text-text-description hover:text-text-important hover:bg-transparent'
+                        : 'text-text-description hover:text-text-important hover:bg-transparent',
                     )}
                   >
                     {!idx ? (
@@ -213,7 +213,7 @@ function Experience({ data }: ExperienceProps) {
                           ' • '}
                       {calculateDuration(
                         exp.experience_from,
-                        exp.experience_to
+                        exp.experience_to,
                       )}{' '}
                     </p>
 

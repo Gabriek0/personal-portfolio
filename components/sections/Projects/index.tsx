@@ -14,7 +14,7 @@ import { ProjectsProps } from './Projects.types';
 
 function Projects({ data }: ProjectsProps) {
   return (
-    <Section className='w-full my-12 mx-auto'>
+    <Section id='projects' className='w-full my-12 mx-auto'>
       <SectionWrapper>
         <header className='flex flex-col'>
           <SectionBadge>{data.projects_header.section_badge}</SectionBadge>

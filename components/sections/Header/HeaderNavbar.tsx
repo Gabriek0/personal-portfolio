@@ -12,10 +12,10 @@ export default function HeaderNavbar({ data }: HeaderNavbarProps) {
       className='hidden lg:flex max-h-14 min-w-main items-center justify-center py-4.5 border-surface bg-surface-subtle border-[1px] rounded-2xl'
     >
       <ul className='flex gap-6'>
-        {data.header_navigation_bar.map(({ id, link_title }) => (
+        {data.header_navigation_bar.map(({ id, link_title, link_url }) => (
           <li key={id}>
             <a
-              href='#'
+              href={link_url}
               className={`relative cursor-pointer text-theme-icon font-medium text-sm hover:underline`}
             >
               {link_title}

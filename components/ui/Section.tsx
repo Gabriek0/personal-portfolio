@@ -17,7 +17,7 @@ function SectionBadge({ children, className }: SectionBadgeProps) {
     <span
       className={cn(
         'max-w-fit text-text-secondary text-xs font-medium py-1 px-3 border-[1px] border-surface rounded-3xl md:text-sm',
-        className
+        className,
       )}
     >
       {children}
@@ -30,7 +30,7 @@ function SectionTitle({ children, className }: SectionTitleProps) {
     <h2
       className={cn(
         'text-text-important text-xl font-semibold my-2 lg:text-2xl',
-        className
+        className,
       )}
     >
       {children}
@@ -43,7 +43,7 @@ function SectionDescription({ children, className }: SectionDescriptionProps) {
     <p
       className={cn(
         'text-text-description text-sm font-normal my-4 lg:text-base',
-        className
+        className,
       )}
     >
       {children}
@@ -56,7 +56,7 @@ function SectionWrapper({ children, className }: SectionWrapperProps) {
     <div
       className={cn(
         'my-0 mx-auto min-w-80 max-w-80 md:max-w-155 md:min-w-155 lg:min-w-192',
-        className
+        className,
       )}
     >
       {children}
@@ -64,8 +64,12 @@ function SectionWrapper({ children, className }: SectionWrapperProps) {
   );
 }
 
-function Section({ className, children }: SectionProps) {
-  return <section className={cn('flex', className)}>{children}</section>;
+function Section({ id, className, children }: SectionProps) {
+  return (
+    <section id={id} className={cn('flex', className)}>
+      {children}
+    </section>
+  );
 }
 
 export {

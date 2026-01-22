@@ -11,7 +11,7 @@ import { SkillProps } from './Skill.types';
 
 function Skill({ data }: SkillProps) {
   return (
-    <Section className='max-w-main my-12 mx-auto'>
+    <Section id={'skills'} className='max-w-main my-12 mx-auto'>
       <SectionWrapper>
         <header className='flex flex-col'>
           <SectionBadge className='mt-0 mb-2'>

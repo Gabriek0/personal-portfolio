@@ -7,7 +7,7 @@ import HeroSocialMedia from './HeroSocialMedia';
 
 function Hero({ data }: HeroProps) {
   return (
-    <Section className='items-center h-fit w-full my-8 lg:h-170'>
+    <Section id='home' className='items-center h-fit w-full my-8 lg:h-170'>
       <SectionWrapper>
         <div className='flex-col items-center lg:max-w-100 lg:items-start'>
           <HeroHeader data={data} />

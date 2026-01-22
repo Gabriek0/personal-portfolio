@@ -14,7 +14,7 @@ import { AboutProps } from './About.types';
 
 function About({ data }: AboutProps) {
   return (
-    <Section className='mt-18 lg:mt-0'>
+    <Section id='about' className='mt-18 lg:mt-0'>
       <SectionWrapper>
         <div className='flex flex-col items-center gap-8 md:gap-10 md:flex-row lg:items-start'>
           <div className='max-w-120'>

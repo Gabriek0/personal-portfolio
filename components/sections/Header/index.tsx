@@ -6,10 +6,9 @@ import HeaderThemeSwitcher from './HeaderThemeSwitcher';
 
 function Header({ data }: HeaderProps) {
   return (
-    <header className='w-full mx-auto flex gap-4 items-center justify-between py-6.5 px-5 xl:py-8 xl:px-28'>
+    <header className='z-10 w-full mx-auto flex gap-4 items-center justify-between py-6.5 px-5 xl:py-8 xl:px-28 md:sticky md:top-0'>
       <HeaderLogo />
-      <HeaderNavbar data={data} />
-      <HeaderThemeSwitcher />
+l      <HeaderThemeSwitcher />
       <HeaderMenuToggle data={data} />
     </header>
   );

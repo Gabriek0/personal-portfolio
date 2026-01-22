@@ -2,6 +2,10 @@
 @import 'tailwindcss/preflight.css' layer(base);
 @import 'tw-animate-css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 hr {
   border: none;
 }
