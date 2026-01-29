@@ -1,4 +1,15 @@
-const getMediaUrl = (path: string) =>
-  `${process.env.NEXT_PUBLIC_STRAPI_URL}${path}`;
+const getMediaUrl = (path: string | null | undefined) => {
+  if (!path) {
+    return null;
+  }
+
+  if (path.startsWith('http') || path.startsWith('//')) {
+    return path;
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || '';
+
+  return `${baseUrl}${path}`;
+};
 
 export { getMediaUrl };
