@@ -1,7 +1,6 @@
 const getMediaUrl = (path: string | null | undefined) => {
-  if (!path) {
-    return null;
-  }
+  if (!path) return '';
+
 
   if (path.startsWith('http') || path.startsWith('//')) {
     return path;
