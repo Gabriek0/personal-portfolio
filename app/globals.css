@@ -25,7 +25,7 @@ body {
     --color-text-description: #4d4d4d;
 
     --color-surface: #d0d0d0;
-    --color-surface-subtle: rgba(226, 226, 226, 0.8);
+    --color-surface-subtle: rgba(226, 226, 226, 1);
 
     --color-theme-icon: #0d0d0d;
 
@@ -43,7 +43,7 @@ body {
     --color-text-description: #959698;
 
     --color-surface: #26262a;
-    --color-surface-subtle: rgba(24, 24, 27, 0.8);
+    --color-surface-subtle: rgba(24, 24, 27, 1);
 
     --color-theme-icon: #bfbfbf;
 
