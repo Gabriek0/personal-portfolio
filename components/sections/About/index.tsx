@@ -9,39 +9,109 @@ import {
   SectionWrapper,
 } from '@/components/ui/Section';
 import { getMediaUrl } from '@/lib/getMediaUrl';
+import { motion, Variants } from 'framer-motion';
 import { SquareArrowRight } from 'lucide-react';
 import { AboutProps } from './About.types';
+
+const contentVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut',
+    },
+  },
+};
+
+const imageVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.8,
+      delay: 0.3,
+      ease: [0.34, 1.56, 0.64, 1],
+    },
+  },
+};
 
 function About({ data }: AboutProps) {
   return (
     <Section id='about' className='mt-18 lg:mt-0'>
       <SectionWrapper>
         <div className='flex flex-col items-center gap-8 md:gap-10 md:flex-row lg:items-start'>
-          <div className='max-w-120'>
-            <SectionBadge>{data.about_header.section_badge}</SectionBadge>
-            <SectionTitle>{data.about_header.section_title}</SectionTitle>
+          <motion.div
+            className='max-w-120'
+            variants={contentVariants}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div variants={itemVariants}>
+              <SectionBadge>{data.about_header.section_badge}</SectionBadge>
+            </motion.div>
 
-            <SectionDescription>
-              {data.about_header.section_description}
-            </SectionDescription>
+            <motion.div variants={itemVariants}>
+              <SectionTitle>{data.about_header.section_title}</SectionTitle>
+            </motion.div>
 
-            <a className='flex items-center gap-2 underline text-text-important text-sm lg:text-base'>
+            <motion.div variants={itemVariants}>
+              <SectionDescription>
+                {data.about_header.section_description}
+              </SectionDescription>
+            </motion.div>
+
+            <motion.a
+              className='cursor-pointer flex items-center gap-2 underline text-text-important text-sm lg:text-base'
+              variants={itemVariants}
+              whileHover={{ x: 5 }}
+              transition={{ duration: 0.2 }}
+            >
               {data.about_button.link_title}
-              <span className='no-underline'>
+              <motion.span
+                className='no-underline'
+                whileHover={{ x: 3 }}
+                transition={{ duration: 0.2 }}
+              >
                 <SquareArrowRight className='h-4.5 w-4.5' />
-              </span>
-            </a>
-          </div>
+              </motion.span>
+            </motion.a>
+          </motion.div>
 
-          <div>
+          <motion.div
+            variants={imageVariants}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{
+              scale: 1.05,
+              rotate: 5,
+              transition: { duration: 0.3, ease: 'easeOut' },
+            }}
+          >
             <Image
               fill={true}
               variant='circle'
               alt={data.about_image.name}
               src={getMediaUrl(data.about_image.url)}
-              className='h-46.5 w-46.5 lg:h-62.5 lg:w-62.5'
+              className='cursor-pointer h-46.5 w-46.5 lg:h-62.5 lg:w-62.5'
             />
-          </div>
+          </motion.div>
         </div>
       </SectionWrapper>
     </Section>

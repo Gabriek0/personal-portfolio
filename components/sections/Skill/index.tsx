@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Section,
   SectionBadge,
@@ -6,6 +8,7 @@ import {
   SectionWrapper,
 } from '@/components/ui/Section';
 import { getMediaUrl } from '@/lib/getMediaUrl';
+import { motion } from 'framer-motion';
 import NextImage from 'next/image';
 import { SkillProps } from './Skill.types';
 
@@ -26,9 +29,32 @@ function Skill({ data }: SkillProps) {
         </header>
 
         <ul className='w-full flex flex-wrap justify-center gap-3'>
-          {data.skills_list.map((skill) => (
-            <li
+          {data.skills_list.map((skill, index) => (
+            <motion.li
               key={skill.id}
+              custom={index}
+              initial='initial'
+              whileInView='animate'
+              viewport={{
+                once: true,
+              }}
+              whileHover={{
+                scale: 1.1,
+                y: -10,
+              }}
+              variants={{
+                initial: {
+                  opacity: 0,
+                  y: 100,
+                },
+                animate: (index: number) => ({
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.05 * index,
+                  },
+                }),
+              }}
               className='cursor-pointer max-h-8.5 min-h-8.5 w-fit flex items-center gap-2 p-2 bg-surface-subtle border-surface border-[1px] rounded-3xl md:max-h-12 md:min-h-12'
             >
               <div className='relative h-4.5 w-4.5 rounded-full overflow-hidden md:h-6 md:w-6'>
@@ -42,7 +68,7 @@ function Skill({ data }: SkillProps) {
               <span className='text-text-secondary text-xs font-medium md:text-sm'>
                 {skill.skill_name}
               </span>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </SectionWrapper>
