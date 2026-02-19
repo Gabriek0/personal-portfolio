@@ -67,6 +67,7 @@ export interface SectionHeader {
   section_badge: string;
   section_title: string;
   section_description: string;
+  experience_link: StrapiLink;
 }
 
 export interface HeaderSection {

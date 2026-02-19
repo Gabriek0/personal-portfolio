@@ -21,6 +21,7 @@ const query = (lang: string) =>
         'project_section.projects_list',
         'project_section.projects_list.project_image',
         'experience_section.experiences_header',
+        'experience_section.experiences_header.experience_link',
         'experience_section.experiences_button_switchers',
         'experience_section.experiences_list',
         'experience_section.experiences_list.experience_image',
@@ -36,7 +37,7 @@ const query = (lang: string) =>
     },
     {
       encodeValuesOnly: true,
-    }
+    },
   );
 
 export { query };
