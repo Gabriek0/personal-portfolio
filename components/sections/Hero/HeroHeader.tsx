@@ -37,7 +37,7 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
       animate='visible'
     >
       <motion.p
-        className='text-text-important font-normal text-sm mb-1 md:text-xl'
+        className='text-foreground font-normal text-sm mb-1 md:text-xl'
         variants={itemVariants}
       >
         {data.hero_greetings}
@@ -47,7 +47,7 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
         className='flex items-center gap-2 mb-1'
         variants={itemVariants}
       >
-        <h1 className='text-text-important font-semibold text-2xl md:text-4xl'>
+        <h1 className='text-foreground font-semibold text-2xl md:text-4xl'>
           {data.hero_name}
         </h1>
 
@@ -72,7 +72,7 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
       </motion.div>
 
       <motion.h2
-        className='flex items-center gap-2 text-text-secondary font-medium text-sm  mb-4 md:text-base'
+        className='flex items-center gap-2 text-secondary-foreground font-medium text-sm  mb-4 md:text-base'
         variants={itemVariants}
       >
         <span className='flex justify-center h-4 w-6.5 bg-white text-black rounded-2xl'>
@@ -82,7 +82,7 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
       </motion.h2>
 
       <motion.p
-        className='text-text-description font-regular text-sm mt-4 md:text-base'
+        className='text-muted-foreground font-regular text-sm mt-4 md:text-base'
         variants={itemVariants}
       >
         {data.hero_description}

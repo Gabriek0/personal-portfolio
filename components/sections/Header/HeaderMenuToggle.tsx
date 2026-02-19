@@ -15,12 +15,12 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
     <div className='block lg:hidden'>
       <button
         onClick={toggleMobileMenu}
-        className='relative z-9999 cursor-pointer h-10 w-10 flex items-center justify-center border-[1px] border-solid bg-surface-subtle border-surface rounded-full'
+        className='relative z-9999 cursor-pointer h-10 w-10 flex items-center justify-center border-[1px] border-solid bg-card border-border rounded-full'
       >
         {isMobileMenuOpen ? (
-          <X className='text-theme-icon font-bold size-4' />
+          <X className='text-icon font-bold size-4' />
         ) : (
-          <Menu className='text-theme-icon font-bold size-4' />
+          <Menu className='text-icon font-bold size-4' />
         )}
       </button>
 
@@ -31,7 +31,7 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
         <DialogContent
           showCloseButton={false}
           onInteractOutside={() => setIsMobileMenuOpen(false)}
-          className='h-84 w-80 max-h-84 max-w-80 py-6 px-0 bg-background border-[1px] border-surface rounded-2xl'
+          className='h-84 w-80 max-h-84 max-w-80 py-6 px-0 bg-background border-[1px] border-border rounded-2xl'
         >
           <div className='flex flex-col gap-8 items-center'>
             <ul className='flex flex-col gap-4 items-center justify-center '>
@@ -39,7 +39,7 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
                 <li key={id}>
                   <a
                     href='#'
-                    className='text-theme-icon text-sm font-medium hover:underline'
+                    className='text-icon text-sm font-medium hover:underline'
                   >
                     {link_title}
                   </a>

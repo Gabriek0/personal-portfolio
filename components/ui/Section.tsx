@@ -16,7 +16,7 @@ function SectionBadge({ children, className }: SectionBadgeProps) {
   return (
     <span
       className={cn(
-        'max-w-fit text-text-secondary text-xs font-medium py-1 px-3 border-[1px] border-surface rounded-3xl md:text-sm',
+        'max-w-fit text-secondary-foreground text-xs font-medium py-1 px-3 border-[1px] bg-card border-border rounded-3xl md:text-sm',
         className,
       )}
     >
@@ -29,7 +29,7 @@ function SectionTitle({ children, className }: SectionTitleProps) {
   return (
     <h2
       className={cn(
-        'text-text-important text-xl font-semibold my-2 lg:text-2xl',
+        'text-foreground text-xl font-semibold my-2 lg:text-2xl',
         className,
       )}
     >
@@ -42,7 +42,7 @@ function SectionDescription({ children, className }: SectionDescriptionProps) {
   return (
     <p
       className={cn(
-        'text-text-description text-sm font-normal my-4 lg:text-base',
+        'text-muted-foreground text-sm font-normal my-4 lg:text-base',
         className,
       )}
     >

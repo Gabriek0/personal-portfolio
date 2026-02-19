@@ -55,7 +55,7 @@ function Skill({ data }: SkillProps) {
                   },
                 }),
               }}
-              className='cursor-pointer max-h-8.5 min-h-8.5 w-fit flex items-center gap-2 p-2 bg-surface-subtle border-surface border-[1px] rounded-3xl md:max-h-12 md:min-h-12'
+              className='cursor-pointer max-h-8.5 min-h-8.5 w-fit flex items-center gap-2 p-2 bg-card border-border border-[1px] rounded-3xl md:max-h-12 md:min-h-12'
             >
               <div className='relative h-4.5 w-4.5 rounded-full overflow-hidden md:h-6 md:w-6'>
                 <NextImage
@@ -65,7 +65,7 @@ function Skill({ data }: SkillProps) {
                 />
               </div>
 
-              <span className='text-text-secondary text-xs font-medium md:text-sm'>
+              <span className='text-secondary-foreground text-xs font-medium md:text-sm'>
                 {skill.skill_name}
               </span>
             </motion.li>

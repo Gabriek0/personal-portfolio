@@ -20,6 +20,8 @@ import {
 // import NextImage from 'next/image';
 import Image from '@/components/ui/Image';
 import dayjs from '@/lib/dayjs';
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useCallback, useMemo, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -46,8 +48,11 @@ const itemVariants: Variants = {
 
 function Experience({ data }: ExperienceProps) {
   const params = useParams();
+  const { resolvedTheme } = useTheme();
+
   const lang = params?.lang as string;
   const locale = lang?.toLowerCase();
+  const isDark = resolvedTheme === 'dark';
 
   const [experienceType, setExpeirenceType] =
     useState<ExperienceType>('career');
@@ -117,14 +122,19 @@ function Experience({ data }: ExperienceProps) {
               {data.experiences_header.section_description}
             </SectionDescription>
 
-            <a className='cursor-pointer flex items-center gap-2 text-base font-medium text-text-important underline'>
-              Acessar meu LinkedIn <SquareArrowOutUpRight className='size-4' />
-            </a>
+            <Link
+              target='_blank'
+              href={data?.experiences_header.experience_link?.link_url || ''}
+              className='cursor-pointer flex items-center gap-2 text-base font-medium text-foreground underline'
+            >
+              {data.experiences_header.experience_link?.link_title}{' '}
+              <SquareArrowOutUpRight className='size-4' />
+            </Link>
           </div>
         </header>
 
         <div className='flex flex-col mt-10'>
-          <div className='w-fit p-2 flex items-center gap-1 bg-button-secondary rounded-4xl relative'>
+          <div className='w-fit p-2 flex items-center gap-1 bg-card border-[1px] border-border rounded-4xl relative'>
             {data.experiences_button_switchers.map((button, idx) => {
               const isActive = experienceType === button.button_value;
 
@@ -133,7 +143,7 @@ function Experience({ data }: ExperienceProps) {
                   {isActive && (
                     <motion.div
                       layoutId='active-pill'
-                      className='absolute inset-0 bg-button-primary rounded-3xl shadow-sm'
+                      className='absolute inset-0 bg-off-white rounded-3xl shadow-sm'
                       transition={{ type: 'spring', duration: 0.6 }}
                       style={{ borderRadius: 24 }}
                     />
@@ -148,8 +158,8 @@ function Experience({ data }: ExperienceProps) {
                       'relative z-10 max-w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-36 transition-colors',
 
                       isActive
-                        ? 'text-background hover:text-background hover:bg-transparent'
-                        : 'text-text-description hover:text-text-important hover:bg-transparent',
+                        ? `text-dark hover:text-dark hover:bg-transparent`
+                        : `text-muted ${isDark ? 'hover:text-off-white' : 'hover:text-dark'} hover:bg-transparent`,
                     )}
                   >
                     {!idx ? (
@@ -176,7 +186,7 @@ function Experience({ data }: ExperienceProps) {
                 <motion.li
                   variants={itemVariants}
                   key={`${exp.experience_title}-${idx}`}
-                  className='w-full flex flex-col gap-8 align-top md:flex-row'
+                  className=' w-full flex flex-col gap-8 align-top md:flex-row'
                 >
                   <div>
                     <Image
@@ -189,23 +199,23 @@ function Experience({ data }: ExperienceProps) {
                   </div>
 
                   <div className='flex flex-col gap-2'>
-                    <h2 className='text-text-important font-semibold text-xl md:text-2xl'>
+                    <h2 className='text-foreground font-semibold text-xl md:text-2xl'>
                       {exp.experience_organization}
                     </h2>
 
                     <div className='flex gap-2'>
-                      <p className='text-text-important font-regular text-sm underline md:text-base'>
+                      <p className='text-foreground font-regular text-sm underline md:text-base'>
                         {exp.experience_title}
                       </p>
-                      <span className='text-text-description font-light text-base'>
+                      <span className='text-muted-foreground font-light text-base'>
                         |
                       </span>
-                      <p className='text-text-description font-regular text-sm md:text-base'>
+                      <p className='text-muted-foreground font-regular text-sm md:text-base'>
                         {exp.experience_location}
                       </p>
                     </div>
 
-                    <p className='text-text-description font-regular text-sm md:text-base'>
+                    <p className='text-muted-foreground font-regular text-sm md:text-base'>
                       {dayjs(exp.experience_from).locale(locale).format('L')}
                       {exp.experience_to &&
                         ' - ' +
@@ -217,7 +227,7 @@ function Experience({ data }: ExperienceProps) {
                       )}{' '}
                     </p>
 
-                    <span className='text-text-important font-regular text-left text-sm md:text-base'>
+                    <span className='text-foreground font-regular text-left text-sm md:text-base'>
                       <ReactMarkdown>
                         {exp.experience_description}
                       </ReactMarkdown>

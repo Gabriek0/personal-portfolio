@@ -15,7 +15,7 @@ export default function SkillSkeleton() {
           {Array.from({ length: 12 }).map((_, idx) => (
             <li
               key={idx}
-              className='max-h-8.5 min-h-8.5 w-fit flex items-center gap-2 p-2 bg-surface-subtle border-surface border-[1px] rounded-3xl md:max-h-12 md:min-h-12'
+              className='max-h-8.5 min-h-8.5 w-fit flex items-center gap-2 p-2 bg-card border-border border-[1px] rounded-3xl md:max-h-12 md:min-h-12'
             >
               <Skeleton className='h-4.5 w-4.5 rounded-full md:h-6 md:w-6' />
               <Skeleton className={`h-5 w-14`} />

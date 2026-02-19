@@ -77,7 +77,7 @@ function About({ data }: AboutProps) {
             </motion.div>
 
             <motion.a
-              className='cursor-pointer flex items-center gap-2 underline text-text-important text-sm lg:text-base'
+              className='cursor-pointer flex items-center gap-2 underline text-foreground text-sm lg:text-base'
               variants={itemVariants}
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2 }}
@@ -100,8 +100,7 @@ function About({ data }: AboutProps) {
             viewport={{ once: true, amount: 0.3 }}
             whileHover={{
               scale: 1.05,
-              rotate: 5,
-              transition: { duration: 0.3, ease: 'easeOut' },
+              transition: { duration: 0.2, ease: 'easeOut' },
             }}
           >
             <Image

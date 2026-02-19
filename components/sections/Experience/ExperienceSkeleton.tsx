@@ -16,7 +16,7 @@ export default function ExperienceSkeleton() {
         </header>
 
         <div className='flex flex-col mt-10'>
-          <div className='w-fit p-2 flex items-center gap-1 bg-button-secondary rounded-4xl relative'>
+          <div className='w-fit p-2 flex items-center gap-1 bg-secondary rounded-4xl relative'>
             <Skeleton className='h-13 w-28 rounded-3xl' />
             <Skeleton className='h-13 w-28 rounded-3xl' />
           </div>

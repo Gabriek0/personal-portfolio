@@ -31,7 +31,7 @@ export default function HeaderLanguageSelect({
           <SelectItem
             key={id}
             value={language_code}
-            className='cursor-pointer hover:bg-surface'
+            className='cursor-pointer hover:bg-border'
           >
             <img
               alt={language_flag.name}

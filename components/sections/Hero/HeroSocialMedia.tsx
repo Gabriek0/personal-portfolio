@@ -67,12 +67,12 @@ export default function HeroSocialMedia({ data }: HeroSocialMediaProps) {
             whileHover={{ y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <props.icon className='size-4.5 text-text-description' />
+            <props.icon className='size-4.5 text-muted-foreground' />
 
             <a
               target='_blank'
               href={link_url ?? '#'}
-              className='cursor-pointer text-text-description font-medium text-xs md:text-sm'
+              className='cursor-pointer text-muted-foreground font-medium text-xs md:text-sm'
             >
               {link_title}
             </a>

@@ -14,7 +14,7 @@ export default function HeroDivider() {
         ease: 'easeOut',
       }}
     >
-      <Divider />
+      <Divider className='my-8' />
     </motion.div>
   );
 }

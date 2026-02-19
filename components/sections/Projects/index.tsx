@@ -11,6 +11,7 @@ import {
 import { getMediaUrl } from '@/lib/getMediaUrl';
 import { motion, Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 import { ProjectsProps } from './Projects.types';
 
 const headerVariants = {
@@ -112,38 +113,46 @@ function Projects({ data }: ProjectsProps) {
               <motion.div
                 variants={imageVariants}
                 whileHover={{
-                  y: -8,
+                  scale: 1.025,
                   transition: { duration: 0.3, ease: 'easeOut' },
                 }}
                 className='overflow-hidden rounded-lg mb-6 md:mb-4'
               >
                 <motion.div>
-                  <Image
-                    fill={true}
-                    variant='square'
-                    alt={project.project_image.name}
-                    src={getMediaUrl(project.project_image.url)}
-                    className='cursor-pointer h-72 w-80 md:h-68 md:w-76 lg:h-80 lg:w-93'
-                  />
+                  <Link href={project.project_link} target='_blank'>
+                    <Image
+                      fill={true}
+                      variant='square'
+                      alt={project.project_image.name}
+                      src={getMediaUrl(project.project_image.url)}
+                      className='cursor-pointer h-72 w-80 md:h-68 md:w-76 lg:h-80 lg:w-93'
+                    />
+                  </Link>
                 </motion.div>
               </motion.div>
 
-              <motion.h2
-                className='cursor-pointer flex items-center gap-2 text-text-important font-medium text-2xl hover:underline'
+              <motion.h1
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
+                className='cursor-pointer flex items-center text-foreground font-medium text-2xl hover:underline mb-2'
               >
-                {project.project_title}{' '}
-                <motion.span
-                  whileHover={{ x: 3, y: -3 }}
-                  transition={{ duration: 0.2 }}
+                <Link
+                  href={project.project_link}
+                  target='_blank'
+                  className='flex items-center gap-2'
                 >
-                  <ArrowUpRight className='size-4' />
-                </motion.span>
-              </motion.h2>
+                  {project.project_title}{' '}
+                  <motion.span
+                    whileHover={{ x: 3, y: -3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ArrowUpRight className='size-4' />
+                  </motion.span>
+                </Link>
+              </motion.h1>
 
               <motion.p
-                className='text-text-description font-normal text-sm md:text-base'
+                className='text-muted-foreground font-normal text-sm md:text-base'
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

@@ -11,11 +11,11 @@ const imageContainerVariants = cva(
     variants: {
       variant: {
         circle:
-          'relative rounded-full bg-background overflow-hidden border-text-description border-[1px]  p-4',
+          'relative rounded-full bg-background overflow-hidden border-border border-[1px] p-4',
         square: 'rounded-3xl',
       },
     },
-  }
+  },
 );
 
 export default function Image({ variant, className, ...props }: Props) {
@@ -29,7 +29,7 @@ export default function Image({ variant, className, ...props }: Props) {
                 fill={true}
                 src={props.src}
                 alt={props.alt}
-                className='rounded-full h-full w-full'
+                className='bg-card rounded-full h-full w-full'
               />
             </div>
           );
@@ -46,7 +46,7 @@ export default function Image({ variant, className, ...props }: Props) {
           return <React.Fragment />;
       }
     },
-    [variant]
+    [variant],
   );
 
   return (

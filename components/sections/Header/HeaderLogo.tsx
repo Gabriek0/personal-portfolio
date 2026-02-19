@@ -7,7 +7,7 @@ function HeaderLogo() {
     <motion.div
       animate={{ y: 0, opacity: 1 }}
       initial={{ y: -100, opacity: 0 }}
-      className='relative z-9999 h-fit w-fit cursor-pointer select-none text-size-xl text-text-important'
+      className='relative z-9999 h-fit w-fit cursor-pointer select-none text-size-xl text-foreground'
     >
       <strong className='font-bold'>G</strong>
       <span className='font-regular italic'>h</span>
