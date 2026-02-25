@@ -11,7 +11,7 @@ import {
 } from '@/src/components/ui/Section';
 import dayjs from '@/src/lib/dayjs';
 import { cn, getMediaUrl } from '@/src/lib/utils';
-import { ExperienceType } from '@/src/types/strapi';
+import { CareerExperience, EducationExperience, ExperienceType } from '@/src/types/strapi';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import {
   BriefcaseBusiness,
@@ -52,28 +52,40 @@ function Experience({ data }: ExperienceProps) {
   const locale = lang?.toLowerCase();
   const isDark = resolvedTheme === 'dark';
 
-  const [experienceType, setExpeirenceType] =
-    useState<ExperienceType>('career');
+  const [experienceType, setExpeirenceType] = useState<ExperienceType>('career');
 
   const experiences = useMemo(() => {
-    return data.experiences_list
-      .filter((exp) => {
-        return exp.experience_type === experienceType;
-      })
-      .sort((a, b) => {
-        return (
-          new Date(b.experience_from).getTime() -
-          new Date(a.experience_from).getTime()
-        );
-      });
+    const filteredExperiences = data.experiences_list.filter((exp) => exp.experience_type === experienceType);
+    const sortedExperiences = filteredExperiences.sort((a, b) => new Date(b.experience_from).getTime() - new Date(a.experience_from).getTime());
+
+    return sortedExperiences;
   }, [experienceType, data.experiences_list]);
 
-  const calculateDuration = useCallback(
-    (start: string, end: string | null) => {
-      if (!end) return null;
+  const formatDate = useCallback((date: string) => dayjs(date).locale(locale).format('L'), [locale]);
+
+  const getExperienceDate = useCallback((exp: CareerExperience | EducationExperience) => {
+    const { experience_type, experience_from, experience_to } = exp;
+
+    const isCareerExperience = experience_type === 'career';
+
+    if (isCareerExperience) {
+      const { experience_is_current_work: isCurrentWork, experience_current_work_text: textCurrentWork } = exp;
+      
+      if (isCurrentWork) {
+        return formatDate(experience_from) + ' - ' + textCurrentWork + ' • ';
+      }
+    }
+
+    if (!experience_to) return formatDate(experience_from);
+    
+    return formatDate(experience_from) + ' - ' + formatDate(experience_to) + ' • ';
+  }, [locale])
+  
+  const calculateExperienceDuration = useCallback((start: string, end: string | null) => {
+      const endDateValue = (end ?? dayjs().format('L'));
 
       const startDate = dayjs(start);
-      const endDate = dayjs(end);
+      const endDate = dayjs(endDateValue);
 
       const totalMonths = endDate.diff(startDate, 'month');
       const years = Math.floor(totalMonths / 12);
@@ -132,7 +144,7 @@ function Experience({ data }: ExperienceProps) {
         </header>
 
         <div className='flex flex-col mt-10'>
-          <div className='w-fit p-2 flex items-center gap-1 bg-card border-[1px] border-border rounded-4xl relative'>
+          <div className='w-fit p-2 flex items-center gap-1 bg-card border-[1px] border-border rounded-4xl relative z-1'>
             {data.experiences_button_switchers.map((button, idx) => {
               const isActive = experienceType === button.button_value;
 
@@ -148,10 +160,8 @@ function Experience({ data }: ExperienceProps) {
                   )}
 
                   <Button
-                    onClick={() =>
-                      setExpeirenceType(button.button_value as ExperienceType)
-                    }
                     variant='ghost'
+                    onClick={() => setExpeirenceType(button.button_value as ExperienceType)}
                     className={cn(
                       'relative z-10 max-w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-36 transition-colors',
 
@@ -202,27 +212,21 @@ function Experience({ data }: ExperienceProps) {
                     </h2>
 
                     <div className='flex gap-2'>
-                      <p className='text-foreground font-regular text-sm underline md:text-base'>
+                      <p className='max-w-36 text-foreground font-regular text-xs underline md:max-w-full md:text-base'>
                         {exp.experience_title}
                       </p>
-                      <span className='text-muted-foreground font-light text-base'>
+                      <span className='text-muted-foreground font-light text-xs md:text-base'>
                         |
                       </span>
-                      <p className='text-muted-foreground font-regular text-sm md:text-base'>
+                      <p className='text-muted-foreground font-regular text-xs md:text-base'>
                         {exp.experience_location}
                       </p>
                     </div>
 
                     <p className='text-muted-foreground font-regular text-sm md:text-base'>
-                      {dayjs(exp.experience_from).locale(locale).format('L')}
-                      {exp.experience_to &&
-                        ' - ' +
-                          dayjs(exp.experience_to).locale(locale).format('L') +
-                          ' • '}
-                      {calculateDuration(
-                        exp.experience_from,
-                        exp.experience_to,
-                      )}{' '}
+                      {getExperienceDate(exp)}
+                      
+                      {calculateExperienceDuration(exp.experience_from, exp.experience_to)}{' '}
                     </p>
 
                     <span className='text-foreground font-regular text-left text-sm md:text-base'>
