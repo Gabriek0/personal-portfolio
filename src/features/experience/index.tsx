@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/src/components/ui/Button';
+import Image from '@/src/components/ui/Image';
 import {
   Section,
   SectionBadge,
@@ -8,6 +9,7 @@ import {
   SectionTitle,
   SectionWrapper,
 } from '@/src/components/ui/Section';
+import dayjs from '@/src/lib/dayjs';
 import { cn, getMediaUrl } from '@/src/lib/utils';
 import { ExperienceType } from '@/src/types/strapi';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
@@ -16,12 +18,10 @@ import {
   GraduationCap,
   SquareArrowOutUpRight,
 } from 'lucide-react';
-import Image from '@/src/components/ui/Image';
-import dayjs from '@/src/lib/dayjs';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { ExperienceProps } from './types';
 
@@ -226,7 +226,30 @@ function Experience({ data }: ExperienceProps) {
                     </p>
 
                     <span className='text-foreground font-regular text-left text-sm md:text-base'>
-                      <ReactMarkdown>
+                      <ReactMarkdown
+                        allowedElements={[
+                          'p',
+                          'ul',
+                          'ol',
+                          'li',
+                          'strong',
+                          'blockquote',
+                        ]}
+                        components={{
+                          p: ({ children }) => (
+                            <React.Fragment>
+                              <p>{children}</p>
+                              <br />
+                            </React.Fragment>
+                          ),
+                          ul: ({ children }) => (
+                            <ul className='ml-6 list-disc'>{children}</ul>
+                          ),
+                          li: ({ children }) => (
+                            <li className='mb-2'>{children}</li>
+                          ),
+                        }}
+                      >
                         {exp.experience_description}
                       </ReactMarkdown>
                     </span>
