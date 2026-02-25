@@ -115,20 +115,30 @@ export type ExperienceType = 'career' | 'education';
 export interface Experience {
   id: number;
   experience_title: string;
-  experience_organization: string;
-  experience_location: string;
   experience_from: string;
+  experience_location: string;
   experience_to: string | null;
+  experience_organization: string;
   experience_type: ExperienceType;
   experience_description: string;
   experience_image: StrapiImage;
 }
 
+export type CareerExperience = Experience & {
+  experience_type: 'career';
+  experience_is_current_work: boolean;
+  experience_current_work_text?: string;
+};
+
+export type EducationExperience = Experience & {
+  experience_type: 'education';
+};
+
 export interface ExperienceSection {
   id: number;
-  experiences_list: Experience[];
-  experiences_button_switchers: StrapiButton[];
   experiences_header: SectionHeader;
+  experiences_button_switchers: StrapiButton[];
+  experiences_list: Array<CareerExperience | EducationExperience>;
 }
 
 export interface Skill {
