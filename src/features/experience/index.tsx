@@ -25,12 +25,36 @@ import React, { useCallback, useMemo, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { ExperienceProps } from './types';
 
+const headerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const headerItemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+};
+
 const listVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.2,
+      delayChildren: 0.2,
     },
   },
 };
@@ -121,13 +145,26 @@ function Experience({ data }: ExperienceProps) {
   return (
     <Section id='experience' className='max-w-main my-12 mx-auto'>
       <SectionWrapper>
-        <header className='flex flex-col'>
-          <SectionBadge>{data.experiences_header.section_badge}</SectionBadge>
-          <SectionTitle className='mb-2'>
-            {data.experiences_header.section_title}
-          </SectionTitle>
+        <motion.header
+          className='flex flex-col'
+          variants={headerVariants}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div variants={headerItemVariants}>
+            <SectionBadge>{data.experiences_header.section_badge}</SectionBadge>
+          </motion.div>
+          <motion.div variants={headerItemVariants}>
+            <SectionTitle className='mb-2'>
+              {data.experiences_header.section_title}
+            </SectionTitle>
+          </motion.div>
 
-          <div className='md:flex md:items-center md:justify-between'>
+          <motion.div
+            className='md:flex md:items-center md:justify-between'
+            variants={headerItemVariants}
+          >
             <SectionDescription className='mt-2 mb-4 md:4'>
               {data.experiences_header.section_description}
             </SectionDescription>
@@ -140,11 +177,17 @@ function Experience({ data }: ExperienceProps) {
               {data.experiences_header.experience_link?.link_title}{' '}
               <SquareArrowOutUpRight className='size-4' />
             </Link>
-          </div>
-        </header>
+          </motion.div>
+        </motion.header>
 
         <div className='flex flex-col mt-10'>
-          <div className='w-fit p-2 flex items-center gap-1 bg-card border-[1px] border-border rounded-4xl relative z-1'>
+          <motion.div
+            className='w-fit p-2 flex items-center gap-1 bg-card border-[1px] border-border rounded-4xl relative z-1'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
             {data.experiences_button_switchers.map((button, idx) => {
               const isActive = experienceType === button.button_value;
 
@@ -180,11 +223,12 @@ function Experience({ data }: ExperienceProps) {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
 
           <motion.ul
             initial='hidden'
-            animate='visible'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.1 }}
             key={experienceType}
             variants={listVariants}
             className='flex flex-col gap-8 mt-8 w-full'
