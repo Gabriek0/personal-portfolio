@@ -8,12 +8,12 @@ const generalSans = localFont({
     {
       style: 'normal',
       weight: '200 700',
-      path: '../../public/fonts/GeneralSans-Variable.ttf',
+      path: './fonts/GeneralSans-Variable.ttf',
     },
     {
       style: 'italic',
       weight: '200 700',
-      path: '../../public/fonts/GeneralSans-VariableItalic.ttf',
+      path: './fonts/GeneralSans-VariableItalic.ttf',
     },
   ],
   display: 'swap',
@@ -21,7 +21,7 @@ const generalSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Gh; Portfolio',
+  title: 'Gabriel Henrique | Portfolio',
   description: 'Gabriel Henrique | Personal Portfolio',
 };
 
