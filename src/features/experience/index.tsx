@@ -22,7 +22,6 @@ import {
   GraduationCap,
   SquareArrowOutUpRight,
 } from 'lucide-react';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useCallback, useMemo, useState } from 'react';
@@ -74,11 +73,9 @@ const itemVariants: Variants = {
 
 function Experience({ data }: ExperienceProps) {
   const params = useParams();
-  const { resolvedTheme } = useTheme();
 
   const lang = params?.lang as string;
   const locale = lang?.toLowerCase();
-  const isDark = resolvedTheme === 'dark';
 
   const [experienceType, setExpeirenceType] =
     useState<ExperienceType>('career');
@@ -213,7 +210,6 @@ function Experience({ data }: ExperienceProps) {
           >
             {data.experiences_button_switchers.map((button, idx) => {
               const isActive = experienceType === button.button_value;
-
               return (
                 <div key={idx} className='relative'>
                   {isActive && (
@@ -235,7 +231,7 @@ function Experience({ data }: ExperienceProps) {
 
                       isActive
                         ? `text-dark hover:text-dark hover:bg-transparent`
-                        : `text-muted ${isDark ? 'hover:text-off-white' : 'hover:text-dark'} hover:bg-transparent`,
+                        : 'text-muted hover:text-dark dark:hover:text-off-white hover:bg-transparent',
                     )}
                   >
                     {!idx ? (
