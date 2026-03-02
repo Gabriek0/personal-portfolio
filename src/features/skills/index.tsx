@@ -6,7 +6,7 @@ import {
   SectionDescription,
   SectionTitle,
   SectionWrapper,
-} from '@/src/components/ui/Section';
+} from '@/src/components/ui/section';
 import { getMediaUrl } from '@/src/lib/utils';
 import { motion } from 'framer-motion';
 import NextImage from 'next/image';

@@ -6,7 +6,7 @@ import {
   Select as SelectRoot,
   SelectTrigger,
   SelectValue,
-} from '@/src/components/ui/Select';
+} from '@/src/components/ui/select';
 
 import { getMediaUrl } from '@/src/lib/utils';
 import { usePathname, useRouter } from 'next/navigation';

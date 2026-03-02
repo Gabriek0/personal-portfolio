@@ -1,6 +1,6 @@
 'use client';
 
-import Divider from '@/src/components/ui/Divider';
+import Divider from '@/src/components/ui/divider';
 import { motion } from 'framer-motion';
 
 export default function HeroDivider() {

@@ -1,4 +1,4 @@
-import { Skeleton } from '@/src/components/ui/Skeleton';
+import { Skeleton } from '@/src/components/ui/skeleton';
 
 export default function HeaderSkeleton() {
   return (

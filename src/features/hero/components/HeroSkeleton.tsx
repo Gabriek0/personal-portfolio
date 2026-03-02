@@ -1,5 +1,5 @@
-import { Section, SectionWrapper } from '@/src/components/ui/Section';
-import { Skeleton } from '@/src/components/ui/Skeleton';
+import { Section, SectionWrapper } from '@/src/components/ui/section';
+import { Skeleton } from '@/src/components/ui/skeleton';
 import HeroDivider from './HeroDivider';
 
 export default function HeroSkeleton() {

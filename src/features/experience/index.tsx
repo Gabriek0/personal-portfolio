@@ -1,17 +1,21 @@
 'use client';
 
-import { Button } from '@/src/components/ui/Button';
-import Image from '@/src/components/ui/Image';
+import { Button } from '@/src/components/ui/button';
+import Image from '@/src/components/ui/image';
 import {
   Section,
   SectionBadge,
   SectionDescription,
   SectionTitle,
   SectionWrapper,
-} from '@/src/components/ui/Section';
+} from '@/src/components/ui/section';
 import dayjs from '@/src/lib/dayjs';
 import { cn, getMediaUrl } from '@/src/lib/utils';
-import { CareerExperience, EducationExperience, ExperienceType } from '@/src/types/strapi';
+import {
+  CareerExperience,
+  EducationExperience,
+  ExperienceType,
+} from '@/src/types/strapi';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import {
   BriefcaseBusiness,
@@ -76,37 +80,56 @@ function Experience({ data }: ExperienceProps) {
   const locale = lang?.toLowerCase();
   const isDark = resolvedTheme === 'dark';
 
-  const [experienceType, setExpeirenceType] = useState<ExperienceType>('career');
+  const [experienceType, setExpeirenceType] =
+    useState<ExperienceType>('career');
 
   const experiences = useMemo(() => {
-    const filteredExperiences = data.experiences_list.filter((exp) => exp.experience_type === experienceType);
-    const sortedExperiences = filteredExperiences.sort((a, b) => new Date(b.experience_from).getTime() - new Date(a.experience_from).getTime());
+    const filteredExperiences = data.experiences_list.filter(
+      (exp) => exp.experience_type === experienceType,
+    );
+    const sortedExperiences = filteredExperiences.sort(
+      (a, b) =>
+        new Date(b.experience_from).getTime() -
+        new Date(a.experience_from).getTime(),
+    );
 
     return sortedExperiences;
   }, [experienceType, data.experiences_list]);
 
-  const formatDate = useCallback((date: string) => dayjs(date).locale(locale).format('L'), [locale]);
+  const formatDate = useCallback(
+    (date: string) => dayjs(date).locale(locale).format('L'),
+    [locale],
+  );
 
-  const getExperienceDate = useCallback((exp: CareerExperience | EducationExperience) => {
-    const { experience_type, experience_from, experience_to } = exp;
+  const getExperienceDate = useCallback(
+    (exp: CareerExperience | EducationExperience) => {
+      const { experience_type, experience_from, experience_to } = exp;
 
-    const isCareerExperience = experience_type === 'career';
+      const isCareerExperience = experience_type === 'career';
 
-    if (isCareerExperience) {
-      const { experience_is_current_work: isCurrentWork, experience_current_work_text: textCurrentWork } = exp;
-      
-      if (isCurrentWork) {
-        return formatDate(experience_from) + ' - ' + textCurrentWork + ' • ';
+      if (isCareerExperience) {
+        const {
+          experience_is_current_work: isCurrentWork,
+          experience_current_work_text: textCurrentWork,
+        } = exp;
+
+        if (isCurrentWork) {
+          return formatDate(experience_from) + ' - ' + textCurrentWork + ' • ';
+        }
       }
-    }
 
-    if (!experience_to) return formatDate(experience_from);
-    
-    return formatDate(experience_from) + ' - ' + formatDate(experience_to) + ' • ';
-  }, [locale])
-  
-  const calculateExperienceDuration = useCallback((start: string, end: string | null) => {
-      const endDateValue = (end ?? dayjs().format('L'));
+      if (!experience_to) return formatDate(experience_from);
+
+      return (
+        formatDate(experience_from) + ' - ' + formatDate(experience_to) + ' • '
+      );
+    },
+    [locale],
+  );
+
+  const calculateExperienceDuration = useCallback(
+    (start: string, end: string | null) => {
+      const endDateValue = end ?? dayjs().format('L');
 
       const startDate = dayjs(start);
       const endDate = dayjs(endDateValue);
@@ -204,7 +227,9 @@ function Experience({ data }: ExperienceProps) {
 
                   <Button
                     variant='ghost'
-                    onClick={() => setExpeirenceType(button.button_value as ExperienceType)}
+                    onClick={() =>
+                      setExpeirenceType(button.button_value as ExperienceType)
+                    }
                     className={cn(
                       'relative z-10 max-w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-36 transition-colors',
 
@@ -269,8 +294,10 @@ function Experience({ data }: ExperienceProps) {
 
                     <p className='text-muted-foreground font-regular text-sm md:text-base'>
                       {getExperienceDate(exp)}
-                      
-                      {calculateExperienceDuration(exp.experience_from, exp.experience_to)}{' '}
+                      {calculateExperienceDuration(
+                        exp.experience_from,
+                        exp.experience_to,
+                      )}{' '}
                     </p>
 
                     <span className='text-foreground font-regular text-left text-sm md:text-base'>
