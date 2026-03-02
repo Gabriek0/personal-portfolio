@@ -8,6 +8,7 @@ import Skill from '@/src/features/skills';
 import { client } from '@/src/lib/strapi/client';
 import { query } from '@/src/lib/strapi/query';
 import { StrapiApiResponse } from '@/src/types/strapi';
+import { unstable_cache } from 'next/cache';
 import { notFound } from 'next/navigation';
 
 type GetDataResponse = Promise<StrapiApiResponse['data'] | null>;
@@ -15,10 +16,12 @@ type GetDataResponse = Promise<StrapiApiResponse['data'] | null>;
 async function getPortfolioData(lang: string): GetDataResponse {
   try {
     const response = await client.fetch(`content?${query(lang)}`);
+
     const { data }: StrapiApiResponse = await response.json();
 
     return data;
   } catch (error: any) {
+    console.log('🚀 ~ getPortfolioData ~ error:', error);
     if (error instanceof Error) {
       console.log('Strapi API Error: ', error.message);
     } else {
@@ -29,6 +32,12 @@ async function getPortfolioData(lang: string): GetDataResponse {
   }
 }
 
+const getCachedPortfolioData = unstable_cache(
+  async (lang: string) => getPortfolioData(lang),
+  ['portfolio-data'],
+  { tags: ['portfolio'] },
+);
+
 export default async function Page({
   params,
 }: {
@@ -36,7 +45,7 @@ export default async function Page({
 }) {
   const { lang } = await params;
 
-  const data = await getPortfolioData(lang);
+  const data = await getCachedPortfolioData(lang);
 
   if (!data) {
     notFound();
