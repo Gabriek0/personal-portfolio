@@ -3,16 +3,16 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      // {
-      //   protocol: 'https',
-      //   hostname: process.env.STRAPI_API_MEDIA_HOSTNAME,
-      // },
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
-        pathname: '/uploads/**',
+        protocol: 'https',
+        hostname: process.env.STRAPI_API_MEDIA_HOSTNAME,
       },
+      // {
+      //   protocol: 'http',
+      //   hostname: 'localhost',
+      //   port: '1337',
+      //   pathname: '/uploads/**',
+      // },
     ],
   },
   turbopack: {
