@@ -1,0 +1,20 @@
+'use client';
+
+import Divider from '@/src/components/ui/divider';
+import { motion } from 'framer-motion';
+
+export default function HeroDivider() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scaleX: 0 }}
+      animate={{ opacity: 1, scaleX: 1 }}
+      transition={{
+        duration: 0.6,
+        delay: 0.8,
+        ease: 'easeOut',
+      }}
+    >
+      <Divider className='my-8' />
+    </motion.div>
+  );
+}

@@ -1,0 +1,95 @@
+@import 'tailwindcss';
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tw-animate-css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+hr {
+  border: none;
+}
+
+body {
+  pointer-events: auto !important;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --color-background: #ecebea;
+    --color-foreground: #0d0d0d;
+    --color-secondary-foreground: #424242;
+    --color-muted-foreground: #4d4d4d;
+
+    --color-border: #d0d0d0;
+    --color-card: #e2e2e2;
+
+    --color-icon: #0d0d0d;
+
+    --color-primary: #0d0d0d;
+    --color-secondary: #ecebea;
+
+    --color-skeleton: #bfbfbf;
+  }
+
+  .dark {
+    --color-background: #0d0d0d;
+    --color-foreground: #ecebea;
+    --color-secondary-foreground: #a1a1a1;
+    --color-muted-foreground: #959698;
+
+    --color-border: #26262a;
+    --color-card: #18181b;
+
+    --color-icon: #bfbfbf;
+
+    --color-primary: #ecebea;
+    --color-secondary: #191919;
+
+    --color-skeleton: #4d4d4d;
+  }
+}
+
+@theme {
+  --color-dark: #18181b;
+  --color-muted: #959698;
+  --color-off-white: #ecebea;
+
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-border: var(--color-border);
+  --color-card: var(--color-card);
+  --color-icon: var(--color-icon);
+  --color-skeleton: var(--color-skeleton);
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+
+  --text-size-sm: 14px;
+  --text-size-base: 16px;
+  --text-size-lg: 20px;
+  --text-size-xl: 24px;
+  --text-size-2xl: 36px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --max-width-main: 768px;
+  --min-width-main: 768px;
+
+  --font-family-sans: var(--font-general-sans), sans-serif;
+
+  --gradient-divider: linear-gradient(90deg, transparent, var(--color-border));
+}
