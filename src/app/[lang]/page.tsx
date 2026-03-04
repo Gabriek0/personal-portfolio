@@ -5,38 +5,44 @@ import Header from '@/src/features/header';
 import Hero from '@/src/features/hero';
 import Projects from '@/src/features/projects';
 import Skill from '@/src/features/skills';
-import { client } from '@/src/lib/strapi/client';
 import { query } from '@/src/lib/strapi/query';
 import { StrapiApiResponse } from '@/src/types/strapi';
-import { unstable_cache } from 'next/cache';
 import { notFound } from 'next/navigation';
 
 type GetDataResponse = Promise<StrapiApiResponse['data'] | null>;
 
 async function getPortfolioData(lang: string): GetDataResponse {
   try {
-    const response = await client.fetch(`content?${query(lang)}`);
+    const baseUrl = process.env.STRAPI_API_URL;
+    const token = process.env.STRAPI_API_TOKEN;
+
+    if (!baseUrl) {
+      throw new Error('STRAPI_API_URL is not defined');
+    }
+
+    const url = `${baseUrl}content?${query(lang)}`;
+
+    const response = await fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      next: { revalidate: 3600, tags: ['portfolio'] },
+      signal: AbortSignal.timeout(30000),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
 
     const { data }: StrapiApiResponse = await response.json();
 
-    return data;
-  } catch (error: any) {
-    console.log('🚀 ~ getPortfolioData ~ error:', error);
-    if (error instanceof Error) {
-      console.log('Strapi API Error: ', error.message);
-    } else {
-      console.error('Strapi API Error: ', error);
-    }
-
+    return data ?? null;
+  } catch (error) {
+    console.error('🚀 ~ getPortfolioData ~ error:', error);
     return null;
   }
 }
-
-const getCachedPortfolioData = unstable_cache(
-  async (lang: string) => getPortfolioData(lang),
-  ['portfolio-data'],
-  { tags: ['portfolio'] },
-);
 
 export default async function Page({
   params,
@@ -45,7 +51,7 @@ export default async function Page({
 }) {
   const { lang } = await params;
 
-  const data = await getCachedPortfolioData(lang);
+  const data = await getPortfolioData(lang);
 
   if (!data) {
     notFound();
