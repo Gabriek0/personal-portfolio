@@ -1,12 +1,12 @@
 import { NextRequest } from 'next/server';
-
-const defaultLocale = 'en';
-const locales = ['en', 'es', 'pt-BR'];
+import { defaultLocale, locales } from './shared/data/locale';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+  );
 
   if (pathnameHasLocale) return;
 
