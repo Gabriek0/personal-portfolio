@@ -6,9 +6,9 @@ import {
   Select as SelectRoot,
   SelectTrigger,
   SelectValue,
-} from '@/src/components/ui/select';
+} from '@/src/shared/components/ui/select';
 
-import { getMediaUrl } from '@/src/lib/utils';
+import { getMediaUrl } from '@/src/shared/lib/utils';
 import { usePathname, useRouter } from 'next/navigation';
 import { HeaderLanguageSelectProps } from '../types';
 

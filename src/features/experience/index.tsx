@@ -1,21 +1,21 @@
 'use client';
 
-import { Button } from '@/src/components/ui/button';
-import Image from '@/src/components/ui/image';
+import { Button } from '@/src/shared/components/ui/button';
+import Image from '@/src/shared/components/ui/image';
 import {
   Section,
   SectionBadge,
   SectionDescription,
   SectionTitle,
   SectionWrapper,
-} from '@/src/components/ui/section';
-import dayjs from '@/src/lib/dayjs';
-import { cn, getMediaUrl } from '@/src/lib/utils';
+} from '@/src/shared/components/ui/section';
+import dayjs from '@/src/shared/lib/dayjs';
+import { cn, getMediaUrl } from '@/src/shared/lib/utils';
 import {
   CareerExperience,
   EducationExperience,
   ExperienceType,
-} from '@/src/types/strapi';
+} from '@/src/shared/types/strapi';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import {
   BriefcaseBusiness,

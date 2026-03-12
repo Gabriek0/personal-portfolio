@@ -1,4 +1,4 @@
-import { HeroSection } from '@/src/types/strapi';
+import { HeroSection } from '@/src/shared/types/strapi';
 
 export interface HeroProps {
   data: HeroSection;

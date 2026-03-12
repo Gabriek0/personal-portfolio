@@ -1,14 +1,14 @@
 'use client';
 
-import Image from '@/src/components/ui/image';
+import Image from '@/src/shared/components/ui/image';
 import {
   Section,
   SectionBadge,
   SectionDescription,
   SectionTitle,
   SectionWrapper,
-} from '@/src/components/ui/section';
-import { getMediaUrl } from '@/src/lib/utils';
+} from '@/src/shared/components/ui/section';
+import { getMediaUrl } from '@/src/shared/lib/utils';
 import { motion, Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';

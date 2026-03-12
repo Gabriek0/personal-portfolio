@@ -1,4 +1,4 @@
-import { Section, SectionWrapper } from '@/src/components/ui/section';
+import { Section, SectionWrapper } from '@/src/shared/components/ui/section';
 import HeroButtons from './components/HeroButtons';
 import HeroDivider from './components/HeroDivider';
 import HeroHeader from './components/HeroHeader';

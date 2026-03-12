@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/src/components/ui/button';
+import { Button } from '@/src/shared/components/ui/button';
 import { motion, Variants } from 'framer-motion';
 import { Download, ExternalLink } from 'lucide-react';
 import { HeroButtonProps } from '../types';

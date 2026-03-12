@@ -1,4 +1,4 @@
-import { FooterSection } from '@/src/types/strapi';
+import { FooterSection } from '@/src/shared/types/strapi';
 
 export interface FooterProps {
   data: FooterSection;

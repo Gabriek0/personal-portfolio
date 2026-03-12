@@ -1,6 +1,6 @@
 'use client';
 
-import { StrapiLink } from '@/src/types/strapi';
+import { StrapiLink } from '@/src/shared/types/strapi';
 import { motion, Variants } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import {

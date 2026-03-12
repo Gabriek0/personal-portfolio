@@ -1,5 +1,5 @@
-import Divider from '@/src/components/ui/divider';
-import { Skeleton } from '@/src/components/ui/skeleton';
+import Divider from '@/src/shared/components/ui/divider';
+import { Skeleton } from '@/src/shared/components/ui/skeleton';
 
 export default function FooterSkeleton() {
   return (

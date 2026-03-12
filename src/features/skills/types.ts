@@ -1,4 +1,4 @@
-import { SkillSection } from '@/src/types/strapi';
+import { SkillSection } from '@/src/shared/types/strapi';
 
 export interface SkillProps {
   data: SkillSection;

@@ -1,4 +1,7 @@
-import { HeaderLanguageSelector, HeaderSection } from '@/src/types/strapi';
+import {
+  HeaderLanguageSelector,
+  HeaderSection,
+} from '@/src/shared/types/strapi';
 
 export interface HeaderProps {
   data: HeaderSection;

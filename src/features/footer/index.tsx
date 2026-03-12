@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/src/components/ui/button';
-import Divider from '@/src/components/ui/divider';
+import { Button } from '@/src/shared/components/ui/button';
+import Divider from '@/src/shared/components/ui/divider';
 import { CircleArrowUp } from 'lucide-react';
 import { FooterProps } from './types';
 

@@ -6,8 +6,8 @@ import {
   SectionDescription,
   SectionTitle,
   SectionWrapper,
-} from '@/src/components/ui/section';
-import { getMediaUrl } from '@/src/lib/utils';
+} from '@/src/shared/components/ui/section';
+import { getMediaUrl } from '@/src/shared/lib/utils';
 import { motion } from 'framer-motion';
 import NextImage from 'next/image';
 import { SkillProps } from './types';

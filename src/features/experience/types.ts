@@ -1,4 +1,4 @@
-import { ExperienceSection } from '@/src/types/strapi';
+import { ExperienceSection } from '@/src/shared/types/strapi';
 
 export interface ExperienceProps {
   data: ExperienceSection;

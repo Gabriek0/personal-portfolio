@@ -1,6 +1,6 @@
 'use client';
 
-import { getMediaUrl } from '@/src/lib/utils';
+import { getMediaUrl } from '@/src/shared/lib/utils';
 import { motion, Variants } from 'framer-motion';
 import { Code } from 'phosphor-react';
 import { HeroHeaderProps } from '../types';
