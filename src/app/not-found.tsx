@@ -1,14 +1,14 @@
 'use client';
 
 import notFound from '@/public/not-found.png';
+import HeaderLogo from '@/src/features/header/components/HeaderLogo';
+import HeaderThemeSwitcher from '@/src/features/header/components/HeaderThemeSwitcher';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from '@/src/components/ui/select';
-import HeaderLogo from '@/src/features/header/components/HeaderLogo';
-import HeaderThemeSwitcher from '@/src/features/header/components/HeaderThemeSwitcher';
+} from '@/src/shared/components/ui/select';
 import { motion, Variants } from 'framer-motion';
 import { House } from 'lucide-react';
 import Image from 'next/image';
@@ -24,20 +24,26 @@ const languages: { code: Lang; label: string; country: string }[] = [
   { code: 'pt-BR', label: 'Português', country: 'BR' },
 ];
 
-const translations: Record<Lang, { title: string; description: string; button: string }> = {
+const translations: Record<
+  Lang,
+  { title: string; description: string; button: string }
+> = {
   en: {
     title: 'Page not found',
-    description: "You've ventured into the void. The page you're looking for has either been moved, deleted, or is hiding in my backlog.",
+    description:
+      "You've ventured into the void. The page you're looking for has either been moved, deleted, or is hiding in my backlog.",
     button: 'Go to home',
   },
   'pt-BR': {
     title: 'Página não encontrada',
-    description:'Você se aventurou no vazio. A página que você está procurando foi movida, deletada ou está escondida no meu backlog.',
+    description:
+      'Você se aventurou no vazio. A página que você está procurando foi movida, deletada ou está escondida no meu backlog.',
     button: 'Ir para o início',
   },
   es: {
     title: 'Página no encontrada',
-    description: 'Te adentraste en el vacío. La página que buscas fue movida, eliminada o se está escondiendo en mi backlog.',
+    description:
+      'Te adentraste en el vacío. La página que buscas fue movida, eliminada o se está escondiendo en mi backlog.',
     button: 'Ir al inicio',
   },
 };
