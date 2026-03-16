@@ -1,8 +1,10 @@
 'use client';
 
+import dayjs from '@/src/shared/lib/dayjs';
 import { motion, Variants } from 'framer-motion';
 import { BookOpen, Calendar } from 'lucide-react';
 import Link from 'next/link';
+import { t } from '../lib/dictionaries';
 
 export const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -17,18 +19,21 @@ export const cardVariants: Variants = {
 };
 
 interface PostProps {
-  title: string;
+  locale: string;
   date: string;
-  readingTime: number;
   slug: string;
+  title: string;
+  readingTime: number;
 }
 
-export default function Post({ title, date, slug, readingTime }: PostProps) {
-  const formattedDate = new Date(date).toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
+export default function Post({
+  locale,
+  title,
+  date,
+  slug,
+  readingTime,
+}: PostProps) {
+  const formattedDate = dayjs(date).locale(locale).format('L');
 
   return (
     <motion.article variants={cardVariants} className='flex flex-col gap-3'>
@@ -67,7 +72,7 @@ export default function Post({ title, date, slug, readingTime }: PostProps) {
         </span>
         <span className='flex items-center gap-1.5'>
           <BookOpen className='size-4' />
-          {readingTime} min de leitura
+          {readingTime} {t('readingTime', locale)}
         </span>
       </div>
     </motion.article>
