@@ -1,0 +1,1 @@
+export const normalizeLanguageCode = (lang: string) => lang.trim().toLowerCase();

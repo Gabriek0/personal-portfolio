@@ -10,6 +10,7 @@ import {
 
 import { getMediaUrl } from '@/src/shared/lib/utils';
 import { usePathname, useRouter } from 'next/navigation';
+import { useCallback, useMemo } from 'react';
 import { HeaderLanguageSelectProps } from '../types';
 
 export default function HeaderLanguageSelect({
@@ -18,11 +19,19 @@ export default function HeaderLanguageSelect({
   const router = useRouter();
   const pathname = usePathname();
 
+  const selectedLanguage = useMemo(() => {
+    const [lang] = pathname.split('/').filter(Boolean);
+
+    return lang;
+  }, [pathname, router]);
+
+  const onValueChange = useCallback((value: string) => {
+    const [, ...paths] = pathname.split('/').filter(Boolean);
+    router.push(`/${value}/${paths.join('/')}`);
+  }, [router]);
+
   return (
-    <SelectRoot
-      value={pathname.replace('/', '')}
-      onValueChange={(value) => router.push('/' + value)}
-    >
+    <SelectRoot value={selectedLanguage} onValueChange={onValueChange}>
       <SelectTrigger className='cursor-pointer w-fit outline-0'>
         <SelectValue />
       </SelectTrigger>
