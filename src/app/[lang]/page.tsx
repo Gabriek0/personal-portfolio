@@ -14,7 +14,7 @@ import { notFound } from 'next/navigation';
 
 type GetDataResponse = Promise<StrapiApiResponse['data'] | null>;
 
-async function getPortfolioData(lang: string): GetDataResponse {
+export async function getPortfolioData(lang: string): GetDataResponse {
   try {
     const baseUrl = process.env.STRAPI_API_URL;
     const token = process.env.STRAPI_API_TOKEN;
@@ -52,6 +52,7 @@ export default async function Page({
 }: {
   params: Promise<{ lang: string }>;
 }) {
+  
   const { lang } = await params;
 
   const data = await getPortfolioData(lang);
