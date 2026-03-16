@@ -8,7 +8,9 @@ export async function getAllPosts(limit?: number) {
   const fileNames = fs.readdirSync(filePath);
 
   const posts = fileNames.map((fileName) => {
-    const fileContent = fs.readFileSync(`${filePath}/${fileName}`, { encoding: 'utf-8' });
+    const fileContent = fs.readFileSync(`${filePath}/${fileName}`, {
+      encoding: 'utf-8',
+    });
     const parsed = matter(fileContent);
 
     parsed.data.slug = fileName.replace('.mdx', '');
@@ -20,8 +22,16 @@ export async function getAllPosts(limit?: number) {
 }
 
 export async function getPostBySlug(slug: string) {
-  const { default: Post } = await import(
-    `@/src/features/blog/posts/${slug}.mdx`
+  const filePath = path.join(
+    process.cwd(),
+    'src',
+    'features',
+    'blog',
+    'posts',
+    `${slug}.mdx`,
   );
-  return Post;
+  const fileContent = fs.readFileSync(filePath, { encoding: 'utf-8' });
+  const { data, content } = matter(fileContent);
+
+  return { data, content };
 }
