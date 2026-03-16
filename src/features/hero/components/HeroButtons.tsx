@@ -1,8 +1,10 @@
 'use client';
 
 import { Button } from '@/src/components/ui/button';
+import { getMediaUrl } from '@/src/lib/utils';
 import { motion, Variants } from 'framer-motion';
 import { Download, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import { HeroButtonProps } from '../types';
 
 const containerVariants = {
@@ -42,13 +44,15 @@ export default function HeroButtons({ data }: HeroButtonProps) {
         transition={{ duration: 0.2 }}
         whileHover={{ scale: 1.02, y: -2 }}
       >
-        <Button
-          variant='primary'
-          className='w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-50'
-        >
-          {data.hero_primary_button.button_text}
-          <ExternalLink className='size-5' />
-        </Button>
+        <Link href={data.hero_primary_button.button_url || ''} target='_blank'>
+          <Button
+            variant='primary'
+            className='w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-50'
+          >
+            {data.hero_primary_button.button_text}
+            <ExternalLink className='size-5' />
+          </Button>
+        </Link>
       </motion.div>
       <motion.div
         variants={buttonVariants}
@@ -56,13 +60,19 @@ export default function HeroButtons({ data }: HeroButtonProps) {
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.2 }}
       >
-        <Button
-          variant='secondary'
-          className='w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-50'
+        <Link
+          download
+          target='_blank'
+          href={getMediaUrl(data.hero_secondary_button.button_url)}
         >
-          {data.hero_secondary_button.button_text}
-          <Download className='size-5' />
-        </Button>
+          <Button
+            variant='secondary'
+            className='w-full flex flex-1 items-center gap-3 py-3.5 px-5 rounded-3xl text-sm md:max-w-80 md:text-base lg:max-w-50'
+          >
+            {data.hero_secondary_button.button_text}
+            <Download className='size-5' />
+          </Button>
+        </Link>
       </motion.div>
     </motion.div>
   );
