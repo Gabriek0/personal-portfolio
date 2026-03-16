@@ -10,6 +10,7 @@ import {
 import { motion, Variants } from 'framer-motion';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import Post, { cardVariants } from './components/Post';
 import { calculateReadingTime } from './lib/utils';
 import { BlogProps } from './types';
@@ -49,6 +50,11 @@ const containerVariants = {
 };
 
 export default function Blog({ data: { blog_header, posts_list } }: BlogProps) {
+  const params = useParams();
+
+  const lang = params?.lang as string;
+  const locale = lang?.toLowerCase();
+
   return (
     <Section id='blog' className='w-full my-12 mx-auto'>
       <SectionWrapper>
@@ -99,6 +105,7 @@ export default function Blog({ data: { blog_header, posts_list } }: BlogProps) {
           {posts_list.map((post, index) => (
             <motion.div key={post.data.slug ?? index} variants={cardVariants}>
               <Post
+                locale={locale}
                 slug={post.data.slug}
                 date={post.data.date}
                 title={post.data.title}
