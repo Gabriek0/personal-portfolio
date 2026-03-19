@@ -6,6 +6,8 @@ import { motion, Variants } from 'framer-motion';
 import { Download, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { HeroButtonProps } from '../types';
+import { useParams } from "next/navigation";
+import { getDownloadUrl } from "../lib/utils";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,6 +33,9 @@ const buttonVariants: Variants = {
 };
 
 export default function HeroButtons({ data }: HeroButtonProps) {
+  const params = useParams();
+  const lang = params?.lang as string;
+
   return (
     <motion.div
       className='flex flex-col gap-4 mt-6 md:flex-row lg:mt-8'
@@ -63,7 +68,8 @@ export default function HeroButtons({ data }: HeroButtonProps) {
         <Link
           download
           target='_blank'
-          href={getMediaUrl(data.hero_secondary_button.button_url)}
+          href={getDownloadUrl(data.hero_secondary_button.button_url, lang)}
+
         >
           <Button
             variant='secondary'
