@@ -27,19 +27,26 @@ export default async function Page({
   params: Promise<{ lang: string; slug: string }>;
 }) {
   const { lang, slug } = await params;
+  
   const data = await getPortfolioData(lang);
-  const { data: postData, content } = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug, lang);
 
-  if (!data) {
+  if (!data || !post) {
     notFound();
   }
 
   const { header_section, footer_section } = data;
+  const { data: postData, content, isTranslationAvailable } = post;
 
   return (
     <React.Fragment>
       <Header data={header_section} />
-      <PostPage data={postData} content={content} lang={lang} />
+      <PostPage
+        lang={lang}
+        data={postData}
+        content={content}
+        isTranslationAvailable={isTranslationAvailable}
+      />
       <Footer data={footer_section} />
     </React.Fragment>
   );
