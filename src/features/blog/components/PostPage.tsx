@@ -16,9 +16,15 @@ interface PostPageProps {
   lang: string;
   content: string;
   data: PostFrontmatter;
+  isTranslationAvailable?: boolean;
 }
 
-export default function PostPage({ data, content, lang }: PostPageProps) {
+export default function PostPage({
+  data,
+  lang,
+  content,
+  isTranslationAvailable = true,
+}: PostPageProps) {
   const locale = lang?.toLowerCase();
 
   const readingTime = calculateReadingTime(content);
@@ -35,6 +41,15 @@ export default function PostPage({ data, content, lang }: PostPageProps) {
         </span>
         {t('back', lang)}
       </Link>
+      
+      {!isTranslationAvailable && (
+        <p
+          role='status'
+          className='mt-6 rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-950 dark:text-amber-200'
+        >
+          {t('notTranslated', lang)}
+        </p>
+      )}
 
       <header className='text-center mt-8 mb-6'>
         {data.title && (
