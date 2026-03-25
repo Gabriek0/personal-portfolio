@@ -56,7 +56,7 @@ export default async function Page({
   const { lang } = await params;
 
   const data = await getPortfolioData(lang);
-  const posts = JSON.parse(JSON.stringify(await getAllPosts(3))) as IPosts;
+  const posts = JSON.parse(JSON.stringify(await getAllPosts(3, lang))) as IPosts;
 
   if (!data) {
     notFound();
