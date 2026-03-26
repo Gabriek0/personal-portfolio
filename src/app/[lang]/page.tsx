@@ -6,9 +6,14 @@ import Hero from '@/src/features/hero';
 import Projects from '@/src/features/projects';
 import Skill from '@/src/features/skills';
 import { query } from '@/src/lib/strapi/query';
-import { fetchWithRetry } from '@/src/lib/utils';
 import { StrapiApiResponse } from '@/src/types/strapi';
 import { notFound } from 'next/navigation';
+
+export const dynamic = 'force-static';
+
+export function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }, { lang: 'pt-BR' }];
+}
 
 type GetDataResponse = Promise<StrapiApiResponse['data'] | null>;
 
@@ -24,10 +29,10 @@ async function getPortfolioData(lang: string): GetDataResponse {
 
     const init: RequestInit = {
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      next: { revalidate: 3600, tags: ['portfolio'] },
+      next: { tags: ['portfolio'] },
     }
 
-    const response = await fetchWithRetry({ input, init });
+    const response = await fetch(input, init);
 
     if (response.ok) {
       const { data }: StrapiApiResponse = await response.json();
