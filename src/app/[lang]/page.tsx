@@ -5,9 +5,16 @@ import Header from '@/src/features/header';
 import Hero from '@/src/features/hero';
 import Projects from '@/src/features/projects';
 import Skill from '@/src/features/skills';
+import { fetchStrapiWithRetry } from '@/src/lib/strapi/fetch';
 import { query } from '@/src/lib/strapi/query';
 import { StrapiApiResponse } from '@/src/types/strapi';
 import { notFound } from 'next/navigation';
+
+export const dynamic = 'force-static';
+
+export function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }, { lang: 'pt-BR' }];
+}
 
 type GetDataResponse = Promise<StrapiApiResponse['data'] | null>;
 
@@ -16,30 +23,26 @@ async function getPortfolioData(lang: string): GetDataResponse {
     const baseUrl = process.env.STRAPI_API_URL;
     const token = process.env.STRAPI_API_TOKEN;
 
-    if (!baseUrl) {
-      throw new Error('STRAPI_API_URL is not defined');
+    if (!baseUrl) throw new Error('STRAPI_API_URL is not defined.');
+    if (!token) throw new Error('STRAPI_API_TOKEN is not defined.');
+
+    const input = `${baseUrl}content?${query(lang)}`;
+
+    const init: RequestInit = {
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      next: { tags: ['portfolio'] },
     }
 
-    const url = `${baseUrl}content?${query(lang)}`;
+    const response = await fetchStrapiWithRetry({ input, init });
 
-    const response = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      next: { revalidate: 3600, tags: ['portfolio'] },
-      signal: AbortSignal.timeout(30000),
-    });
+    if (response.ok) {
+      const { data }: StrapiApiResponse = await response.json();
+      return data ?? null;
+    } 
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-
-    const { data }: StrapiApiResponse = await response.json();
-
-    return data ?? null;
+    throw new Error(`${response.status} Error: ${response.statusText}`);
   } catch (error) {
-    console.error('🚀 ~ getPortfolioData ~ error:', error);
+    console.error('Error retrieving portfolio content: ', error);
     return null;
   }
 }
