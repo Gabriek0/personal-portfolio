@@ -16,3 +16,7 @@ export function getMediaUrl(path: string | null | undefined) {
 
   return `${baseUrl}${path}`;
 }
+
+export function sleep(ms: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, ms));
+}
