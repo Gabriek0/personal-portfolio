@@ -5,6 +5,7 @@ import Header from '@/src/features/header';
 import Hero from '@/src/features/hero';
 import Projects from '@/src/features/projects';
 import Skill from '@/src/features/skills';
+import { fetchStrapiWithRetry } from '@/src/lib/strapi/fetch';
 import { query } from '@/src/lib/strapi/query';
 import { StrapiApiResponse } from '@/src/types/strapi';
 import { notFound } from 'next/navigation';
@@ -32,7 +33,7 @@ async function getPortfolioData(lang: string): GetDataResponse {
       next: { tags: ['portfolio'] },
     }
 
-    const response = await fetch(input, init);
+    const response = await fetchStrapiWithRetry({ input, init });
 
     if (response.ok) {
       const { data }: StrapiApiResponse = await response.json();
