@@ -1,0 +1,345 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: Gabriek0/personal-portfolio
+  branch: main
+
+media_folder: public/content/uploads
+public_folder: /content/uploads
+
+collections:
+  - name: portfolio
+    label: Portfolio
+    folder: content/portfolio
+    format: json
+    extension: json
+    create: false
+    editor:
+      preview: false
+    fields:
+      - label: Locale
+        name: locale
+        widget: select
+        options:
+          - { label: English, value: en }
+          - { label: Spanish, value: es }
+          - { label: Portuguese (Brazil), value: pt-BR }
+      - label: Header
+        name: header
+        widget: object
+        fields:
+          - { label: ID, name: id, widget: hidden }
+          - label: Navigation
+            name: navigation
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: Language selector
+            name: languageSelector
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Name, name: name, widget: string }
+              - label: Code
+                name: code
+                widget: select
+                options:
+                  - { label: English, value: en }
+                  - { label: Spanish, value: es }
+                  - { label: Portuguese (Brazil), value: pt-BR }
+              - label: Flag
+                name: flag
+                widget: object
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: File name, name: name, widget: string }
+                  - { label: Alt text, name: alt, widget: string, required: false }
+                  - { label: Caption, name: caption, widget: text, required: false }
+                  - { label: Width, name: width, widget: number, value_type: int }
+                  - { label: Height, name: height, widget: number, value_type: int }
+                  - { label: Image, name: src, widget: image }
+      - label: Hero
+        name: hero
+        widget: object
+        fields:
+          - { label: ID, name: id, widget: hidden }
+          - { label: Greeting, name: greeting, widget: string }
+          - { label: Name, name: name, widget: string }
+          - { label: Role, name: role, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Role icon
+            name: roleIcon
+            widget: object
+            required: false
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: File name, name: name, widget: string }
+              - { label: Alt text, name: alt, widget: string, required: false }
+              - { label: Caption, name: caption, widget: text, required: false }
+              - { label: Width, name: width, widget: number, value_type: int }
+              - { label: Height, name: height, widget: number, value_type: int }
+              - { label: Image, name: src, widget: image }
+          - label: Animation
+            name: animation
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: File name, name: name, widget: string }
+              - { label: Alt text, name: alt, widget: string, required: false }
+              - { label: Caption, name: caption, widget: text, required: false }
+              - { label: Width, name: width, widget: number, value_type: int }
+              - { label: Height, name: height, widget: number, value_type: int }
+              - { label: Animation file, name: src, widget: image }
+          - label: Social links
+            name: socialLinks
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+          - label: Primary action
+            name: primaryAction
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Text, name: text, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Value, name: value, widget: string, required: false }
+          - label: Secondary action
+            name: secondaryAction
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Text, name: text, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Value, name: value, widget: string, required: false }
+      - label: About
+        name: about
+        widget: object
+        fields:
+          - { label: ID, name: id, widget: hidden }
+          - label: Image
+            name: image
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: File name, name: name, widget: string }
+              - { label: Alt text, name: alt, widget: string, required: false }
+              - { label: Caption, name: caption, widget: text, required: false }
+              - { label: Width, name: width, widget: number, value_type: int }
+              - { label: Height, name: height, widget: number, value_type: int }
+              - { label: Image, name: src, widget: image }
+          - label: Action
+            name: action
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+          - label: Section header
+            name: header
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Link
+                name: link
+                widget: object
+                required: false
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: Title, name: title, widget: string }
+                  - { label: URL, name: url, widget: string, required: false }
+      - label: Projects
+        name: projects
+        widget: object
+        fields:
+          - { label: ID, name: id, widget: hidden }
+          - label: Section header
+            name: header
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Link
+                name: link
+                widget: object
+                required: false
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: Title, name: title, widget: string }
+                  - { label: URL, name: url, widget: string, required: false }
+          - label: Items
+            name: items
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: URL, name: url, widget: string }
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: File name, name: name, widget: string }
+                  - { label: Alt text, name: alt, widget: string, required: false }
+                  - { label: Caption, name: caption, widget: text, required: false }
+                  - { label: Width, name: width, widget: number, value_type: int }
+                  - { label: Height, name: height, widget: number, value_type: int }
+                  - { label: Image, name: src, widget: image }
+      - label: Experience
+        name: experience
+        widget: object
+        fields:
+          - { label: ID, name: id, widget: hidden }
+          - label: Section header
+            name: header
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Link
+                name: link
+                widget: object
+                required: false
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: Title, name: title, widget: string }
+                  - { label: URL, name: url, widget: string, required: false }
+          - label: Switchers
+            name: switchers
+            widget: list
+            summary: '{{fields.text}}'
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Text, name: text, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Value, name: value, widget: string, required: false }
+          - label: Items
+            name: items
+            widget: list
+            types:
+              - label: Career
+                name: career
+                widget: object
+                summary: '{{fields.title}} — {{fields.organization}}'
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Organization, name: organization, widget: string }
+                  - { label: From, name: from, widget: string }
+                  - { label: To, name: to, widget: string, required: false }
+                  - { label: Location, name: location, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Current work, name: isCurrentWork, widget: boolean, default: false }
+                  - { label: Current work label, name: currentWorkLabel, widget: string, required: false }
+                  - label: Image
+                    name: image
+                    widget: object
+                    fields:
+                      - { label: ID, name: id, widget: hidden }
+                      - { label: File name, name: name, widget: string }
+                      - { label: Alt text, name: alt, widget: string, required: false }
+                      - { label: Caption, name: caption, widget: text, required: false }
+                      - { label: Width, name: width, widget: number, value_type: int }
+                      - { label: Height, name: height, widget: number, value_type: int }
+                      - { label: Image, name: src, widget: image }
+              - label: Education
+                name: education
+                widget: object
+                summary: '{{fields.title}} — {{fields.organization}}'
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Organization, name: organization, widget: string }
+                  - { label: From, name: from, widget: string }
+                  - { label: To, name: to, widget: string, required: false }
+                  - { label: Location, name: location, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - label: Image
+                    name: image
+                    widget: object
+                    fields:
+                      - { label: ID, name: id, widget: hidden }
+                      - { label: File name, name: name, widget: string }
+                      - { label: Alt text, name: alt, widget: string, required: false }
+                      - { label: Caption, name: caption, widget: text, required: false }
+                      - { label: Width, name: width, widget: number, value_type: int }
+                      - { label: Height, name: height, widget: number, value_type: int }
+                      - { label: Image, name: src, widget: image }
+      - label: Skills
+        name: skills
+        widget: object
+        fields:
+          - { label: ID, name: id, widget: hidden }
+          - label: Section header
+            name: header
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Link
+                name: link
+                widget: object
+                required: false
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: Title, name: title, widget: string }
+                  - { label: URL, name: url, widget: string, required: false }
+          - label: Links
+            name: links
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+          - label: Items
+            name: items
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Name, name: name, widget: string }
+              - { label: URL, name: url, widget: string }
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - { label: ID, name: id, widget: hidden }
+                  - { label: File name, name: name, widget: string }
+                  - { label: Alt text, name: alt, widget: string, required: false }
+                  - { label: Caption, name: caption, widget: text, required: false }
+                  - { label: Width, name: width, widget: number, value_type: int }
+                  - { label: Height, name: height, widget: number, value_type: int }
+                  - { label: Image, name: src, widget: image }
+      - label: Footer
+        name: footer
+        widget: object
+        fields:
+          - { label: ID, name: id, widget: hidden }
+          - { label: Copyright, name: copyright, widget: string }
+          - label: Back to top action
+            name: backToTopAction
+            widget: object
+            fields:
+              - { label: ID, name: id, widget: hidden }
+              - { label: Text, name: text, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Value, name: value, widget: string, required: false }

@@ -1,0 +1,611 @@
+{
+  "locale": "pt-BR",
+  "header": {
+    "id": 39,
+    "navigation": [
+      {
+        "id": 551,
+        "title": "Início",
+        "url": "#home"
+      },
+      {
+        "id": 552,
+        "title": "Sobre",
+        "url": "#about"
+      },
+      {
+        "id": 553,
+        "title": "Portfólio",
+        "url": "#projects"
+      },
+      {
+        "id": 554,
+        "title": "Blog",
+        "url": "#blog"
+      },
+      {
+        "id": 555,
+        "title": "Experiência",
+        "url": "#experience"
+      },
+      {
+        "id": 556,
+        "title": "Habilidades",
+        "url": "#skills"
+      }
+    ],
+    "languageSelector": [
+      {
+        "id": 151,
+        "name": "Português",
+        "code": "pt-BR",
+        "flag": {
+          "id": 174,
+          "name": "brazil.png",
+          "alt": "Circular icon featuring the Brazilian flag: a green background with a yellow diamond and blue sphere.",
+          "caption": "This iconic design represents the Brazilian flag, featuring its distinctive green, yellow, blue, and white colors in a circular format.",
+          "width": 512,
+          "height": 512,
+          "src": "/content/assets/flags/brazil.png"
+        }
+      },
+      {
+        "id": 152,
+        "name": "Inglês",
+        "code": "en",
+        "flag": {
+          "id": 173,
+          "name": "usa.png",
+          "alt": "Circular icon of the American flag with stars and stripes.",
+          "caption": "This circular icon prominently displays the United States flag, featuring its iconic red and white stripes and a blue field with white stars.",
+          "width": 512,
+          "height": 512,
+          "src": "/content/assets/flags/usa.png"
+        }
+      },
+      {
+        "id": 153,
+        "name": "Espanhol",
+        "code": "es",
+        "flag": {
+          "id": 175,
+          "name": "spain.png",
+          "alt": "Circular Spanish flag featuring two red horizontal stripes and a central yellow stripe.",
+          "caption": "This circular emblem displays the vibrant red and yellow bands of the Spanish flag, a recognized national symbol.",
+          "width": 512,
+          "height": 512,
+          "src": "/content/assets/flags/spain.png"
+        }
+      }
+    ]
+  },
+  "hero": {
+    "id": 39,
+    "greeting": "Olá, eu sou",
+    "name": "Gabriel Henrique",
+    "role": "Desenvolvedor Full Stack",
+    "description": "Criando soluções elegantes para problemas complexos com tecnologias modernas.",
+    "roleIcon": null,
+    "animation": {
+      "id": 176,
+      "name": "wave.gif",
+      "alt": "A yellow emoji hand waves hello with motion lines.",
+      "caption": "A friendly yellow hand emoji waves, symbolizing a greeting or farewell. It's a universal gesture for saying hello.",
+      "width": 512,
+      "height": 512,
+      "src": "/content/assets/hero/wave.gif"
+    },
+    "socialLinks": [
+      {
+        "id": 557,
+        "title": "Github",
+        "url": "https://github.com/Gabriek0"
+      },
+      {
+        "id": 558,
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/"
+      },
+      {
+        "id": 559,
+        "title": "Instagram",
+        "url": null
+      },
+      {
+        "id": 560,
+        "title": "E-mail",
+        "url": null
+      }
+    ],
+    "primaryAction": {
+      "id": 203,
+      "text": "Vamos conversar",
+      "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/",
+      "value": null
+    },
+    "secondaryAction": {
+      "id": 204,
+      "text": "Baixar Currículo",
+      "url": "/content/resume/resume-pt-BR.pdf",
+      "value": null
+    }
+  },
+  "about": {
+    "id": 39,
+    "image": {
+      "id": 205,
+      "name": "gabriel-henrique.png",
+      "alt": null,
+      "caption": null,
+      "width": 800,
+      "height": 800,
+      "src": "/content/assets/about/gabriel_henrique.png"
+    },
+    "action": {
+      "id": 561,
+      "title": "Vamos construir algo incrível juntos?",
+      "url": null
+    },
+    "header": {
+      "id": 164,
+      "badge": "Sobre",
+      "title": "Em busca de desafios.",
+      "description": "Minha paixão é transformar ideias complexas em realidade digital, atuando em todas as frentes do desenvolvimento. Do front-end ao back-end, meu foco é criar aplicações robustas, intuitivas e que realmente façam a diferença.",
+      "link": null
+    }
+  },
+  "projects": {
+    "id": 39,
+    "header": {
+      "id": 165,
+      "badge": "Projetos",
+      "title": "Sim, é o meu portfólio",
+      "description": "Os meus principais projetos.",
+      "link": null
+    },
+    "items": [
+      {
+        "id": 153,
+        "title": "Ignite Call",
+        "description": "Aplicação integrada ao Google Calendar para gestão de horários e reservas simplificadas.",
+        "url": "https://github.com/Gabriek0/ignite-call",
+        "image": {
+          "id": 198,
+          "name": "ignite-call.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/ignite_call.png"
+        }
+      },
+      {
+        "id": 154,
+        "title": "Ignews",
+        "description": "Blog com sistema de assinaturas, pagamentos via Stripe e login social para conteúdo exclusivo.",
+        "url": "https://github.com/Gabriek0/ignews",
+        "image": {
+          "id": 199,
+          "name": "ignews.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/ignews.png"
+        }
+      },
+      {
+        "id": 155,
+        "title": "Remix Expenses",
+        "description": "Controle de finanças pessoais rápido e moderno, desenvolvido com Remix.js.",
+        "url": "https://github.com/Gabriek0/remix-expenses",
+        "image": {
+          "id": 200,
+          "name": "remix-expenses.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/remix_expenses.png"
+        }
+      },
+      {
+        "id": 156,
+        "title": "Simple Automotive API",
+        "description": "Back-end escalável com arquitetura limpa (SOLID) e documentação via Swagger.",
+        "url": "https://github.com/Gabriek0/simple-automotive",
+        "image": {
+          "id": 201,
+          "name": "simple-automotive-api.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/simple_automotive_api.png"
+        }
+      }
+    ]
+  },
+  "experience": {
+    "id": 39,
+    "header": {
+      "id": 167,
+      "badge": "Experiência",
+      "title": "Minha jornada.",
+      "description": "Conheça um pouco mais da minha jornada.",
+      "link": {
+        "id": 563,
+        "title": "Acessar meu LinkedIn",
+        "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/"
+      }
+    },
+    "switchers": [
+      {
+        "id": 205,
+        "text": "Carreira",
+        "url": null,
+        "value": "career"
+      },
+      {
+        "id": 206,
+        "text": "Educação",
+        "url": null,
+        "value": "education"
+      }
+    ],
+    "items": [
+      {
+        "id": 267,
+        "title": "Desenvolvedor Web e Mobile (Estagiário)",
+        "from": "2022-03-01",
+        "location": "Registro, São Paulo, Brasil",
+        "to": "2022-08-01",
+        "organization": "LocalSIG",
+        "type": "career",
+        "description": "Iniciei no desenvolvimento com WordPress e, por iniciativa própria, introduzi tecnologias modernas como React e React Native, culminando na criação de um aplicativo mobile essencial para a empresa.\n\n- Co-liderei o desenvolvimento ponta a ponta (end-to-end) de um aplicativo em **React Native** para a **Sabesp**, voltado para a gestão de vistorias de vazamentos pela cidade.\n- O aplicativo capacitou técnicos de campo a realizar inspeções e reportar dados digitalmente, substituindo um fluxo de trabalho que antes era manual.\n- Desenvolvi a aplicação utilizando **React Native, TypeScript e Styled-Components**, garantindo código robusto e de fácil manutenção.\n- Projetei e implementei interfaces de usuário, traduzindo protótipos do **Figma** em componentes front-end responsivos com **Next.js**.\n- Desenvolvi um painel administrativo para gestão de sistemas e realizei a gestão de sites de clientes utilizando **WordPress** e **Elementor PRO**.",
+        "image": {
+          "id": 191,
+          "name": "localsig.png",
+          "alt": "A stylized blue globe logo with curved lines representing meridians and parallels.",
+          "caption": "This blue globe logo, featuring curved grid lines, symbolizes global connectivity and international reach.",
+          "width": 230,
+          "height": 221,
+          "src": "/content/assets/experience/localsig.png"
+        },
+        "isCurrentWork": null,
+        "currentWorkLabel": null
+      },
+      {
+        "id": 268,
+        "title": "Desenvolvedor Front End Júnior",
+        "from": "2022-04-01",
+        "location": "São Paulo, Brasil | Remoto",
+        "to": "2023-11-01",
+        "organization": "YOUDevelop",
+        "type": "career",
+        "description": "Em um ambiente dinâmico de fábrica de software, evoluí rapidamente de tarefas fundamentais para o desenvolvimento e contribuição em aplicações web complexas para um portfólio diversificado de clientes.\n\n- **Desenvolvi do zero** uma plataforma completa de sorteio de cupons com **Next.js**, utilizando o **Firebase** para gerenciamento de dados em tempo real e seleção de ganhadores.\n- Contribuí no desenvolvimento de uma plataforma de viagens com **Next.js e TypeScript**, implementando autenticação com **NextAuth** e armazenamento de arquivos com **Amazon S3**.\n- Participei ativamente da construção de uma plataforma de feedback de clientes com **Remix.js e MongoDB**, auxiliando na integração de APIs do Google para coleta e análise de dados.\n- Desenvolvi funcionalidades front-end para diversos sistemas, incluindo uma aplicação de gestão de restaurantes e uma plataforma de portfólio para designers.\n- Participei de um **projeto internacional para a Alemanha** na construção de uma plataforma de delivery utilizando Next.js e Firebase.\n- Iniciei na empresa construindo e mantendo landing pages, o que estabeleceu uma base sólida nas melhores práticas de desenvolvimento front-end.",
+        "image": {
+          "id": 192,
+          "name": "you_develop.jpg",
+          "alt": "Yellow text 'YOU' inside a white circle with a colorful gradient border.",
+          "caption": "The word 'YOU' in bright yellow is centrally placed within a crisp white circle, framed by a vibrant gradient border.",
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/you_develop.jpg"
+        },
+        "isCurrentWork": null,
+        "currentWorkLabel": null
+      },
+      {
+        "id": 269,
+        "title": "Desenvolvedor Full Stack",
+        "from": "2023-11-01",
+        "location": "São Paulo, Brasil | Remoto",
+        "to": "2024-12-01",
+        "organization": "Origin9",
+        "type": "career",
+        "description": "Como desenvolvedor full stack, contribuí em todo o ciclo de vida de plataformas complexas e de larga escala, desde o banco de dados e API até a implementação de front-end e testes.\n\n- Participei ativamente do desenvolvimento de uma plataforma completa de gestão escolar, contribuindo tanto no front-end quanto no back-end.\n  - **Back-end:** Criei e mantive endpoints da API RESTful com **Node.js, Sequelize (ORM) e PostgreSQL** para gerenciar alunos, turmas, matrículas e professores.\n  - **Front-end:** Desenvolvi interfaces de usuário interativas e responsivas utilizando **React.js e TypeScript**.\n- Implementei **IA para auxiliar na geração do plano de aula** dos professores.\n- Garanti a qualidade e a confiabilidade das aplicações escrevendo testes end-to-end (E2E) com **Cypress** e testes unitários com **Jest**.\n- Otimizei queries no banco de dados para melhorar a performance.\n- Colaborei em um projeto de vistorias com aplicação web e mobile sincronizadas, atuando no app em **React Native** na implementação de **off-line first** e sincronização de dados com a plataforma web.",
+        "image": {
+          "id": 193,
+          "name": "origin9.jpg",
+          "alt": "Blue abstract symbol resembling two inward-pointing arrows forming a diamond shape.",
+          "caption": "This blue abstract symbol features two curved, arrow-like shapes pointing inwards, creating a central diamond that suggests connection or focus.",
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/origin9.jpg"
+        },
+        "isCurrentWork": null,
+        "currentWorkLabel": null
+      },
+      {
+        "id": 270,
+        "title": "Desenvolvedor Full Stack",
+        "from": "2024-10-01",
+        "location": "São Paulo, Brasil | Remoto",
+        "to": null,
+        "organization": "Infracommerce",
+        "type": "career",
+        "description": "Recrutado como Desenvolvedor Full Stack e posteriormente promovido ao nível **Pleno**, contribuindo para soluções de e-commerce de alta escala e grande impacto para empresas líderes de mercado.\n\n- **Desenvolvedor Full Stack (Plataforma Omnichannel):**\n  - Inicialmente, atuei na manutenção e evolução de uma plataforma omnichannel B2B, oferecendo uma solução de \"prateleira infinita\" para clientes de grande porte.\n  - Desenvolvi serviços de back-end com **NestJS** para suportar tanto o painel administrativo de gerenciamento de conteúdo e produtos quanto o catálogo para o cliente final.\n  - Stack: **TypeScript, Nest.js, Docker, PostgreSQL, RabbitMQ e Next.js**.\n- **Desenvolvedor Pleno (Marketplace VTEX):**\n  - Reconhecido pelo meu desempenho, fui transferido para uma nova equipe para atuar no desenvolvimento do marketplace oficial dos Correios, o **Mais Correios**.\n  - Utilizando o ecossistema **VTEX**, desenvolvo e mantenho soluções full stack, desde serviços customizados no back-end até componentes no front-end, garantindo alta performance e escalabilidade para uma plataforma de alcance nacional.",
+        "image": {
+          "id": 194,
+          "name": "infracommerce.jpg",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/infracommerce.jpg"
+        },
+        "isCurrentWork": true,
+        "currentWorkLabel": "Atualmente"
+      },
+      {
+        "id": 271,
+        "title": "Técnico em Mecatrônica",
+        "from": "2018-02-01",
+        "location": "Registro, São Paulo, Brasil",
+        "to": "2020-02-01",
+        "organization": "Instituto Federal de São Paulo (IFSP)",
+        "type": "education",
+        "description": "Um curso abrangente que integra mecânica, eletrônica e computação. Esta formação proporcionou uma base sólida em pensamento lógico e integração de sistemas, culminando no projeto e construção de uma dobradeira de chapas funcional. O projeto envolveu a aplicação de princípios de mecânica, soldagem e análise de resistência de materiais, aprimorando as habilidades de resolução de problemas que hoje aplico no desenvolvimento de software.",
+        "image": {
+          "id": 195,
+          "name": "instituto_federal_de_educao_cincia_e_tecnologia_de_so_paulo___ifsp_logo",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/instituto_federal_de_educao_cincia_e_tecnologia_de_so_paulo_ifsp_logo.jpeg"
+        }
+      },
+      {
+        "id": 272,
+        "title": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+        "from": "2020-02-01",
+        "location": "Registro, São Paulo, Brasil",
+        "to": "2023-02-01",
+        "organization": "UNIVR",
+        "type": "education",
+        "description": "Um curso superior focado nos princípios da engenharia de software e em habilidades para o mercado de trabalho. O currículo enfatizou o aprendizado prático através de múltiplos projetos em equipe, nos quais apliquei conhecimento teórico para construir aplicações web full-stack. Essa abordagem baseada em projetos foi essencial para desenvolver tanto minhas habilidades técnicas em desenvolvimento web quanto minhas competências interpessoais de comunicação e trabalho em equipe, fornecendo a base de conhecimento fundamental para minha carreira como desenvolvedor de software.",
+        "image": {
+          "id": 196,
+          "name": "educacional_unisepe_logo",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/educacional_unisepe_logo.jpeg"
+        }
+      },
+      {
+        "id": 273,
+        "title": "Pós-graduação em Engenharia de Software",
+        "from": "2024-03-01",
+        "location": "EAD",
+        "to": "2025-03-01",
+        "organization": "PUC Minas",
+        "type": "education",
+        "description": "Especialização focada em aprofundar meus conhecimentos nos aspectos técnicos e gerenciais do desenvolvimento de software. O curso abrangeu tópicos avançados como arquitetura de software (front-end e back-end), metodologias ágeis, testes automatizados e gestão de projetos, fornecendo habilidades estratégicas para projetar, liderar e manter sistemas de software escaláveis e de alta qualidade.",
+        "image": {
+          "id": 197,
+          "name": "pucminas_logo",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/pucminas_logo.jpeg"
+        }
+      }
+    ]
+  },
+  "skills": {
+    "id": 39,
+    "header": {
+      "id": 168,
+      "badge": "Habilidades",
+      "title": "Minhas principais skills.",
+      "description": "Conheça um pouco mais da minha jornada.",
+      "link": null
+    },
+    "links": [
+      {
+        "id": 564,
+        "title": "Acessar meu Github",
+        "url": "https://github.com/Gabriek0"
+      }
+    ],
+    "items": [
+      {
+        "id": 495,
+        "name": "Typescript",
+        "url": "https://www.typescriptlang.org/",
+        "image": {
+          "id": 190,
+          "name": "typescript.png",
+          "alt": "Blue square logo with white capital letters 'TS', representing TypeScript.",
+          "caption": "The official logo for TypeScript, an open-source programming language developed by Microsoft, enhancing JavaScript capabilities.",
+          "width": 375,
+          "height": 375,
+          "src": "/content/assets/skills/typescript.png"
+        }
+      },
+      {
+        "id": 496,
+        "name": "React.js",
+        "url": "https://react.dev/",
+        "image": {
+          "id": 189,
+          "name": "react.png",
+          "alt": "ReactJS logo, a light blue atomic structure symbol with orbiting electrons.",
+          "caption": "The iconic light blue ReactJS logo, an atomic structure, represents the popular JavaScript library for building dynamic user interfaces.",
+          "width": 400,
+          "height": 400,
+          "src": "/content/assets/skills/react.png"
+        }
+      },
+      {
+        "id": 497,
+        "name": "Next.js",
+        "url": "https://nextjs.org/",
+        "image": {
+          "id": 188,
+          "name": "next_js.png",
+          "alt": "Dark gray circle logo featuring a stylized letter N with a subtle outline.",
+          "caption": "A minimalist dark gray circle logo featuring a stylized letter 'N' with a subtle outline, suitable for a modern brand.",
+          "width": 400,
+          "height": 400,
+          "src": "/content/assets/skills/next_js.png"
+        }
+      },
+      {
+        "id": 498,
+        "name": "Node.js",
+        "url": "https://nodejs.org/en",
+        "image": {
+          "id": 187,
+          "name": "node_js.png",
+          "alt": "The official Node.js logo featuring green text and a hexagonal JavaScript symbol.",
+          "caption": "The distinctive green and dark gray logo represents Node.js, a popular open-source JavaScript runtime environment.",
+          "width": 900,
+          "height": 900,
+          "src": "/content/assets/skills/node_js.png"
+        }
+      },
+      {
+        "id": 499,
+        "name": "Nest.js",
+        "url": "https://nestjs.com/",
+        "image": {
+          "id": 186,
+          "name": "nest_js.png",
+          "alt": "Stylized pink panther head roaring with an open mouth, facing right.",
+          "caption": "This striking stylized pink panther head, with its fierce open mouth, serves as a powerful and memorable logo.",
+          "width": 400,
+          "height": 400,
+          "src": "/content/assets/skills/nest_js.png"
+        }
+      },
+      {
+        "id": 500,
+        "name": "PostegreSQL",
+        "url": "https://www.postgresql.org/",
+        "image": {
+          "id": 185,
+          "name": "postgresql.png",
+          "alt": "PostgreSQL logo featuring a stylized blue elephant head icon above the word PostgreSQL.",
+          "caption": "The official logo for PostgreSQL, an open-source relational database management system, featuring its distinctive blue elephant mascot.",
+          "width": 555,
+          "height": 617,
+          "src": "/content/assets/skills/postgresql.png"
+        }
+      },
+      {
+        "id": 501,
+        "name": "Firebase",
+        "url": "https://firebase.google.com/",
+        "image": {
+          "id": 184,
+          "name": "firebase.png",
+          "alt": "The distinctive Google Firebase logo, featuring a stylized orange and yellow flame design.",
+          "caption": "The official Google Firebase logo, representing a powerful development platform for building and growing web and mobile applications.",
+          "width": 400,
+          "height": 400,
+          "src": "/content/assets/skills/firebase.png"
+        }
+      },
+      {
+        "id": 502,
+        "name": "Supabase",
+        "url": "https://supabase.com/",
+        "image": {
+          "id": 183,
+          "name": "supabase.png",
+          "alt": "A stylized light green lightning bolt symbol on a black background.",
+          "caption": "This minimalist light green lightning bolt graphic represents speed, energy, or electrical power, standing out against a dark background.",
+          "width": 400,
+          "height": 400,
+          "src": "/content/assets/skills/supabase.png"
+        }
+      },
+      {
+        "id": 503,
+        "name": "Cypress",
+        "url": "https://www.cypress.io/#create",
+        "image": {
+          "id": 182,
+          "name": "cypress.png",
+          "alt": "A circular logo featuring the white letters 'cY' on a dark gray background.",
+          "caption": "This distinct circular logo displays the white letters 'cY' on a dark gray background, effectively symbolizing the brand's identity.",
+          "width": 400,
+          "height": 400,
+          "src": "/content/assets/skills/cypress.png"
+        }
+      },
+      {
+        "id": 504,
+        "name": "Jest",
+        "url": "https://jestjs.io/",
+        "image": {
+          "id": 181,
+          "name": "jest.png",
+          "alt": "A maroon, stylized emblem resembling a jester's cap or a royal boot with white trim.",
+          "caption": "This unique maroon emblem features abstract shapes suggesting a jester's hat or stylized royal footwear, perfect for a distinctive logo.",
+          "width": 400,
+          "height": 400,
+          "src": "/content/assets/skills/jest.png"
+        }
+      },
+      {
+        "id": 505,
+        "name": "Java",
+        "url": "https://docs.oracle.com/en/java/",
+        "image": {
+          "id": 180,
+          "name": "java.png",
+          "alt": "The official Java programming language logo featuring a steaming coffee cup and the word Java.",
+          "caption": "The iconic Java programming language logo, a steaming coffee cup, represents its widespread use and platform independence.",
+          "width": 256,
+          "height": 256,
+          "src": "/content/assets/skills/java.png"
+        }
+      },
+      {
+        "id": 506,
+        "name": "Docker",
+        "url": "https://www.docker.com/",
+        "image": {
+          "id": 179,
+          "name": "docker.png",
+          "alt": "The Docker logo, a blue whale carrying containers with the word 'docker' below.",
+          "caption": "The iconic Docker logo features a blue whale carrying shipping containers, symbolizing the platform's revolutionary containerization technology.",
+          "width": 336,
+          "height": 287,
+          "src": "/content/assets/skills/docker.png"
+        }
+      },
+      {
+        "id": 507,
+        "name": "VTEX",
+        "url": "https://vtex.com/pt-br/",
+        "image": {
+          "id": 178,
+          "name": "vtex.png",
+          "alt": "A vibrant pink abstract geometric logo resembling a stylized letter W on a black background.",
+          "caption": "A vibrant pink geometric logo, resembling a stylized 'W', stands out on a black background. This abstract design offers a clean, modern brand identity.",
+          "width": 280,
+          "height": 280,
+          "src": "/content/assets/skills/vtex.png"
+        }
+      }
+    ]
+  },
+  "footer": {
+    "id": 39,
+    "copyright": "Gabriel Henrique © 2025 Todos os direitos reservados",
+    "backToTopAction": {
+      "id": 207,
+      "text": "Voltar ao topo",
+      "url": null,
+      "value": null
+    }
+  }
+}
