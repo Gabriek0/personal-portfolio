@@ -29,32 +29,34 @@ export default async function Page({
   }
 
   const data = await getPortfolioContent(lang);
-  const latestPosts = await getAllPosts(lang, 3);
-  const latestPostsWithContent = await Promise.all(
-    latestPosts.map(async (post) => {
-      const fullPost = await getPostBySlug(post.slug, lang);
-
-      return {
-        ...post,
-        content: fullPost?.content || '',
-      };
-    }),
-  );
 
   if (!data) {
     notFound();
   }
 
+  const latestPostsWithContent = data.blog.active
+    ? await Promise.all(
+        (await getAllPosts(lang, 3)).map(async (post) => {
+          const fullPost = await getPostBySlug(post.slug, lang);
+
+          return {
+            ...post,
+            content: fullPost?.content || '',
+          };
+        }),
+      )
+    : [];
+
   return (
     <main className='w-full px-5'>
-      <Header data={data.header} />
-      <Hero data={data.hero} />
-      <About data={data.about} />
-      <Projects data={data.projects} />
-      <Blog locale={lang} posts={latestPostsWithContent} />
-      <Experience data={data.experience} />
-      <Skill data={data.skills} />
-      <Footer data={data.footer} />
+      {data.header.active && <Header data={data.header} />}
+      {data.hero.active && <Hero data={data.hero} />}
+      {data.about.active && <About data={data.about} />}
+      {data.projects.active && <Projects data={data.projects} />}
+      {data.blog.active && <Blog locale={lang} posts={latestPostsWithContent} />}
+      {data.experience.active && <Experience data={data.experience} />}
+      {data.skills.active && <Skill data={data.skills} />}
+      {data.footer.active && <Footer data={data.footer} />}
     </main>
   );
 }

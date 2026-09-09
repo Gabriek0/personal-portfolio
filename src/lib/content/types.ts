@@ -46,12 +46,14 @@ export interface HeaderNavigationItem {
 
 export interface HeaderSection {
   id: number;
+  active: boolean;
   navigation: HeaderNavigationItem[];
   languageSelector: HeaderLanguageOption[];
 }
 
 export interface HeroSection {
   id: number;
+  active: boolean;
   greeting: string;
   name: string;
   role: string;
@@ -65,6 +67,7 @@ export interface HeroSection {
 
 export interface AboutSection {
   id: number;
+  active: boolean;
   image: ContentMedia;
   action: ContentLink;
   header: SectionHeader;
@@ -80,6 +83,7 @@ export interface ProjectItem {
 
 export interface ProjectSection {
   id: number;
+  active: boolean;
   items: ProjectItem[];
   header: SectionHeader;
 }
@@ -112,6 +116,7 @@ export type ExperienceItem = CareerExperienceItem | EducationExperienceItem;
 
 export interface ExperienceSection {
   id: number;
+  active: boolean;
   header: SectionHeader;
   switchers: ContentButton[];
   items: ExperienceItem[];
@@ -126,6 +131,7 @@ export interface SkillItem {
 
 export interface SkillSection {
   id: number;
+  active: boolean;
   items: SkillItem[];
   links: ContentLink[];
   header: SectionHeader;
@@ -133,8 +139,13 @@ export interface SkillSection {
 
 export interface FooterSection {
   id: number;
+  active: boolean;
   copyright: string;
   backToTopAction: ContentButton;
+}
+
+export interface BlogSection {
+  active: boolean;
 }
 
 export interface PortfolioContent {
@@ -143,6 +154,7 @@ export interface PortfolioContent {
   hero: HeroSection;
   about: AboutSection;
   projects: ProjectSection;
+  blog: BlogSection;
   experience: ExperienceSection;
   skills: SkillSection;
   footer: FooterSection;

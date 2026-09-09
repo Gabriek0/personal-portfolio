@@ -59,6 +59,7 @@ export const portfolioContentSchema = z.object({
   locale: localeSchema,
   header: z.object({
     id: z.number(),
+    active: z.boolean(),
     navigation: z.array(
       z.object({
         id: z.number(),
@@ -77,6 +78,7 @@ export const portfolioContentSchema = z.object({
   }),
   hero: z.object({
     id: z.number(),
+    active: z.boolean(),
     greeting: z.string(),
     name: z.string(),
     role: z.string(),
@@ -89,12 +91,14 @@ export const portfolioContentSchema = z.object({
   }),
   about: z.object({
     id: z.number(),
+    active: z.boolean(),
     image: mediaSchema,
     action: linkSchema,
     header: sectionHeaderSchema,
   }),
   projects: z.object({
     id: z.number(),
+    active: z.boolean(),
     items: z.array(
       z.object({
         id: z.number(),
@@ -106,14 +110,19 @@ export const portfolioContentSchema = z.object({
     ),
     header: sectionHeaderSchema,
   }),
+  blog: z.object({
+    active: z.boolean(),
+  }),
   experience: z.object({
     id: z.number(),
+    active: z.boolean(),
     header: sectionHeaderSchema,
     switchers: z.array(buttonSchema),
     items: z.array(z.discriminatedUnion('type', [careerExperienceSchema, educationExperienceSchema])),
   }),
   skills: z.object({
     id: z.number(),
+    active: z.boolean(),
     items: z.array(
       z.object({
         id: z.number(),
@@ -127,6 +136,7 @@ export const portfolioContentSchema = z.object({
   }),
   footer: z.object({
     id: z.number(),
+    active: z.boolean(),
     copyright: z.string(),
     backToTopAction: buttonSchema,
   }),
