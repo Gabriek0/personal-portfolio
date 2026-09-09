@@ -30,6 +30,7 @@ collections:
         widget: object
         fields:
           - { label: ID, name: id, widget: hidden }
+          - { label: Activate section, name: active, widget: boolean, default: true }
           - label: Navigation
             name: navigation
             widget: list
@@ -68,6 +69,7 @@ collections:
         widget: object
         fields:
           - { label: ID, name: id, widget: hidden }
+          - { label: Activate section, name: active, widget: boolean, default: true }
           - { label: Greeting, name: greeting, widget: string }
           - { label: Name, name: name, widget: string }
           - { label: Role, name: role, widget: string }
@@ -77,13 +79,13 @@ collections:
             widget: object
             required: false
             fields:
-              - { label: ID, name: id, widget: hidden }
-              - { label: File name, name: name, widget: string }
+              - { label: ID, name: id, widget: hidden, required: false }
+              - { label: File name, name: name, widget: string, required: false }
               - { label: Alt text, name: alt, widget: string, required: false }
               - { label: Caption, name: caption, widget: text, required: false }
-              - { label: Width, name: width, widget: number, value_type: int }
-              - { label: Height, name: height, widget: number, value_type: int }
-              - { label: Image, name: src, widget: image }
+              - { label: Width, name: width, widget: number, value_type: int, required: false }
+              - { label: Height, name: height, widget: number, value_type: int, required: false }
+              - { label: Image, name: src, widget: image, required: false }
           - label: Animation
             name: animation
             widget: object
@@ -124,6 +126,7 @@ collections:
         widget: object
         fields:
           - { label: ID, name: id, widget: hidden }
+          - { label: Activate section, name: active, widget: boolean, default: true }
           - label: Image
             name: image
             widget: object
@@ -156,13 +159,14 @@ collections:
                 required: false
                 fields:
                   - { label: ID, name: id, widget: hidden }
-                  - { label: Title, name: title, widget: string }
+                  - { label: Title, name: title, widget: string, required: false }
                   - { label: URL, name: url, widget: string, required: false }
       - label: Projects
         name: projects
         widget: object
         fields:
           - { label: ID, name: id, widget: hidden }
+          - { label: Activate section, name: active, widget: boolean, default: true }
           - label: Section header
             name: header
             widget: object
@@ -177,7 +181,7 @@ collections:
                 required: false
                 fields:
                   - { label: ID, name: id, widget: hidden }
-                  - { label: Title, name: title, widget: string }
+                  - { label: Title, name: title, widget: string, required: false }
                   - { label: URL, name: url, widget: string, required: false }
           - label: Items
             name: items
@@ -204,6 +208,7 @@ collections:
         widget: object
         fields:
           - { label: ID, name: id, widget: hidden }
+          - { label: Activate section, name: active, widget: boolean, default: true }
           - label: Section header
             name: header
             widget: object
@@ -245,7 +250,7 @@ collections:
                   - { label: To, name: to, widget: string, required: false }
                   - { label: Location, name: location, widget: string }
                   - { label: Description, name: description, widget: text }
-                  - { label: Current work, name: isCurrentWork, widget: boolean, default: false }
+                  - { label: Current work, name: isCurrentWork, widget: boolean, default: false, required: false }
                   - { label: Current work label, name: currentWorkLabel, widget: string, required: false }
                   - label: Image
                     name: image
@@ -281,11 +286,17 @@ collections:
                       - { label: Width, name: width, widget: number, value_type: int }
                       - { label: Height, name: height, widget: number, value_type: int }
                       - { label: Image, name: src, widget: image }
+      - label: Blog
+        name: blog
+        widget: object
+        fields:
+          - { label: Activate section, name: active, widget: boolean, default: true }
       - label: Skills
         name: skills
         widget: object
         fields:
           - { label: ID, name: id, widget: hidden }
+          - { label: Activate section, name: active, widget: boolean, default: true }
           - label: Section header
             name: header
             widget: object
@@ -300,7 +311,7 @@ collections:
                 required: false
                 fields:
                   - { label: ID, name: id, widget: hidden }
-                  - { label: Title, name: title, widget: string }
+                  - { label: Title, name: title, widget: string, required: false }
                   - { label: URL, name: url, widget: string, required: false }
           - label: Links
             name: links
@@ -334,6 +345,7 @@ collections:
         widget: object
         fields:
           - { label: ID, name: id, widget: hidden }
+          - { label: Activate section, name: active, widget: boolean, default: true }
           - { label: Copyright, name: copyright, widget: string }
           - label: Back to top action
             name: backToTopAction
