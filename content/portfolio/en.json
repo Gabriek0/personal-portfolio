@@ -1,405 +1,7 @@
 {
-  "title": "English",
-  "locale": "en",
-  "header": {
-    "id": 40,
-    "navigation": [
-      {
-        "id": 565,
-        "title": "Home",
-        "url": "#home"
-      },
-      {
-        "id": 566,
-        "title": "About",
-        "url": "#about"
-      },
-      {
-        "id": 567,
-        "title": "Portfolio",
-        "url": "#projects"
-      },
-      {
-        "id": 568,
-        "title": "Blog",
-        "url": "#blog"
-      },
-      {
-        "id": 569,
-        "title": "Experience",
-        "url": "#experience"
-      },
-      {
-        "id": 570,
-        "title": "Skills",
-        "url": "#skills"
-      }
-    ],
-    "languageSelector": [
-      {
-        "id": 154,
-        "name": "Portuguese",
-        "code": "pt-BR",
-        "flag": {
-          "id": 174,
-          "name": "brazil.png",
-          "alt": "Circular icon featuring the Brazilian flag: a green background with a yellow diamond and blue sphere.",
-          "caption": "This iconic design represents the Brazilian flag, featuring its distinctive green, yellow, blue, and white colors in a circular format.",
-          "width": 512,
-          "height": 512,
-          "src": "/content/assets/flags/brazil.png"
-        }
-      },
-      {
-        "id": 155,
-        "name": "English",
-        "code": "en",
-        "flag": {
-          "id": 173,
-          "name": "usa.png",
-          "alt": "Circular icon of the American flag with stars and stripes.",
-          "caption": "This circular icon prominently displays the United States flag, featuring its iconic red and white stripes and a blue field with white stars.",
-          "width": 512,
-          "height": 512,
-          "src": "/content/assets/flags/usa.png"
-        }
-      },
-      {
-        "id": 156,
-        "name": "Spanish",
-        "code": "es",
-        "flag": {
-          "id": 175,
-          "name": "spain.png",
-          "alt": "Circular Spanish flag featuring two red horizontal stripes and a central yellow stripe.",
-          "caption": "This circular emblem displays the vibrant red and yellow bands of the Spanish flag, a recognized national symbol.",
-          "width": 512,
-          "height": 512,
-          "src": "/content/assets/flags/spain.png"
-        }
-      }
-    ]
-  },
-  "hero": {
-    "id": 40,
-    "greeting": "Hello, I'm",
-    "name": "Gabriel Henrique",
-    "role": "Full Stack Developer",
-    "description": "Crafting elegant solutions for complex problems with modern technologies.",
-    "roleIcon": null,
-    "animation": {
-      "id": 176,
-      "name": "wave.gif",
-      "alt": "A yellow emoji hand waves hello with motion lines.",
-      "caption": "A friendly yellow hand emoji waves, symbolizing a greeting or farewell. It's a universal gesture for saying hello.",
-      "width": 512,
-      "height": 512,
-      "src": "/content/assets/hero/wave.gif"
-    },
-    "socialLinks": [
-      {
-        "id": 571,
-        "title": "Github",
-        "url": "https://github.com/Gabriek0"
-      },
-      {
-        "id": 572,
-        "title": "LinkedIn",
-        "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/"
-      },
-      {
-        "id": 573,
-        "title": "Instagram",
-        "url": null
-      },
-      {
-        "id": 574,
-        "title": "E-mail",
-        "url": null
-      }
-    ],
-    "primaryAction": {
-      "id": 208,
-      "text": "Get in touch",
-      "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/",
-      "value": null
-    },
-    "secondaryAction": {
-      "id": 209,
-      "text": "Download Resume",
-      "url": "/content/resume/resume-en.pdf",
-      "value": null
-    }
-  },
-  "about": {
-    "id": 40,
-    "image": {
-      "id": 205,
-      "name": "gabriel-henrique.png",
-      "alt": null,
-      "caption": null,
-      "width": 800,
-      "height": 800,
-      "src": "/content/assets/about/gabriel_henrique.png"
-    },
-    "action": {
-      "id": 575,
-      "title": "Shall we build something amazing together?",
-      "url": null
-    },
-    "header": {
-      "id": 169,
-      "badge": "About",
-      "title": "Seeking new challenges.",
-      "description": "My passion is to turn complex ideas into digital reality, working across all fronts of development. From front-end to back-end, my focus is to build robust, intuitive applications that truly make a difference.",
-      "link": null
-    }
-  },
-  "projects": {
-    "id": 40,
-    "header": {
-      "id": 170,
-      "badge": "Projects",
-      "title": "Yes, this is my portfolio",
-      "description": "My main projects.",
-      "link": null
-    },
-    "items": [
-      {
-        "id": 157,
-        "title": "Ignite Call",
-        "description": "Application integrated with Google Calendar for seamless scheduling and booking management.",
-        "url": "https://github.com/Gabriek0/ignite-call",
-        "image": {
-          "id": 198,
-          "name": "ignite-call.png",
-          "alt": null,
-          "caption": null,
-          "width": 372,
-          "height": 320,
-          "src": "/content/assets/projects/ignite_call.png"
-        }
-      },
-      {
-        "id": 158,
-        "title": "Ignews",
-        "description": "Blog featuring subscription plans, Stripe payments, and social login for exclusive content.",
-        "url": "https://github.com/Gabriek0/ignews",
-        "image": {
-          "id": 199,
-          "name": "ignews.png",
-          "alt": null,
-          "caption": null,
-          "width": 372,
-          "height": 320,
-          "src": "/content/assets/projects/ignews.png"
-        }
-      },
-      {
-        "id": 159,
-        "title": "Remix Expenses",
-        "description": "Fast and modern personal finance tracker built with Remix.js.",
-        "url": "https://github.com/Gabriek0/remix-expenses",
-        "image": {
-          "id": 200,
-          "name": "remix-expenses.png",
-          "alt": null,
-          "caption": null,
-          "width": 372,
-          "height": 320,
-          "src": "/content/assets/projects/remix_expenses.png"
-        }
-      },
-      {
-        "id": 160,
-        "title": "Simple Automotive",
-        "description": "Scalable back-end with clean architecture (SOLID) and Swagger documentation.",
-        "url": "https://github.com/Gabriek0/simple-automotive",
-        "image": {
-          "id": 201,
-          "name": "simple-automotive-api.png",
-          "alt": null,
-          "caption": null,
-          "width": 372,
-          "height": 320,
-          "src": "/content/assets/projects/simple_automotive_api.png"
-        }
-      }
-    ]
-  },
-  "experience": {
-    "id": 40,
-    "header": {
-      "id": 172,
-      "badge": "Experience",
-      "title": "My journey.",
-      "description": "Learn a bit more about my journey.",
-      "link": {
-        "id": 577,
-        "title": "View my LinkedIn",
-        "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/"
-      }
-    },
-    "switchers": [
-      {
-        "id": 210,
-        "text": "Career",
-        "url": null,
-        "value": "career"
-      },
-      {
-        "id": 211,
-        "text": "Education",
-        "url": null,
-        "value": "education"
-      }
-    ],
-    "items": [
-      {
-        "id": 274,
-        "title": "Web & Mobile Developer Intern",
-        "from": "2022-03-01",
-        "location": "Registro, São Paulo, Brazil",
-        "to": "2022-08-01",
-        "organization": "LocalSIG",
-        "type": "career",
-        "description": "I started in development with WordPress and, on my own initiative, introduced modern technologies such as React and React Native, culminating in the creation of a mobile application essential to the company.\n\n- Co-led the end-to-end development of an application in **React Native** for **Sabesp**, focused on managing leak inspections across the city.\n- The application enabled field technicians to perform inspections and report data digitally, replacing a previously manual workflow.\n- Developed the application using **React Native, TypeScript, and Styled-Components**, ensuring robust and maintainable code.\n- Designed and implemented user interfaces, translating **Figma** prototypes into responsive front-end components with **Next.js**.\n- Developed an administrative panel for system management and maintained client websites using **WordPress** and **Elementor PRO**.",
-        "image": {
-          "id": 191,
-          "name": "localsig.png",
-          "alt": "A stylized blue globe logo with curved lines representing meridians and parallels.",
-          "caption": "This blue globe logo, featuring curved grid lines, symbolizes global connectivity and international reach.",
-          "width": 230,
-          "height": 221,
-          "src": "/content/assets/experience/localsig.png"
-        },
-        "isCurrentWork": null,
-        "currentWorkLabel": null
-      },
-      {
-        "id": 275,
-        "title": "Junior Front End Developer",
-        "from": "2022-04-01",
-        "location": "São Paulo, Brazil | Remote",
-        "to": "2023-11-01",
-        "organization": "YOUDevelop",
-        "type": "career",
-        "description": "In a dynamic software factory environment, I quickly evolved from fundamental tasks to developing and contributing to complex web applications for a diverse portfolio of clients.\n\n- **Developed from scratch** a complete coupon raffle platform with **Next.js**, using **Firebase** for real-time data management and winner selection.\n- Contributed to the development of a travel platform with **Next.js and TypeScript**, implementing authentication with **NextAuth** and file storage with **Amazon S3**.\n- Actively participated in building a customer feedback platform with **Remix.js and MongoDB**, assisting in the integration of Google APIs for data collection and analysis.\n- Developed front-end features for various systems, including a restaurant management application and a portfolio platform for designers.\n- Participated in an **international project for Germany**, building a delivery platform using Next.js and Firebase.\n- Started at the company building and maintaining landing pages, establishing a solid foundation in front-end development best practices.",
-        "image": {
-          "id": 192,
-          "name": "you_develop.jpg",
-          "alt": "Yellow text 'YOU' inside a white circle with a colorful gradient border.",
-          "caption": "The word 'YOU' in bright yellow is centrally placed within a crisp white circle, framed by a vibrant gradient border.",
-          "width": 200,
-          "height": 200,
-          "src": "/content/assets/experience/you_develop.jpg"
-        },
-        "isCurrentWork": false,
-        "currentWorkLabel": null
-      },
-      {
-        "id": 276,
-        "title": "Full Stack Developer",
-        "from": "2023-11-01",
-        "location": "São Paulo, Brazil | Remote",
-        "to": "2024-12-01",
-        "organization": "Origin9",
-        "type": "career",
-        "description": "As a full-stack developer, I contributed throughout the lifecycle of complex, large-scale platforms, from database and API to front-end implementation and testing.\n\n- Actively participated in the development of a complete school management platform, contributing to both front-end and back-end.\n  - **Back-end:** Created and maintained RESTful API endpoints with **Node.js, Sequelize (ORM), and PostgreSQL** to manage students, classes, enrollments, and teachers.\n  - **Front-end:** Developed interactive and responsive user interfaces using **React.js and TypeScript**.\n- Implemented **AI to assist teachers in generating lesson plans**.\n- Ensured application quality and reliability by writing end-to-end (E2E) tests with **Cypress** and unit tests with **Jest**.\n- Optimized database queries to improve performance.\n- Collaborated on an inspection project with synchronized web and mobile applications, working on the **React Native** app to implement **off-line first** functionality and data synchronization with the web platform.",
-        "image": {
-          "id": 193,
-          "name": "origin9.jpg",
-          "alt": "Blue abstract symbol resembling two inward-pointing arrows forming a diamond shape.",
-          "caption": "This blue abstract symbol features two curved, arrow-like shapes pointing inwards, creating a central diamond that suggests connection or focus.",
-          "width": 200,
-          "height": 200,
-          "src": "/content/assets/experience/origin9.jpg"
-        },
-        "isCurrentWork": false,
-        "currentWorkLabel": null
-      },
-      {
-        "id": 277,
-        "title": "Full Stack Developer",
-        "from": "2024-10-01",
-        "location": "São Paulo, Brazil | Remote",
-        "to": null,
-        "organization": "Infracommerce",
-        "type": "career",
-        "description": "Recruited as a full-stack developer and later promoted to a **mid-level** role, contributing to high-stakes, large-scale e-commerce solutions for market-leading companies.\n\n- **Full-Stack Developer (Omnichannel Platform):**\n  - Initially maintained and evolved a B2B omnichannel platform, providing an \"infinite shelf\" solution for enterprise clients.\n  - Developed back-end services with **NestJS** to support both the administrative content and product management panel and the customer-facing catalog.\n  - Stack: **TypeScript, Nest.js, Docker, PostgreSQL, RabbitMQ, and Next.js**.\n- **Mid-Level Developer (VTEX Marketplace):**\n  - Recognized for performance, transitioned to a new team to work on the development of the official Correios marketplace, **Mais Correios**.\n  - Leveraging the **VTEX** ecosystem, developing and maintaining full-stack solutions, from custom back-end services to front-end components, ensuring high performance and scalability for a nationwide platform.",
-        "image": {
-          "id": 194,
-          "name": "infracommerce.jpg",
-          "alt": null,
-          "caption": null,
-          "width": 200,
-          "height": 200,
-          "src": "/content/assets/experience/infracommerce.jpg"
-        },
-        "isCurrentWork": true,
-        "currentWorkLabel": "Present"
-      },
-      {
-        "id": 278,
-        "title": "Technician in Mechatronics",
-        "from": "2018-02-01",
-        "location": "Registro, São Paulo, Brazil",
-        "to": "2020-02-01",
-        "organization": "Federal Institute of São Paulo (IFSP)",
-        "type": "education",
-        "description": "A comprehensive program integrating mechanics, electronics, and computer science. This course provided a strong foundation in logical thinking and systems integration, culminating in the design and construction of a functional sheet metal bending machine. This project involved applying principles of mechanics, welding, and material strength analysis, honing the problem-solving skills I now use in software development.",
-        "image": {
-          "id": 195,
-          "name": "instituto_federal_de_educao_cincia_e_tecnologia_de_so_paulo___ifsp_logo",
-          "alt": null,
-          "caption": null,
-          "width": 200,
-          "height": 200,
-          "src": "/content/assets/experience/instituto_federal_de_educao_cincia_e_tecnologia_de_so_paulo_ifsp_logo.jpeg"
-        }
-      },
-      {
-        "id": 279,
-        "title": "Systems Analysis and Development",
-        "from": "2020-02-01",
-        "location": "Registro, São Paulo, Brazil",
-        "to": "2023-02-01",
-        "organization": "UNIVR ",
-        "type": "education",
-        "description": "A higher education program focused on software engineering principles and market-ready skills. The curriculum emphasized hands-on learning through multiple team-based projects, where I applied theoretical knowledge to build full-stack web applications. This project-driven approach was essential for developing both my technical abilities in web development and my interpersonal skills in communication and teamwork, providing the foundational knowledge for my career as a software developer.",
-        "image": {
-          "id": 196,
-          "name": "educacional_unisepe_logo",
-          "alt": null,
-          "caption": null,
-          "width": 200,
-          "height": 200,
-          "src": "/content/assets/experience/educacional_unisepe_logo.jpeg"
-        }
-      },
-      {
-        "id": 280,
-        "title": "Postgraduate Degree in Software Engineering",
-        "from": "2024-03-01",
-        "location": "EAD",
-        "to": "2025-03-01",
-        "organization": "PUC Minas",
-        "type": "education",
-        "description": "A specialization focused on deepening my expertise in both the technical and managerial aspects of software development. The curriculum covered advanced topics including software architecture (front-end and back-end), agile methodologies, automated testing, and project management, providing strategic skills for designing, leading, and maintaining high-quality, scalable software systems.",
-        "image": {
-          "id": 197,
-          "name": "pucminas_logo",
-          "alt": null,
-          "caption": null,
-          "width": 200,
-          "height": 200,
-          "src": "/content/assets/experience/pucminas_logo.jpeg"
-        }
-      }
-    ]
-  },
   "skills": {
     "id": 40,
+    "active": true,
     "header": {
       "id": 173,
       "badge": "Skills",
@@ -599,8 +201,411 @@
       }
     ]
   },
+  "blog": {
+    "active": false
+  },
+  "experience": {
+    "id": 40,
+    "active": true,
+    "header": {
+      "id": 172,
+      "badge": "Experience",
+      "title": "My journey.",
+      "description": "Learn a bit more about my journey.",
+      "link": {
+        "id": 577,
+        "title": "View my LinkedIn",
+        "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/"
+      }
+    },
+    "switchers": [
+      {
+        "id": 210,
+        "text": "Career",
+        "url": null,
+        "value": "career"
+      },
+      {
+        "id": 211,
+        "text": "Education",
+        "url": null,
+        "value": "education"
+      }
+    ],
+    "items": [
+      {
+        "isCurrentWork": null,
+        "currentWorkLabel": null,
+        "from": "2022-03-01",
+        "organization": "LocalSIG",
+        "location": "Registro, São Paulo, Brazil",
+        "title": "Web & Mobile Developer Intern",
+        "type": "career",
+        "id": 274,
+        "image": {
+          "id": 191,
+          "name": "localsig.png",
+          "alt": "A stylized blue globe logo with curved lines representing meridians and parallels.",
+          "caption": "This blue globe logo, featuring curved grid lines, symbolizes global connectivity and international reach.",
+          "width": 230,
+          "height": 221,
+          "src": "/content/assets/experience/localsig.png"
+        },
+        "to": "2022-08-01",
+        "description": "I started in development with WordPress and, on my own initiative, introduced modern technologies such as React and React Native, culminating in the creation of a mobile application essential to the company.\n\n- Co-led the end-to-end development of an application in **React Native** for **Sabesp**, focused on managing leak inspections across the city.\n- The application enabled field technicians to perform inspections and report data digitally, replacing a previously manual workflow.\n- Developed the application using **React Native, TypeScript, and Styled-Components**, ensuring robust and maintainable code.\n- Designed and implemented user interfaces, translating **Figma** prototypes into responsive front-end components with **Next.js**.\n- Developed an administrative panel for system management and maintained client websites using **WordPress** and **Elementor PRO**."
+      },
+      {
+        "isCurrentWork": false,
+        "currentWorkLabel": null,
+        "from": "2022-04-01",
+        "organization": "YOUDevelop",
+        "location": "São Paulo, Brazil | Remote",
+        "title": "Junior Front End Developer",
+        "type": "career",
+        "id": 275,
+        "image": {
+          "id": 192,
+          "name": "you_develop.jpg",
+          "alt": "Yellow text 'YOU' inside a white circle with a colorful gradient border.",
+          "caption": "The word 'YOU' in bright yellow is centrally placed within a crisp white circle, framed by a vibrant gradient border.",
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/you_develop.jpg"
+        },
+        "to": "2023-11-01",
+        "description": "In a dynamic software factory environment, I quickly evolved from fundamental tasks to developing and contributing to complex web applications for a diverse portfolio of clients.\n\n- **Developed from scratch** a complete coupon raffle platform with **Next.js**, using **Firebase** for real-time data management and winner selection.\n- Contributed to the development of a travel platform with **Next.js and TypeScript**, implementing authentication with **NextAuth** and file storage with **Amazon S3**.\n- Actively participated in building a customer feedback platform with **Remix.js and MongoDB**, assisting in the integration of Google APIs for data collection and analysis.\n- Developed front-end features for various systems, including a restaurant management application and a portfolio platform for designers.\n- Participated in an **international project for Germany**, building a delivery platform using Next.js and Firebase.\n- Started at the company building and maintaining landing pages, establishing a solid foundation in front-end development best practices."
+      },
+      {
+        "isCurrentWork": false,
+        "currentWorkLabel": null,
+        "from": "2023-11-01",
+        "organization": "Origin9",
+        "location": "São Paulo, Brazil | Remote",
+        "title": "Full Stack Developer",
+        "type": "career",
+        "id": 276,
+        "image": {
+          "id": 193,
+          "name": "origin9.jpg",
+          "alt": "Blue abstract symbol resembling two inward-pointing arrows forming a diamond shape.",
+          "caption": "This blue abstract symbol features two curved, arrow-like shapes pointing inwards, creating a central diamond that suggests connection or focus.",
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/origin9.jpg"
+        },
+        "to": "2024-12-01",
+        "description": "As a full-stack developer, I contributed throughout the lifecycle of complex, large-scale platforms, from database and API to front-end implementation and testing.\n\n- Actively participated in the development of a complete school management platform, contributing to both front-end and back-end.\n  - **Back-end:** Created and maintained RESTful API endpoints with **Node.js, Sequelize (ORM), and PostgreSQL** to manage students, classes, enrollments, and teachers.\n  - **Front-end:** Developed interactive and responsive user interfaces using **React.js and TypeScript**.\n- Implemented **AI to assist teachers in generating lesson plans**.\n- Ensured application quality and reliability by writing end-to-end (E2E) tests with **Cypress** and unit tests with **Jest**.\n- Optimized database queries to improve performance.\n- Collaborated on an inspection project with synchronized web and mobile applications, working on the **React Native** app to implement **off-line first** functionality and data synchronization with the web platform."
+      },
+      {
+        "isCurrentWork": true,
+        "currentWorkLabel": "Present",
+        "from": "2024-10-01",
+        "organization": "Infracommerce",
+        "location": "São Paulo, Brazil | Remote",
+        "title": "Full Stack Developer",
+        "type": "career",
+        "id": 277,
+        "image": {
+          "id": 194,
+          "name": "infracommerce.jpg",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/infracommerce.jpg"
+        },
+        "to": null,
+        "description": "Recruited as a full-stack developer and later promoted to a **mid-level** role, contributing to high-stakes, large-scale e-commerce solutions for market-leading companies.\n\n- **Full-Stack Developer (Omnichannel Platform):**\n  - Initially maintained and evolved a B2B omnichannel platform, providing an \"infinite shelf\" solution for enterprise clients.\n  - Developed back-end services with **NestJS** to support both the administrative content and product management panel and the customer-facing catalog.\n  - Stack: **TypeScript, Nest.js, Docker, PostgreSQL, RabbitMQ, and Next.js**.\n- **Mid-Level Developer (VTEX Marketplace):**\n  - Recognized for performance, transitioned to a new team to work on the development of the official Correios marketplace, **Mais Correios**.\n  - Leveraging the **VTEX** ecosystem, developing and maintaining full-stack solutions, from custom back-end services to front-end components, ensuring high performance and scalability for a nationwide platform."
+      },
+      {
+        "from": "2018-02-01",
+        "organization": "Federal Institute of São Paulo (IFSP)",
+        "location": "Registro, São Paulo, Brazil",
+        "title": "Technician in Mechatronics",
+        "type": "education",
+        "id": 278,
+        "image": {
+          "id": 195,
+          "name": "instituto_federal_de_educao_cincia_e_tecnologia_de_so_paulo___ifsp_logo",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/instituto_federal_de_educao_cincia_e_tecnologia_de_so_paulo_ifsp_logo.jpeg"
+        },
+        "to": "2020-02-01",
+        "description": "A comprehensive program integrating mechanics, electronics, and computer science. This course provided a strong foundation in logical thinking and systems integration, culminating in the design and construction of a functional sheet metal bending machine. This project involved applying principles of mechanics, welding, and material strength analysis, honing the problem-solving skills I now use in software development."
+      },
+      {
+        "from": "2020-02-01",
+        "organization": "UNIVR ",
+        "location": "Registro, São Paulo, Brazil",
+        "title": "Systems Analysis and Development",
+        "type": "education",
+        "id": 279,
+        "image": {
+          "id": 196,
+          "name": "educacional_unisepe_logo",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/educacional_unisepe_logo.jpeg"
+        },
+        "to": "2023-02-01",
+        "description": "A higher education program focused on software engineering principles and market-ready skills. The curriculum emphasized hands-on learning through multiple team-based projects, where I applied theoretical knowledge to build full-stack web applications. This project-driven approach was essential for developing both my technical abilities in web development and my interpersonal skills in communication and teamwork, providing the foundational knowledge for my career as a software developer."
+      },
+      {
+        "from": "2024-03-01",
+        "organization": "PUC Minas",
+        "location": "EAD",
+        "title": "Postgraduate Degree in Software Engineering",
+        "type": "education",
+        "id": 280,
+        "image": {
+          "id": 197,
+          "name": "pucminas_logo",
+          "alt": null,
+          "caption": null,
+          "width": 200,
+          "height": 200,
+          "src": "/content/assets/experience/pucminas_logo.jpeg"
+        },
+        "to": "2025-03-01",
+        "description": "A specialization focused on deepening my expertise in both the technical and managerial aspects of software development. The curriculum covered advanced topics including software architecture (front-end and back-end), agile methodologies, automated testing, and project management, providing strategic skills for designing, leading, and maintaining high-quality, scalable software systems."
+      }
+    ]
+  },
+  "header": {
+    "id": 40,
+    "active": true,
+    "navigation": [
+      {
+        "id": 565,
+        "title": "Home",
+        "url": "#home"
+      },
+      {
+        "id": 566,
+        "title": "About",
+        "url": "#about"
+      },
+      {
+        "id": 567,
+        "title": "Portfolio",
+        "url": "#projects"
+      },
+      {
+        "id": 569,
+        "title": "Experience",
+        "url": "#experience"
+      },
+      {
+        "id": 570,
+        "title": "Skills",
+        "url": "#skills"
+      }
+    ],
+    "languageSelector": [
+      {
+        "id": 154,
+        "name": "Portuguese",
+        "code": "pt-BR",
+        "flag": {
+          "id": 174,
+          "name": "brazil.png",
+          "alt": "Circular icon featuring the Brazilian flag: a green background with a yellow diamond and blue sphere.",
+          "caption": "This iconic design represents the Brazilian flag, featuring its distinctive green, yellow, blue, and white colors in a circular format.",
+          "width": 512,
+          "height": 512,
+          "src": "/content/assets/flags/brazil.png"
+        }
+      },
+      {
+        "id": 155,
+        "name": "English",
+        "code": "en",
+        "flag": {
+          "id": 173,
+          "name": "usa.png",
+          "alt": "Circular icon of the American flag with stars and stripes.",
+          "caption": "This circular icon prominently displays the United States flag, featuring its iconic red and white stripes and a blue field with white stars.",
+          "width": 512,
+          "height": 512,
+          "src": "/content/assets/flags/usa.png"
+        }
+      },
+      {
+        "id": 156,
+        "name": "Spanish",
+        "code": "es",
+        "flag": {
+          "id": 175,
+          "name": "spain.png",
+          "alt": "Circular Spanish flag featuring two red horizontal stripes and a central yellow stripe.",
+          "caption": "This circular emblem displays the vibrant red and yellow bands of the Spanish flag, a recognized national symbol.",
+          "width": 512,
+          "height": 512,
+          "src": "/content/assets/flags/spain.png"
+        }
+      }
+    ]
+  },
+  "about": {
+    "id": 40,
+    "active": true,
+    "image": {
+      "id": 205,
+      "name": "gabriel-henrique.png",
+      "alt": null,
+      "caption": null,
+      "width": 800,
+      "height": 800,
+      "src": "/content/assets/about/gabriel_henrique.png"
+    },
+    "action": {
+      "id": 575,
+      "title": "Shall we build something amazing together?",
+      "url": null
+    },
+    "header": {
+      "id": 169,
+      "badge": "About",
+      "title": "Seeking new challenges.",
+      "description": "My passion is to turn complex ideas into digital reality, working across all fronts of development. From front-end to back-end, my focus is to build robust, intuitive applications that truly make a difference.",
+      "link": null
+    }
+  },
+  "title": "English",
+  "projects": {
+    "id": 40,
+    "active": true,
+    "header": {
+      "id": 170,
+      "badge": "Projects",
+      "title": "Yes, this is my portfolio",
+      "description": "My main projects.",
+      "link": null
+    },
+    "items": [
+      {
+        "id": 157,
+        "title": "Ignite Call",
+        "description": "Application integrated with Google Calendar for seamless scheduling and booking management.",
+        "url": "https://github.com/Gabriek0/ignite-call",
+        "image": {
+          "id": 198,
+          "name": "ignite-call.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/ignite_call.png"
+        }
+      },
+      {
+        "id": 158,
+        "title": "Ignews",
+        "description": "Blog featuring subscription plans, Stripe payments, and social login for exclusive content.",
+        "url": "https://github.com/Gabriek0/ignews",
+        "image": {
+          "id": 199,
+          "name": "ignews.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/ignews.png"
+        }
+      },
+      {
+        "id": 159,
+        "title": "Remix Expenses",
+        "description": "Fast and modern personal finance tracker built with Remix.js.",
+        "url": "https://github.com/Gabriek0/remix-expenses",
+        "image": {
+          "id": 200,
+          "name": "remix-expenses.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/remix_expenses.png"
+        }
+      },
+      {
+        "id": 160,
+        "title": "Simple Automotive",
+        "description": "Scalable back-end with clean architecture (SOLID) and Swagger documentation.",
+        "url": "https://github.com/Gabriek0/simple-automotive",
+        "image": {
+          "id": 201,
+          "name": "simple-automotive-api.png",
+          "alt": null,
+          "caption": null,
+          "width": 372,
+          "height": 320,
+          "src": "/content/assets/projects/simple_automotive_api.png"
+        }
+      }
+    ]
+  },
+  "locale": "en",
+  "hero": {
+    "animation": {
+      "id": 176,
+      "name": "wave.gif",
+      "alt": "A yellow emoji hand waves hello with motion lines.",
+      "caption": "A friendly yellow hand emoji waves, symbolizing a greeting or farewell. It's a universal gesture for saying hello.",
+      "width": 512,
+      "height": 512,
+      "src": "/content/assets/hero/wave.gif"
+    },
+    "active": true,
+    "secondaryAction": {
+      "id": 209,
+      "text": "Download Resume",
+      "url": "/content/resume/resume-en.pdf",
+      "value": null
+    },
+    "name": "Gabriel Henrique",
+    "socialLinks": [
+      {
+        "id": 571,
+        "title": "Github",
+        "url": "https://github.com/Gabriek0"
+      },
+      {
+        "id": 572,
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/"
+      },
+      {
+        "id": 573,
+        "title": "Instagram",
+        "url": null
+      },
+      {
+        "id": 574,
+        "title": "E-mail",
+        "url": null
+      }
+    ],
+    "roleIcon": null,
+    "role": "Full Stack Developer",
+    "primaryAction": {
+      "id": 208,
+      "text": "Get in touch",
+      "url": "https://www.linkedin.com/in/gabriel-henrique-664bb219a/",
+      "value": null
+    },
+    "greeting": "Hello, I'm",
+    "id": 40,
+    "description": "Crafting elegant solutions for complex problems with modern technologies."
+  },
   "footer": {
     "id": 40,
+    "active": true,
     "copyright": "Gabriel Henrique © 2025 All rights reserved",
     "backToTopAction": {
       "id": 212,
