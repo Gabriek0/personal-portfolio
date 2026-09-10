@@ -20,12 +20,12 @@ export default function Footer({ data }: FooterProps) {
           }}
           className='bg-transparent hidden underline text-foreground md:flex md:items-center md:gap-2'
         >
-          {data.footer_back_to_top_button.button_text}
+          {data.backToTopAction.text}
           <CircleArrowUp className='h-4.5 w-4.5 ' />
         </Button>
 
         <span className='text-sm font-normal text-foreground md:text-base'>
-          {data.footer_copyright}
+          {data.copyright}
         </span>
       </div>
     </footer>

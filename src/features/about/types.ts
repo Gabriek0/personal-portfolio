@@ -1,4 +1,4 @@
-import { AboutSection } from '@/src/types/strapi';
+import { AboutSection } from '@/src/lib/content/types';
 
 export interface AboutProps {
   data: AboutSection;

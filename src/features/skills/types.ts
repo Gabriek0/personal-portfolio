@@ -1,4 +1,4 @@
-import { SkillSection } from '@/src/types/strapi';
+import { SkillSection } from '@/src/lib/content/types';
 
 export interface SkillProps {
   data: SkillSection;
