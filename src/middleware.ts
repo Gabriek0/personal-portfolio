@@ -1,12 +1,16 @@
 import { NextRequest } from 'next/server';
+import { defaultLocale, locales } from '@/src/lib/i18n';
 
-const defaultLocale = 'en';
-const locales = ['en', 'es', 'pt-BR'];
+const PUBLIC_FILE = /\.(.*)$/;
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
+  if (PUBLIC_FILE.test(pathname)) return;
+
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+  );
 
   if (pathnameHasLocale) return;
 

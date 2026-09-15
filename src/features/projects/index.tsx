@@ -84,14 +84,14 @@ function Projects({ data }: ProjectsProps) {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div variants={headerItemVariants}>
-            <SectionBadge>{data.projects_header.section_badge}</SectionBadge>
+            <SectionBadge>{data.header.badge}</SectionBadge>
           </motion.div>
           <motion.div variants={headerItemVariants}>
-            <SectionTitle>{data.projects_header.section_title}</SectionTitle>
+            <SectionTitle>{data.header.title}</SectionTitle>
           </motion.div>
           <motion.div variants={headerItemVariants}>
             <SectionDescription>
-              {data.projects_header.section_description}
+              {data.header.description}
             </SectionDescription>
           </motion.div>
         </motion.header>
@@ -103,7 +103,7 @@ function Projects({ data }: ProjectsProps) {
           whileInView='visible'
           viewport={{ once: true, amount: 0.1 }}
         >
-          {data.projects_list.map((project, index) => (
+          {data.items.map((project, index) => (
             <motion.div
               custom={index}
               key={project.id}
@@ -119,12 +119,12 @@ function Projects({ data }: ProjectsProps) {
                 className='overflow-hidden rounded-lg mb-6 md:mb-4'
               >
                 <motion.div>
-                  <Link href={project.project_link} target='_blank'>
+                  <Link href={project.url} target='_blank'>
                     <Image
                       fill={true}
                       variant='square'
-                      alt={project.project_image.name}
-                      src={getMediaUrl(project.project_image.url)}
+                      alt={project.image.alt || project.image.name}
+                      src={getMediaUrl(project.image.src)}
                       className='cursor-pointer h-72 w-80 md:h-68 md:w-76 lg:h-80 lg:w-93'
                     />
                   </Link>
@@ -137,11 +137,11 @@ function Projects({ data }: ProjectsProps) {
                 className='cursor-pointer flex items-center text-foreground font-medium text-2xl hover:underline mb-2'
               >
                 <Link
-                  href={project.project_link}
+                  href={project.url}
                   target='_blank'
                   className='flex items-center gap-2'
                 >
-                  {project.project_title}{' '}
+                  {project.title}{' '}
                   <motion.span
                     whileHover={{ x: 3, y: -3 }}
                     transition={{ duration: 0.2 }}
@@ -158,7 +158,7 @@ function Projects({ data }: ProjectsProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                {project.project_description}
+                {project.description}
               </motion.p>
             </motion.div>
           ))}

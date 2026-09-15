@@ -38,9 +38,9 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
-  const sectionIds = useMemo(() => data.header_navigation_bar.map(({ link_url }) => link_url.replace('#', '')).filter(Boolean), [data.header_navigation_bar]);
+  const sectionIds = useMemo(() => data.navigation.map(({ url }) => url.replace('#', '')).filter(Boolean), [data.navigation]);
   const activeSection = useActiveSection(sectionIds);
-  const activeNavId = data.header_navigation_bar.find(({ link_url }) => link_url.replace('#', '') === activeSection)?.id ?? null;
+  const activeNavId = data.navigation.find(({ url }) => url.replace('#', '') === activeSection)?.id ?? null;
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
@@ -103,7 +103,7 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
             >
               <nav>
                 <ul className='flex flex-col gap-1'>
-                  {data.header_navigation_bar.map(({ id, link_title, link_url }, i) => (
+                  {data.navigation.map(({ id, title, url }, i) => (
                     <motion.li
                       key={id}
                       custom={i}
@@ -113,13 +113,13 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
                       className='relative'
                     >
                       <a
-                        href={link_url}
+                        href={url}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`relative z-10 block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                           activeNavId === id ? 'text-foreground' : 'text-icon hover:text-foreground'
                         }`}
                       >
-                        {link_title}
+                        {title}
                       </a>
                       <AnimatePresence>
                         {activeNavId === id && (
@@ -147,11 +147,11 @@ export default function HeaderMenuToggle({ data }: HeaderMenuToggleProps) {
                     type: 'spring',
                     stiffness: 260,
                     damping: 20,
-                    delay: 0.1 + data.header_navigation_bar.length * 0.06,
+                    delay: 0.1 + data.navigation.length * 0.06,
                   },
                 }}
               >
-                <HeaderLanguageSelect data={data.header_language_selector} />
+                <HeaderLanguageSelect data={data.languageSelector} />
               </motion.div>
             </motion.aside>
           </>

@@ -12,9 +12,7 @@ export function getMediaUrl(path: string | null | undefined) {
     return path;
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || '';
-
-  return `${baseUrl}${path}`;
+  return path;
 }
 
 export function sleep(ms: number) {

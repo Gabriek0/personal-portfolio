@@ -1,19 +1,14 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
+  async redirects() {
+    return [
       {
-        protocol: 'https',
-        hostname: process.env.STRAPI_API_MEDIA_HOSTNAME,
+        source: '/admin',
+        destination: '/admin/index.html',
+        permanent: false,
       },
-      // {
-      //   protocol: 'http',
-      //   hostname: 'localhost',
-      //   port: '1337',
-      //   pathname: '/uploads/**',
-      // },
-    ],
+    ];
   },
   turbopack: {
     rules: {

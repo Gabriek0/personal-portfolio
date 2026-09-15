@@ -63,16 +63,16 @@ function About({ data }: AboutProps) {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={itemVariants}>
-              <SectionBadge>{data.about_header.section_badge}</SectionBadge>
+              <SectionBadge>{data.header.badge}</SectionBadge>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <SectionTitle>{data.about_header.section_title}</SectionTitle>
+              <SectionTitle>{data.header.title}</SectionTitle>
             </motion.div>
 
             <motion.div variants={itemVariants}>
               <SectionDescription>
-                {data.about_header.section_description}
+                {data.header.description}
               </SectionDescription>
             </motion.div>
 
@@ -81,8 +81,10 @@ function About({ data }: AboutProps) {
               variants={itemVariants}
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2 }}
+              href={data.action.url || '#'}
+              target='_blank'
             >
-              {data.about_button.link_title}
+              {data.action.title}
               <motion.span
                 className='no-underline'
                 whileHover={{ x: 3 }}
@@ -106,8 +108,8 @@ function About({ data }: AboutProps) {
             <Image
               fill={true}
               variant='circle'
-              alt={data.about_image.name}
-              src={getMediaUrl(data.about_image.url)}
+              alt={data.image.alt || data.image.name}
+              src={getMediaUrl(data.image.src)}
               className='cursor-pointer h-46.5 w-46.5 lg:h-62.5 lg:w-62.5'
             />
           </motion.div>
