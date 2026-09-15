@@ -1,4 +1,4 @@
-import { HeaderLanguageSelector, HeaderSection } from '@/src/types/strapi';
+import { HeaderLanguageOption, HeaderSection } from '@/src/lib/content/types';
 
 export interface HeaderProps {
   data: HeaderSection;
@@ -7,7 +7,7 @@ export interface HeaderNavbarProps {
   data: HeaderSection;
 }
 export interface HeaderLanguageSelectProps {
-  data: HeaderLanguageSelector;
+  data: HeaderLanguageOption[];
 }
 
 export interface HeaderMenuToggleProps {

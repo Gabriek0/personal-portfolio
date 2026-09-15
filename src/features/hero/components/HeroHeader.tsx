@@ -40,7 +40,7 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
         className='text-foreground font-normal text-sm mb-1 md:text-xl'
         variants={itemVariants}
       >
-        {data.hero_greetings}
+        {data.greeting}
       </motion.p>
 
       <motion.div
@@ -48,7 +48,7 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
         variants={itemVariants}
       >
         <h1 className='text-foreground font-semibold text-2xl md:text-4xl'>
-          {data.hero_name}
+          {data.name}
         </h1>
 
         <motion.picture
@@ -61,12 +61,12 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
         >
           <source
             type='image/webp'
-            srcSet={getMediaUrl(data.hero_animation.url)}
+            srcSet={getMediaUrl(data.animation.src)}
           />
           <img
             alt='👋'
             className='h-8 w-8 lg:h-10 lg:w-10'
-            src={getMediaUrl(data.hero_animation.url)}
+            src={getMediaUrl(data.animation.src)}
           />
         </motion.picture>
       </motion.div>
@@ -78,14 +78,14 @@ export default function HeroHeader({ data }: HeroHeaderProps) {
         <span className='flex justify-center h-4 w-6.5 bg-white text-black rounded-2xl'>
           <Code className='mt-[1px] size-3.5 font-bold text-base' />
         </span>
-        {data.hero_role}
+        {data.role}
       </motion.h2>
 
       <motion.p
         className='text-muted-foreground font-regular text-sm mt-4 md:text-base'
         variants={itemVariants}
       >
-        {data.hero_description}
+        {data.description}
       </motion.p>
     </motion.header>
   );

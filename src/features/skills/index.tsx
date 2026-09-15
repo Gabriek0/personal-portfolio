@@ -18,18 +18,18 @@ function Skill({ data }: SkillProps) {
       <SectionWrapper>
         <header className='flex flex-col'>
           <SectionBadge className='mt-0 mb-2'>
-            {data.skills_header.section_badge}
+            {data.header.badge}
           </SectionBadge>
           <SectionTitle className='mt-0 mb-2'>
-            {data.skills_header.section_title}
+            {data.header.title}
           </SectionTitle>
           <SectionDescription className='mt-0 mb-8'>
-            {data.skills_header.section_description}
+            {data.header.description}
           </SectionDescription>
         </header>
 
         <ul className='w-full flex flex-wrap justify-center gap-3'>
-          {data.skills_list.map((skill, index) => (
+          {data.items.map((skill, index) => (
             <motion.li
               key={skill.id}
               custom={index}
@@ -60,13 +60,13 @@ function Skill({ data }: SkillProps) {
               <div className='relative h-4.5 w-4.5 rounded-full overflow-hidden md:h-6 md:w-6'>
                 <NextImage
                   fill={true}
-                  alt={skill.skill_image.name}
-                  src={getMediaUrl(skill.skill_image.url)}
+                  alt={skill.image.alt || skill.image.name}
+                  src={getMediaUrl(skill.image.src)}
                 />
               </div>
 
               <span className='text-secondary-foreground text-xs font-medium md:text-sm'>
-                {skill.skill_name}
+                {skill.name}
               </span>
             </motion.li>
           ))}

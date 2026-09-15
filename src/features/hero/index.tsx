@@ -6,7 +6,7 @@ import HeroSocialMedia from './components/HeroSocialMedia';
 import { HeroProps } from './types';
 
 function Hero({ data }: HeroProps) {
-  const { hero_social_media } = data;
+  const { socialLinks } = data;
 
   return (
     <Section id='home' className='items-center h-fit w-full my-8 lg:h-170'>
@@ -15,7 +15,7 @@ function Hero({ data }: HeroProps) {
           <HeroHeader data={data} />
           <HeroButtons data={data} />
           <HeroDivider />
-          <HeroSocialMedia data={hero_social_media} />
+          <HeroSocialMedia data={socialLinks} />
         </div>
       </SectionWrapper>
     </Section>

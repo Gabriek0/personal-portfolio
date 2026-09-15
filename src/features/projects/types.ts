@@ -1,4 +1,4 @@
-import { ProjectSection } from '@/src/types/strapi';
+import { ProjectSection } from '@/src/lib/content/types';
 
 export interface ProjectsProps {
   data: ProjectSection;

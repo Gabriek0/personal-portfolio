@@ -1,6 +1,6 @@
 'use client';
 
-import { StrapiLink } from '@/src/types/strapi';
+import { ContentLink } from '@/src/lib/content/types';
 import { motion, Variants } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import {
@@ -39,7 +39,7 @@ const itemVariants: Variants = {
 
 export default function HeroSocialMedia({ data }: HeroSocialMediaProps) {
   const socialMedia: Array<
-    StrapiLink & {
+    ContentLink & {
       icon: React.ForwardRefExoticComponent<
         IconProps & React.RefAttributes<SVGSVGElement>
       >;
@@ -59,7 +59,7 @@ export default function HeroSocialMedia({ data }: HeroSocialMediaProps) {
         initial='hidden'
         animate='visible'
       >
-        {socialMedia.map(({ id, link_title, link_url, ...props }) => (
+        {socialMedia.map(({ id, title, url, ...props }) => (
           <motion.li
             className='flex items-center gap-1 hover:underline'
             key={id}
@@ -71,10 +71,10 @@ export default function HeroSocialMedia({ data }: HeroSocialMediaProps) {
 
             <a
               target='_blank'
-              href={link_url ?? '#'}
+              href={url ?? '#'}
               className='cursor-pointer text-muted-foreground font-medium text-xs md:text-sm'
             >
-              {link_title}
+              {title}
             </a>
           </motion.li>
         ))}

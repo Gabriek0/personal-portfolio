@@ -1,4 +1,4 @@
-import { HeroSection } from '@/src/types/strapi';
+import { HeroSection } from '@/src/lib/content/types';
 
 export interface HeroProps {
   data: HeroSection;
@@ -13,5 +13,5 @@ export interface HeroButtonProps {
 }
 
 export interface HeroSocialMediaProps {
-  data: HeroSection['hero_social_media'];
+  data: HeroSection['socialLinks'];
 }
